@@ -1,0 +1,130 @@
+---
+title: "Introduction to the command line"
+author: "Roman E. Reggiardo"
+format: revealjs
+editor: visual
+---
+
+## Prediction:
+
+What does data look like? Where do we keep it?
+
+## Computers and Data
+
+The **command line** gives us an opportunity to work with computers in a more direct way compared to "Folders" and "Files".
+
+![](images/Screen%20Shot%202022-06-28%20at%204.02.45%20PM.png){fig-align="center"}
+
+## For example:
+
+Look at your desktop, what's there?
+
+Folders?
+
+What's inside?
+
+![](images/Screen%20Shot%202022-06-28%20at%204.25.49%20PM.png){fig-align="center"}
+
+## This sounds like something we could see in everyday life...
+
+picture of filing cabinet
+
+![](images/file_cabinet.jpeg){fig-align="center"}
+
+## Computers, on the other hand, think differently
+
+Really they operate in binary, on 1's and 0's, but just beneath 'Files' and 'Folders' they operate with:
+
+"Folders" == "Directories"
+
+"Files" == "Paths"
+
+![](images/Screen%20Shot%202022-06-28%20at%204.35.02%20PM.png){fig-align="center"}
+
+## **Prediction:**
+
+How will your experience be different when you switch from "human think" to "command line/computer think"?
+
+## Practice 01:
+
+### Create a "Project Folder"
+
+Using the **Graphical User Interface (GUI)** provided on your Jupyter login, create a **Folder** called:
+
+`SCBC_2022_folder`
+
+![](images/Screen%20Shot%202022-06-28%20at%204.37.31%20PM.png){fig-align="center"}
+
+## Practice 01A:
+
+### Create sub-folders and a `README.txt` file:
+
+`data/`
+
+`notes/`
+
+`code/`
+
+![](images/Screen%20Shot%202022-06-28%20at%204.38.28%20PM.png){fig-align="right"}
+
+## Practice 01B:
+
+### Go back to Jupyter and edit README.txt to say something....
+
+![your desktop doesn't have a text editor installed.....yet](images/Screen%20Shot%202022-06-28%20at%204.41.24%20PM.png){fig-align="center"}
+
+## Reflect:
+
+### What you've just made is a 'project folder':
+
+Why is this useful? What could it help with moving forward?
+
+![](images/Screen%20Shot%202022-06-28%20at%204.38.28%20PM.png){fig-align="center"}
+
+## So why even bother with the command line? We just did so much!
+
+We can **create, copy, rename, move (etc etc)** files using a GUI, it works, its easy and intuitive.
+
+However, the things you did are
+
+-   only possible if a GUI is provided
+
+-   not **reproducible** (could someone else get the same result? yes...but in the same exact way? maybe not.)
+
+-   **limited** to what the GUI/Operating System designers decided was useful for most users.
+
+Bioinformatics asks us to do much more with data, and thus computers, than most.
+
+## Beyond the GUI: Command Line interface \[CLI\]
+
+On your desktops you can **view** the command line with a **terminal** -- a piece of software built to enable our use of command line programming
+
+`image of desktop GUI terminal`
+
+## Prediction:
+
+Instead of the mouse, how will we navigate the command line?
+
+## Practice 02: Doing the same stuff differently
+
+### Create a "Project Directory"
+
+```{r}
+# dummy R chunk to keep things working
+```
+
+```{bash echo=TRUE}
+ls
+```
+
+```{bash echo=TRUE}
+ls SCBC_22
+```
+
+```{bash echo=TRUE}
+touch SCBC_22/my_file.txt
+```
+
+```{bash echo=TRUE}
+ls SCBC_22
+```
