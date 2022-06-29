@@ -2,8 +2,5 @@
 
 Here you'll find slides, code, and all the other material we are using to explore the world of bioinformatics.
 
-### Lectures
-
-[Lecture 001: Introduction to command line](slides/001.html)
 
 
