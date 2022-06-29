@@ -27,7 +27,7 @@ What's inside?
 
 ## This sounds like something we could see in everyday life...
 
-picture of filing cabinet
+Folders! Files! Its a database, right?
 
 ![](images/file_cabinet.jpeg){fig-align="center"}
 
