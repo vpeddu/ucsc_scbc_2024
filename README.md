@@ -2,5 +2,7 @@
 
 Here you'll find slides, code, and all the other material we are using to explore the world of bioinformatics.
 
+[Website](https://rreggiar.github.io/ucsc_scbc_2022/)
+
 
 
