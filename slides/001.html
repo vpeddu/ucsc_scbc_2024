@@ -458,7 +458,6 @@
 <section id="so-why-even-bother-with-the-command-line-we-just-did-so-much" class="slide level2">
 <h2>So why even bother with the command line? We just did so much!</h2>
 <p>We can <strong>create, copy, rename, move (etc etc)</strong> files using a GUI, it works, its easy and intuitive.</p>
-<p>However, the things you did are</p>
 <ul>
 <li><p>only possible if a GUI is provided</p></li>
 <li><p>not <strong>reproducible</strong> (could someone else get the same result? yes…but in the same exact way? maybe not.)</p></li>
@@ -468,44 +467,292 @@
 </section>
 <section id="beyond-the-gui-command-line-interface-cli" class="slide level2">
 <h2>Beyond the GUI: Command Line interface [CLI]</h2>
-<p>On your desktops you can <strong>view</strong> the command line with a <strong>terminal</strong> – a piece of software built to enable our use of command line programming</p>
-<p><code>image of desktop GUI terminal</code></p>
-</section>
+<p>On your desktops you can <strong>view</strong> and <strong>interact</strong> <strong>with</strong> the command line with a <strong>terminal</strong> – a piece of software built to enable our use of command line programming</p>
+
+<img data-src="images/Screen%20Shot%202022-06-30%20at%2011.53.19%20AM.png" class="r-stretch quarto-figure-center"><p class="caption">terminal on left, file explorer on right</p></section>
 <section id="prediction-2" class="slide level2">
 <h2>Prediction:</h2>
 <p>Instead of the mouse, how will we navigate the command line?</p>
 </section>
-<section id="practice-02-doing-the-same-stuff-differently" class="slide level2">
-<h2>Practice 02: Doing the same stuff differently</h2>
-<h3 id="create-a-project-directory">Create a “Project Directory”</h3>
-<div class="cell">
+<section id="anatomy-of-the-command-line" class="slide level2">
+<h2>Anatomy of the <code>command line</code></h2>
 
+<img data-src="images/Screen%20Shot%202022-06-30%20at%202.02.21%20PM.png" class="r-stretch quarto-figure-center"><p><code>user</code> @ <code>host</code> : <code>location</code> <code>$</code> <em>commands you enter here</em></p>
+</section>
+<section id="before-we-start-an-introduction-to-code-chunks" class="slide level2">
+<h2>Before we start: An introduction to <em>code chunks</em></h2>
+<p>If you see something like this</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># print out 'hello' to the command line</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">echo</span> <span class="st">'hello'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>hello</code></pre>
+</div>
+</div>
+<p>its <strong>code</strong> (and expected output below) that you can execute in your <strong>terminal</strong> on the <strong>command line</strong>. Just copy and paste or type it in yourself, hit enter, and follow along</p>
+<p>Lines that start with <code>#</code> and are grayed out are <strong>comments</strong> that don’t run as code; they are just notes</p>
+</section>
+<section id="before-we-start-some-basic-commands" class="slide level2">
+<h2>Before we start: Some basic commands</h2>
+<p>The command line accepts…commands!</p>
+<p>These tell us <em>where we are</em> and <em>what’s in here with</em></p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># present working directory</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># list directory contents</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>001.html
 001.qmd
 001_files
-SCBC_22
+SCBC_2022_folder
 images</code></pre>
 </div>
 </div>
+</section>
+<section id="another-basic-command-with-big-implications-cd" class="slide level2">
+<h2>Another basic command with big implications: <code>cd</code></h2>
+<p>Our command line “mouse” – move <em>somewhere, anywhere</em></p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ls</span> SCBC_22</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># change directory to SCBC_2022_folder</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">cd</span> SCBC_2022_folder</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>my_file.txt</code></pre>
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides/SCBC_2022_folder</code></pre>
 </div>
 </div>
+<p>hint: try hitting <em>tab</em> to complete the rest of your statements – it’ll auto-complete (like texting, etc)</p>
+</section>
+<section id="what-this-looks-like-in-file-explorer" class="slide level2">
+<h2>What this looks like in file explorer</h2>
+
+<img data-src="images/Screen%20Shot%202022-06-30%20at%201.55.51%20PM.png" class="r-stretch quarto-figure-center"></section>
+<section id="if-youre-going-forward-you-should-be-able-to-go-back-too" class="slide level2">
+<h2>If you’re going forward, you should be able to go back too</h2>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">touch</span> SCBC_22/my_file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ls</span> SCBC_22</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># present working directory</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>my_file.txt</code></pre>
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># change directory to SCBC_2022_folder</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">cd</span> SCBC_2022_folder</span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides/SCBC_2022_folder</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># change directory to SCBC_2022_folder</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="bu">cd</span> SCBC_2022_folder</span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="co"># change directory to the one above/before/in front of pwd</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="bu">cd</span> .. </span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
+</div>
+</div>
+</section>
+<section id="briefly-the-role-of-.-.." class="slide level2">
+<h2>Briefly: The role of ‘.’ &amp; ‘..’</h2>
+<p>These are really useful shortcuts that correspond to location</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># change directory to SCBC_2022_folder</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="bu">cd</span> SCBC_2022_folder</span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="co"># change directory to the one above/before/in front of pwd</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="bu">cd</span> .. </span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="bu">pwd</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
+</div>
+</div>
+<p>as we just saw, <code>cd ..</code> tells us to go from:</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides/SCBC_2022_folder</code></pre>
+</div>
+</div>
+<p>to</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
+</div>
+</div>
+</section>
+<section id="briefly-the-role-of-.-..-1" class="slide level2">
+<h2>Briefly: The role of ‘.’ &amp; ‘..’</h2>
+<p>These are really useful shortcuts that correspond to location</p>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># change directory to SCBC_2022_folder</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="bu">cd</span> SCBC_2022_folder</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># change directory to the one above/before/in front of pwd</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="bu">cd</span> .. </span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="bu">pwd</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
+</div>
+</div>
+<p>looking again, <code>pwd .</code> is the same as <code>pwd</code> – <code>.</code> is equivalent to pwd, <code>..</code> is one step up</p>
+</section>
+<section id="what-exactly-is-pwd-telling-us" class="slide level2">
+<h2>What exactly is <code>pwd</code> telling us?</h2>
+<p>what <code>pwd</code> ‘returns’ is a string of text</p>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># present working directory</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
+</div>
+</div>
+<p>it is the <strong>path</strong> to our present working directory:</p>
+<p>each directory along the path is separated by <code>/</code></p>
+</section>
+<section id="thinking-in-paths" class="slide level2">
+<h2>Thinking in paths</h2>
+<p>When you <code>cd</code> to a different directory, it has to be in a valid path</p>
+<p>from</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
+</div>
+</div>
+<p>we can go to</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides/SCBC_2022_folder</code></pre>
+</div>
+</div>
+<p>but not to <code>Documents</code></p>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># should ERROR</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="bu">cd</span> Documents</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>bash: line 1: cd: Documents: No such file or directory</code></pre>
+</div>
+</div>
+</section>
+<section id="if-youre-going-somewhere-you-need-directions" class="slide level2">
+<h2>If you’re going somewhere, you need directions</h2>
+<p>To get to the <code>Documents</code> directory from</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
+</div>
+</div>
+<p>directly, we need to provide the entire <strong>path</strong></p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents</code></pre>
+</div>
+</div>
+<p>looks like:</p>
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1"></a><span class="bu">cd</span> /Users/rreggiar/Documents</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents</code></pre>
+</div>
+</div>
+</section>
+<section id="practice-02-moving-through-directories" class="slide level2">
+<h2>Practice 02: Moving through directories</h2>
+<p>before beginning please run:</p>
+<div class="cell">
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="bu">cd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>Where are you? What does it appear running just <code>cd</code> does?</li>
+<li>What’s there?</li>
+<li>Go to <code>Pictures/</code> directory, is anything in there?</li>
+<li>Go to <code>SCBC_2022_folder/data/</code> directory, what does <code>pwd</code> return?</li>
+<li>List the <strong>three</strong> ways you can get back to where you were in <code>1.</code></li>
+</ol>
+</section>
+<section id="reflect-1" class="slide level2">
+<h2>Reflect:</h2>
+<p>Do you like moving around with the command line? It is easier than mouse? Is it more challenging?</p>
+</section>
+<section id="predict" class="slide level2">
+<h2>Predict</h2>
+<p>Now we know how to move, what else have we done with the file explorer/mouse that we can do on the command line?</p>
+</section>
+<section id="more-command-line-creating" class="slide level2">
+<h2>More command line: Creating</h2>
+<p>Moving is great, but we can do much more</p>
+<div class="cell">
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># create a **file**</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">touch</span> temp.txt</span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>001.html
+001.qmd
+001_files
+SCBC_2022_folder
+images
+temp.txt</code></pre>
+</div>
+</div>
+<p><code>touch</code> is our command to create a <strong>file</strong>, not a directory</p>
+</section>
+<section id="creating-continued" class="slide level2">
+<h2>Creating continued</h2>
+<p>We also will need to create <code>directories</code> to help organize our files</p>
+<div class="cell">
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># make a **directory**</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">mkdir</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>since its a directory, we can <code>cd</code> into it</p>
+<div class="cell">
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="bu">cd</span> temporary_dir</span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="bu">pwd</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="bu">cd</span> ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides/temporary_dir</code></pre>
+</div>
+</div>
+</section>
+<section id="destroying-cannot-be-undone" class="slide level2">
+<h2>Destroying <strong>cannot be undone!!</strong></h2>
+<p>Well, we called these temporary, so let’s get rid of them <strong>carefully</strong></p>
+<div class="cell">
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># destroy a **file** NOT REVERSIBLE</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">rm</span> temp.txt</span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>001.html
+001.qmd
+001_files
+SCBC_2022_folder
+images
+temporary_dir</code></pre>
+</div>
+</div>
+<p>We can also remove <code>directories</code> with <code>-rf</code> (we’ll come back to this later)</p>
+<div class="cell">
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># destroy a **directory** NOT REVERSIBLE</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">rm</span> <span class="at">-rf</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="destroying-cannot-be-undone-continued" class="slide level2">
+<h2>Destroying cannot be undone continued</h2>
+<p>now try to <code>cd</code> into our deleted <code>directory</code></p>
+<div class="cell">
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1"></a><span class="bu">cd</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>bash: line 0: cd: temporary_dir: No such file or directory</code></pre>
+</div>
+</div>
+</section>
+<section id="practice-03-doing-the-same-stuff-differently" class="slide level2">
+<h2>Practice 03: Doing the same stuff differently</h2>
+<h3 id="create-a-project-directory">Create a “Project Directory”</h3>
 <div class="footer footer-default">
 
 </div>

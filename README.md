@@ -10,5 +10,3 @@ Here is the course material in HTML and/or PDF slide format.
 If you need to go from HTML (website-like interaction) please print to PDF from your browser.
 
 [Lecture 001: Introduction to command line](slides/001.html)
-
-
