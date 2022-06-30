@@ -5,6 +5,10 @@ format: revealjs
 editor: visual
 ---
 
+```{r include=FALSE}
+# need a dummy `R` chunk to get `Bash` chunks to work
+```
+
 ## Prediction:
 
 What does data look like? Where do we keep it?
@@ -85,8 +89,6 @@ Why is this useful? What could it help with moving forward?
 
 We can **create, copy, rename, move (etc etc)** files using a GUI, it works, its easy and intuitive.
 
-However, the things you did are
-
 -   only possible if a GUI is provided
 
 -   not **reproducible** (could someone else get the same result? yes...but in the same exact way? maybe not.)
@@ -97,34 +99,262 @@ Bioinformatics asks us to do much more with data, and thus computers, than most.
 
 ## Beyond the GUI: Command Line interface \[CLI\]
 
-On your desktops you can **view** the command line with a **terminal** -- a piece of software built to enable our use of command line programming
+On your desktops you can **view** and **interact** **with** the command line with a **terminal** -- a piece of software built to enable our use of command line programming
 
-`image of desktop GUI terminal`
+![terminal on left, file explorer on right](images/Screen%20Shot%202022-06-30%20at%2011.53.19%20AM.png){fig-align="center"}
 
 ## Prediction:
 
 Instead of the mouse, how will we navigate the command line?
 
-## Practice 02: Doing the same stuff differently
+## Anatomy of the `command line`
 
-### Create a "Project Directory"
+![](images/Screen%20Shot%202022-06-30%20at%202.02.21%20PM.png){fig-align="center"}
 
-```{r}
-# dummy R chunk to keep things working
+`user` \@ `host` : `location` `$` *commands you enter here*
+
+## Before we start: An introduction to *code chunks*
+
+If you see something like this
+
+```{bash echo=TRUE}
+# print out 'hello' to the command line
+echo 'hello'
+```
+
+its **code** (and expected output below) that you can execute in your **terminal** on the **command line**. Just copy and paste or type it in yourself, hit enter, and follow along
+
+Lines that start with `#` and are grayed out are **comments** that don't run as code; they are just notes
+
+## Before we start: Some basic commands
+
+The command line accepts...commands!
+
+These tell us *where we are* and *what's in here with*
+
+```{bash echo=TRUE}
+# present working directory
+pwd
 ```
 
 ```{bash echo=TRUE}
+# list directory contents
 ls
 ```
 
+## Another basic command with big implications: `cd`
+
+Our command line "mouse" -- move *somewhere, anywhere*
+
 ```{bash echo=TRUE}
-ls SCBC_22
+# change directory to SCBC_2022_folder
+cd SCBC_2022_folder
+pwd
+```
+
+hint: try hitting *tab* to complete the rest of your statements -- it'll auto-complete (like texting, etc)
+
+## What this looks like in file explorer
+
+![](images/Screen%20Shot%202022-06-30%20at%201.55.51%20PM.png){fig-align="center"}
+
+## If you're going forward, you should be able to go back too
+
+```{bash echo=TRUE}
+# present working directory
+pwd
 ```
 
 ```{bash echo=TRUE}
-touch SCBC_22/my_file.txt
+# change directory to SCBC_2022_folder
+cd SCBC_2022_folder
+pwd
 ```
 
 ```{bash echo=TRUE}
-ls SCBC_22
+# change directory to SCBC_2022_folder
+cd SCBC_2022_folder
+# change directory to the one above/before/in front of pwd
+cd .. 
+pwd
 ```
+
+## Briefly: The role of '.'  & '..'
+
+These are really useful shortcuts that correspond to location
+
+```{bash echo=TRUE}
+# change directory to SCBC_2022_folder
+cd SCBC_2022_folder
+# change directory to the one above/before/in front of pwd
+cd .. 
+pwd .
+```
+
+as we just saw, `cd ..` tells us to go from:
+
+```{bash}
+# change directory to SCBC_2022_folder
+cd SCBC_2022_folder
+pwd
+```
+
+to
+
+```{bash}
+pwd
+```
+
+## Briefly: The role of '.'  & '..'
+
+These are really useful shortcuts that correspond to location
+
+```{bash echo=TRUE}
+# change directory to SCBC_2022_folder
+cd SCBC_2022_folder
+# change directory to the one above/before/in front of pwd
+cd .. 
+pwd .
+```
+
+looking again, `pwd .` is the same as `pwd` -- `.` is equivalent to pwd, `..` is one step up
+
+## What exactly is `pwd` telling us?
+
+what `pwd` 'returns' is a string of text
+
+```{bash echo=TRUE}
+# present working directory
+pwd
+```
+
+it is the **path** to our present working directory:
+
+each directory along the path is separated by `/`
+
+## Thinking in paths
+
+When you `cd` to a different directory, it has to be in a valid path
+
+from
+
+```{bash}
+pwd
+```
+
+we can go to
+
+```{bash}
+# change directory to SCBC_2022_folder
+cd SCBC_2022_folder
+pwd
+```
+
+but not to `Documents`
+
+```{bash error=TRUE, echo=TRUE}
+# should ERROR
+cd Documents
+```
+
+## If you're going somewhere, you need directions
+
+To get to the `Documents` directory from
+
+```{bash}
+pwd
+```
+
+directly, we need to provide the entire **path**
+
+```{bash}
+cd ../../../
+pwd
+```
+
+looks like:
+
+```{bash error=TRUE, echo=TRUE}
+cd /Users/rreggiar/Documents
+pwd
+```
+
+## Practice 02: Moving through directories
+
+before beginning please run:
+
+```{bash echo=TRUE}
+cd
+```
+
+1.  Where are you? What does it appear running just `cd` does?
+2.  What's there?
+3.  Go to `Pictures/` directory, is anything in there?
+4.  Go to `SCBC_2022_folder/data/` directory, what does `pwd` return?
+5.  List the **three** ways you can get back to where you were in `1.`
+
+## Reflect: 
+
+Do you like moving around with the command line? It is easier than mouse? Is it more challenging?
+
+## Predict
+
+Now we know how to move, what else have we done with the file explorer/mouse that we can do on the command line?
+
+## More command line: Creating
+
+Moving is great, but we can do much more
+
+```{bash echo=TRUE}
+# create a **file**
+touch temp.txt
+ls
+```
+
+`touch` is our command to create a **file**, not a directory
+
+## Creating continued
+
+We also will need to create `directories` to help organize our files
+
+```{bash echo=TRUE}
+# make a **directory**
+mkdir temporary_dir
+```
+
+since its a directory, we can `cd` into it
+
+```{bash echo=TRUE}
+cd temporary_dir
+pwd
+cd ..
+```
+
+## Destroying **cannot be undone!!**
+
+Well, we called these temporary, so let's get rid of them **carefully**
+
+```{bash echo=TRUE}
+# destroy a **file** NOT REVERSIBLE
+rm temp.txt
+ls
+```
+
+We can also remove `directories` with `-rf` (we'll come back to this later)
+
+```{bash echo=TRUE}
+# destroy a **directory** NOT REVERSIBLE
+rm -rf temporary_dir
+```
+
+## Destroying cannot be undone continued
+
+now try to `cd` into our deleted `directory`
+
+```{bash echo=TRUE, error=TRUE}
+cd temporary_dir
+```
+
+## Practice 03: Doing the same stuff differently
+
+### Create a "Project Directory"
