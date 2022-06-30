@@ -31,8 +31,6 @@ What's inside?
 
 ## This sounds like something we could see in everyday life...
 
-picture of filing cabinet
-
 ![](images/file_cabinet.jpeg){fig-align="center"}
 
 ## Computers, on the other hand, think differently
@@ -179,7 +177,7 @@ cd ..
 pwd
 ```
 
-## Briefly: The role of '.'  & '..'
+## Briefly: The role of '.' & '..'
 
 These are really useful shortcuts that correspond to location
 
@@ -205,7 +203,7 @@ to
 pwd
 ```
 
-## Briefly: The role of '.'  & '..'
+## Briefly: The role of '.' & '..'
 
 These are really useful shortcuts that correspond to location
 
@@ -293,7 +291,7 @@ cd
 4.  Go to `SCBC_2022_folder/data/` directory, what does `pwd` return?
 5.  List the **three** ways you can get back to where you were in `1.`
 
-## Reflect: 
+## Reflect:
 
 Do you like moving around with the command line? It is easier than mouse? Is it more challenging?
 
@@ -328,6 +326,12 @@ since its a directory, we can `cd` into it
 cd temporary_dir
 pwd
 cd ..
+```
+
+## Moving and Copying
+
+```{bash}
+
 ```
 
 ## Destroying **cannot be undone!!**
