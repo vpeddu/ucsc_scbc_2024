@@ -600,7 +600,7 @@ images</code></pre>
 <pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides</code></pre>
 </div>
 </div>
-<p>looking again, <code>pwd .</code> is the same as <code>pwd</code> – <code>.</code> is equivalent to pwd, <code>..</code> is one step up</p>
+<p>looking again, <code>pwd .</code> is the same as <code>pwd</code> becuase <code>.</code> is equivalent to pwd, <code>..</code> is one step up</p>
 </section>
 <section id="what-exactly-is-pwd-telling-us" class="slide level2">
 <h2>What exactly is <code>pwd</code> telling us?</h2>
@@ -897,8 +897,9 @@ mkdir: SCBC_2022_dir/code: File exists</code></pre>
 <h2>Printing to files: Appending instead of over-writing</h2>
 <p>Much like <code>.</code> and <code>..</code> , <code>&gt;</code> and <code>&gt;&gt;</code> have distinct functions.</p>
 <div class="cell">
-<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1"></a><span class="bu">echo</span> <span class="st">'Banana slugs have no known predators'</span> <span class="op">&gt;&gt;</span> SCBC_2022_dir/README.txt</span>
-<span id="cb59-2"><a href="#cb59-2"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1"></a><span class="co">## `&gt;&gt;` lets us append output to an existing file, line by line</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a><span class="bu">echo</span> <span class="st">'Banana slugs have no known predators'</span> <span class="op">&gt;&gt;</span> SCBC_2022_dir/README.txt</span>
+<span id="cb59-3"><a href="#cb59-3"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>Hi im Roman and I like to code
 Banana slugs have no known predators</code></pre>
@@ -908,7 +909,7 @@ Banana slugs have no known predators</code></pre>
 </section>
 <section id="prediction-5" class="slide level2">
 <h2>Prediction:</h2>
-<p><code>echo</code> would be a pretty laborious way to write an essay, but what real uses does it have?</p>
+<p><code>echo</code> would be a pretty laborious way to write something like an essay, but what real uses does it have?</p>
 <div class="footer footer-default">
 
 </div>

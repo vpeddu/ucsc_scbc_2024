@@ -215,7 +215,7 @@ cd ..
 pwd .
 ```
 
-looking again, `pwd .` is the same as `pwd` -- `.` is equivalent to pwd, `..` is one step up
+looking again, `pwd .` is the same as `pwd` becuase `.` is equivalent to pwd, `..` is one step up
 
 ## What exactly is `pwd` telling us?
 
@@ -474,6 +474,7 @@ cat SCBC_2022_dir/README.txt
 Much like `.` and `..` , `>` and `>>` have distinct functions.
 
 ```{bash echo=TRUE}
+## `>>` lets us append output to an existing file, line by line
 echo 'Banana slugs have no known predators' >> SCBC_2022_dir/README.txt
 cat SCBC_2022_dir/README.txt
 ```
@@ -482,4 +483,4 @@ now we have both lines!
 
 ## Prediction:
 
-`echo` would be a pretty laborious way to write an essay, but what real uses does it have?
+`echo` would be a pretty laborious way to write something like an essay, but what real uses does it have?
