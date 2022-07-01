@@ -75,7 +75,7 @@ Using the **Graphical User Interface (GUI)** provided on your Jupyter login, cre
 
 ![your desktop doesn't have a text editor installed.....yet](images/Screen%20Shot%202022-06-28%20at%204.41.24%20PM.png){fig-align="center"}
 
-## Reflect:
+## Reflection:
 
 ### What you've just made is a 'project folder':
 
@@ -291,11 +291,11 @@ cd
 4.  Go to `SCBC_2022_folder/data/` directory, what does `pwd` return?
 5.  List the **three** ways you can get back to where you were in `1.`
 
-## Reflect:
+## Reflection:
 
 Do you like moving around with the command line? It is easier than mouse? Is it more challenging?
 
-## Predict
+## Prediction:
 
 Now we know how to move, what else have we done with the file explorer/mouse that we can do on the command line?
 
@@ -399,7 +399,7 @@ this also destroys the files within
 
 ## Prediction:
 
-For the same task which is faster: file explorer or command line?
+For the same task, which is faster: file explorer or command line?
 
 ## Practice 03: Doing the same stuff differently
 
