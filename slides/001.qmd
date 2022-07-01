@@ -414,3 +414,14 @@ There are multiple ways to do this, see if you can find the fastest approach.
 ## Reflection:
 
 Is it starting to seem like the command line might do some things faster/cleaner/better than the file explorer?
+
+## Working with files
+
+We've already experienced a minor road block in the GUI -- there's no text editor installed.
+
+The command line can help us here:
+
+```{bash echo = TRUE}
+# 'concatenate' or **print** whole **files**
+cat SCBC_2022_folder/README.txt
+```
