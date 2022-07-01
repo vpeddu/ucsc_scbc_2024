@@ -477,6 +477,10 @@
 <h2>Anatomy of the <code>command line</code></h2>
 
 <img data-src="images/Screen%20Shot%202022-06-30%20at%202.02.21%20PM.png" class="r-stretch quarto-figure-center"><p><code>user</code> @ <code>host</code> : <code>location</code> <code>$</code> <em>commands you enter here</em></p>
+<p><code>user</code> : the name your computer calls you (we’re all joyvan on PRP)</p>
+<p><code>host</code> : the computer you’re using</p>
+<p><code>location</code> : the <code>directory/folder</code> you’re in</p>
+<p><code>$</code> : prompt that tells you commands come next</p>
 </section>
 <section id="before-we-start-an-introduction-to-code-chunks" class="slide level2">
 <h2>Before we start: An introduction to <em>code chunks</em></h2>
@@ -881,10 +885,6 @@ mkdir: SCBC_2022_dir/code: File exists</code></pre>
 <section id="printing-to-files-thinking-about-writing" class="slide level2">
 <h2>Printing to files: Thinking about writing</h2>
 <p>How can we re-generate our original <code>SCBC_2022_dir/README.txt</code> ?</p>
-</section>
-<section id="printing-to-files-thinking-about-writing-1" class="slide level2">
-<h2>Printing to files: Thinking about writing</h2>
-<p>How can we re-generate our original <code>SCBC_2022_dir/README.txt</code> ?</p>
 <div class="cell">
 <div class="sourceCode" id="cb57"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1"></a><span class="bu">echo</span> <span class="st">'Hi im Roman and I like to code'</span> <span class="op">&gt;</span> SCBC_2022_dir/README.txt</span>
 <span id="cb57-2"><a href="#cb57-2"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -909,7 +909,41 @@ Banana slugs have no known predators</code></pre>
 </section>
 <section id="prediction-5" class="slide level2">
 <h2>Prediction:</h2>
-<p><code>echo</code> would be a pretty laborious way to write something like an essay, but what real uses does it have?</p>
+<p><code>echo</code> would be a pretty laborious way to write something like an essay, but what real uses might it have?</p>
+</section>
+<section id="looking-inside-files-with-more-precision" class="slide level2">
+<h2>Looking inside files with more precision</h2>
+<p><code>cat</code> is great when we want to see <em>everything</em>, but sometimes files are huge and that would be….difficult.</p>
+<p>We can also <strong>search</strong> for key terms in files:</p>
+<div class="cell">
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1"></a><span class="co"># `grep` will return lines that contain the input argument</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a><span class="co"># grep [text to search for] [file to search in]</span></span>
+<span id="cb61-3"><a href="#cb61-3"></a><span class="fu">grep</span> <span class="st">"Roman"</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>Hi im Roman and I like to code</code></pre>
+</div>
+</div>
+<p>the text doesn’t have to be in the beginning:</p>
+<div class="cell">
+<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">grep</span> <span class="st">"predators"</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>Banana slugs have no known predators</code></pre>
+</div>
+</div>
+</section>
+<section id="reflection-3" class="slide level2">
+<h2>Reflection:</h2>
+<p>Does this beat opening up Microsoft word or are you still skeptical?</p>
+</section>
+<section id="summary-03" class="slide level2">
+<h2>Summary 03:</h2>
+<p><code>echo</code> : prints whatever text you want – <code>man echo</code></p>
+<p><code>cat</code> : prints the entirety of a file (more uses soon) - <code>man cat</code></p>
+<p><code>grep</code> : finds your input text inside of a given file - <code>man grep</code></p>
+</section>
+<section id="detour-to-the-tool-shed" class="slide level2">
+<h2>Detour to the tool shed</h2>
+<p>We have a lot of tools already</p>
 <div class="footer footer-default">
 
 </div>
