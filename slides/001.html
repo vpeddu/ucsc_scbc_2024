@@ -415,7 +415,6 @@
 <img data-src="images/Screen%20Shot%202022-06-28%20at%204.25.49%20PM.png" class="r-stretch quarto-figure-center"></section>
 <section id="this-sounds-like-something-we-could-see-in-everyday-life" class="slide level2">
 <h2>This sounds like something we could see in everyday life…</h2>
-<p>Folders! Files! Its a database, right?</p>
 
 <img data-src="images/file_cabinet.jpeg" class="r-stretch quarto-figure-center"></section>
 <section id="computers-on-the-other-hand-think-differently" class="slide level2">
@@ -693,6 +692,7 @@ images</code></pre>
 <span id="cb32-3"><a href="#cb32-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>001.html
+001.pdf
 001.qmd
 001_files
 SCBC_2022_folder
@@ -719,15 +719,23 @@ temp.txt</code></pre>
 </div>
 </div>
 </section>
-<section id="destroying-cannot-be-undone" class="slide level2">
-<h2>Destroying <strong>cannot be undone!!</strong></h2>
-<p>Well, we called these temporary, so let’s get rid of them <strong>carefully</strong></p>
+<section id="moving-and-copying" class="slide level2">
+<h2>Moving and Copying</h2>
+<p>If we want to organize, we need to be able to move things</p>
 <div class="cell">
-<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># destroy a **file** NOT REVERSIBLE</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">rm</span> temp.txt</span>
-<span id="cb37-3"><a href="#cb37-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># move a **file** to a different **directory**</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="co"># mv [file you want to move] [destination you want to target]</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="fu">mv</span> temp.txt temporary_dir</span>
+<span id="cb37-4"><a href="#cb37-4"></a><span class="fu">ls</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>temp.txt</code></pre>
+</div>
+</div>
+<p>The file is no longer present in our <code>pwd</code>:</p>
+<div class="cell">
 <div class="cell-output-stdout">
 <pre><code>001.html
+001.pdf
 001.qmd
 001_files
 SCBC_2022_folder
@@ -735,25 +743,90 @@ images
 temporary_dir</code></pre>
 </div>
 </div>
-<p>We can also remove <code>directories</code> with <code>-rf</code> (we’ll come back to this later)</p>
+</section>
+<section id="moving-and-copying-continued" class="slide level2">
+<h2>Moving and Copying continued</h2>
+<p>Sometimes moving isn’t quite what we want, in that case we can <strong>copy</strong> a file and keep the original</p>
 <div class="cell">
-<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># destroy a **directory** NOT REVERSIBLE</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">rm</span> <span class="at">-rf</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># copy a **file** to a different **directory**</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="co"># cp [file you want to move] [destination you want to target]</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a><span class="fu">cp</span> temporary_dir/temp.txt .</span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="fu">ls</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>temp.txt</code></pre>
+</div>
+</div>
+<p>The file now exists in both directories</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides
+001.html
+001.pdf
+001.qmd
+001_files
+SCBC_2022_folder
+images
+temp.txt
+temporary_dir</code></pre>
+</div>
+</div>
+</section>
+<section id="destroying-cannot-be-undone" class="slide level2">
+<h2>Destroying <strong>cannot be undone!!</strong></h2>
+<p>Well, we called these temporary, so let’s get rid of them <strong>carefully</strong></p>
+<div class="cell">
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># destroy a **file** NOT REVERSIBLE</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">rm</span> temp.txt</span>
+<span id="cb43-3"><a href="#cb43-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>001.html
+001.pdf
+001.qmd
+001_files
+SCBC_2022_folder
+images
+temporary_dir</code></pre>
+</div>
+</div>
+<p>this doesn’t destroy the copy in <code>temporary_dir</code></p>
+<div class="cell">
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># destroy a **file** NOT REVERSIBLE</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">ls</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>temp.txt</code></pre>
+</div>
 </div>
 </section>
 <section id="destroying-cannot-be-undone-continued" class="slide level2">
 <h2>Destroying cannot be undone continued</h2>
+<p>We can also remove <code>directories</code> with <code>-rf</code> (we’ll come back to this later)</p>
+<div class="cell">
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># destroy a **directory** NOT REVERSIBLE</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a><span class="fu">rm</span> <span class="at">-rf</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>now try to <code>cd</code> into our deleted <code>directory</code></p>
 <div class="cell">
-<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1"></a><span class="bu">cd</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1"></a><span class="bu">cd</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>bash: line 0: cd: temporary_dir: No such file or directory</code></pre>
 </div>
 </div>
+<p>this also destroys the files within</p>
+</section>
+<section id="prediction-3" class="slide level2">
+<h2>Prediction:</h2>
+<p>For the same task which is faster: file explorer or command line?</p>
 </section>
 <section id="practice-03-doing-the-same-stuff-differently" class="slide level2">
 <h2>Practice 03: Doing the same stuff differently</h2>
 <h3 id="create-a-project-directory">Create a “Project Directory”</h3>
+<p>Make the directory <code>SCBC_2022_dir</code> with the same contents as <code>SCBC_2022_folder</code>.</p>
+<p>Delete the <code>SCBC_2022_folder</code> directory.</p>
+<p>There are multiple ways to do this, see if you can find the fastest approach.</p>
+</section>
+<section id="reflection" class="slide level2">
+<h2>Reflection:</h2>
+<p>Is it starting to seem like the command line might do some things faster/cleaner/better than the file explorer?</p>
 <div class="footer footer-default">
 
 </div>

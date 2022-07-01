@@ -31,8 +31,6 @@ What's inside?
 
 ## This sounds like something we could see in everyday life...
 
-Folders! Files! Its a database, right?
-
 ![](images/file_cabinet.jpeg){fig-align="center"}
 
 ## Computers, on the other hand, think differently
@@ -179,7 +177,7 @@ cd ..
 pwd
 ```
 
-## Briefly: The role of '.'  & '..'
+## Briefly: The role of '.' & '..'
 
 These are really useful shortcuts that correspond to location
 
@@ -205,7 +203,7 @@ to
 pwd
 ```
 
-## Briefly: The role of '.'  & '..'
+## Briefly: The role of '.' & '..'
 
 These are really useful shortcuts that correspond to location
 
@@ -293,7 +291,7 @@ cd
 4.  Go to `SCBC_2022_folder/data/` directory, what does `pwd` return?
 5.  List the **three** ways you can get back to where you were in `1.`
 
-## Reflect: 
+## Reflect:
 
 Do you like moving around with the command line? It is easier than mouse? Is it more challenging?
 
@@ -330,6 +328,41 @@ pwd
 cd ..
 ```
 
+## Moving and Copying
+
+If we want to organize, we need to be able to move things
+
+```{bash echo=TRUE}
+# move a **file** to a different **directory**
+# mv [file you want to move] [destination you want to target]
+mv temp.txt temporary_dir
+ls temporary_dir
+```
+
+The file is no longer present in our `pwd`:
+
+```{bash}
+ls
+```
+
+## Moving and Copying continued
+
+Sometimes moving isn't quite what we want, in that case we can **copy** a file and keep the original
+
+```{bash echo=TRUE}
+# copy a **file** to a different **directory**
+# cp [file you want to move] [destination you want to target]
+cp temporary_dir/temp.txt .
+ls temporary_dir
+```
+
+The file now exists in both directories
+
+```{bash}
+pwd
+ls
+```
+
 ## Destroying **cannot be undone!!**
 
 Well, we called these temporary, so let's get rid of them **carefully**
@@ -340,6 +373,15 @@ rm temp.txt
 ls
 ```
 
+this doesn't destroy the copy in `temporary_dir`
+
+```{bash echo=TRUE}
+# destroy a **file** NOT REVERSIBLE
+ls temporary_dir
+```
+
+## Destroying cannot be undone continued
+
 We can also remove `directories` with `-rf` (we'll come back to this later)
 
 ```{bash echo=TRUE}
@@ -347,14 +389,28 @@ We can also remove `directories` with `-rf` (we'll come back to this later)
 rm -rf temporary_dir
 ```
 
-## Destroying cannot be undone continued
-
 now try to `cd` into our deleted `directory`
 
 ```{bash echo=TRUE, error=TRUE}
 cd temporary_dir
 ```
 
+this also destroys the files within
+
+## Prediction:
+
+For the same task which is faster: file explorer or command line?
+
 ## Practice 03: Doing the same stuff differently
 
 ### Create a "Project Directory"
+
+Make the directory `SCBC_2022_dir` with the same contents as `SCBC_2022_folder`.
+
+Delete the `SCBC_2022_folder` directory.
+
+There are multiple ways to do this, see if you can find the fastest approach.
+
+## Reflection:
+
+Is it starting to seem like the command line might do some things faster/cleaner/better than the file explorer?
