@@ -411,6 +411,13 @@ Delete the `SCBC_2022_folder` directory.
 
 There are multiple ways to do this, see if you can find the fastest approach.
 
+```{bash}
+mkdir SCBC_2022_dir
+mkdir SCBC_2022_dir/data SCBC_2022_dir/notes SCBC_2022_dir/code
+touch SCBC_2022_dir/README.txt
+echo 'Hi im Roman and I like to code' > SCBC_2022_dir/README.txt
+```
+
 ## Reflection:
 
 Is it starting to seem like the command line might do some things faster/cleaner/better than the file explorer?
@@ -419,9 +426,60 @@ Is it starting to seem like the command line might do some things faster/cleaner
 
 We've already experienced a minor road block in the GUI -- there's no text editor installed.
 
-The command line can help us here:
+The command line can help us here, just print the whole file out in terminal:
 
 ```{bash echo = TRUE}
 # 'concatenate' or **print** whole **files**
-cat SCBC_2022_folder/README.txt
+cat SCBC_2022_dir/README.txt
 ```
+
+## Printing continued
+
+`cat` works great when we have existing files with content, but what about printing in general?
+
+```{bash echo = TRUE}
+# write/print arguments 
+echo 'Hello World'
+```
+
+## Printing to files: Standard Output
+
+`echo` is not limited to sending stuff to terminal, we can also send this output to a **file**
+
+```{bash echo=TRUE}
+# `>` tells cmd line to send the output to a specific file, rather than printing to terminal
+echo 'Banana slugs have no known predators' > SCBC_2022_dir/README.txt
+cat SCBC_2022_dir/README.txt
+```
+
+Something new here: `>` is letting us write our `echo` output to our `SCBC_2022_dir/README.txt` **file.**
+
+But in this case, we **over-wrote** our original statement!
+
+## Printing to files: Thinking about writing
+
+How can we re-generate our original `SCBC_2022_dir/README.txt` ?
+
+## Printing to files: Thinking about writing
+
+How can we re-generate our original `SCBC_2022_dir/README.txt` ?
+
+```{bash echo=TRUE}
+echo 'Hi im Roman and I like to code' > SCBC_2022_dir/README.txt
+cat SCBC_2022_dir/README.txt
+```
+
+## Printing to files: Appending instead of over-writing
+
+Much like `.` and `..` , `>` and `>>` have distinct functions.
+
+```{bash echo=TRUE}
+echo 'Banana slugs have no known predators' >> SCBC_2022_dir/README.txt
+cat SCBC_2022_dir/README.txt
+```
+
+now we have both lines!
+
+## Prediction:
+
+`echo` would be a pretty laborious way to write an essay, but what real uses does it have?

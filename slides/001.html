@@ -510,6 +510,7 @@
 001.pdf
 001.qmd
 001_files
+SCBC_2022_dir
 SCBC_2022_folder
 images</code></pre>
 </div>
@@ -695,6 +696,7 @@ images</code></pre>
 001.pdf
 001.qmd
 001_files
+SCBC_2022_dir
 SCBC_2022_folder
 images
 temp.txt</code></pre>
@@ -738,6 +740,7 @@ temp.txt</code></pre>
 001.pdf
 001.qmd
 001_files
+SCBC_2022_dir
 SCBC_2022_folder
 images
 temporary_dir</code></pre>
@@ -764,6 +767,7 @@ temporary_dir</code></pre>
 001.pdf
 001.qmd
 001_files
+SCBC_2022_dir
 SCBC_2022_folder
 images
 temp.txt
@@ -783,6 +787,7 @@ temporary_dir</code></pre>
 001.pdf
 001.qmd
 001_files
+SCBC_2022_dir
 SCBC_2022_folder
 images
 temporary_dir</code></pre>
@@ -823,6 +828,14 @@ temporary_dir</code></pre>
 <p>Make the directory <code>SCBC_2022_dir</code> with the same contents as <code>SCBC_2022_folder</code>.</p>
 <p>Delete the <code>SCBC_2022_folder</code> directory.</p>
 <p>There are multiple ways to do this, see if you can find the fastest approach.</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>mkdir: SCBC_2022_dir: File exists
+mkdir: SCBC_2022_dir/data: File exists
+mkdir: SCBC_2022_dir/notes: File exists
+mkdir: SCBC_2022_dir/code: File exists</code></pre>
+</div>
+</div>
 </section>
 <section id="reflection-2" class="slide level2">
 <h2>Reflection:</h2>
@@ -831,14 +844,71 @@ temporary_dir</code></pre>
 <section id="working-with-files" class="slide level2">
 <h2>Working with files</h2>
 <p>We’ve already experienced a minor road block in the GUI – there’s no text editor installed.</p>
-<p>The command line can help us here:</p>
+<p>The command line can help us here, just print the whole file out in terminal:</p>
 <div class="cell">
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># 'concatenate' or **print** whole **files**</span></span>
-<span id="cb50-2"><a href="#cb50-2"></a><span class="fu">cat</span> SCBC_2022_folder/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># 'concatenate' or **print** whole **files**</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>Hi Im Roman and I like to code</code></pre>
+<pre><code>Hi im Roman and I like to code</code></pre>
 </div>
 </div>
+</section>
+<section id="printing-continued" class="slide level2">
+<h2>Printing continued</h2>
+<p><code>cat</code> works great when we have existing files with content, but what about printing in general?</p>
+<div class="cell">
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># write/print arguments </span></span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="bu">echo</span> <span class="st">'Hello World'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>Hello World</code></pre>
+</div>
+</div>
+</section>
+<section id="printing-to-files-standard-output" class="slide level2">
+<h2>Printing to files: Standard Output</h2>
+<p><code>echo</code> is not limited to sending stuff to terminal, we can also send this output to a <strong>file</strong></p>
+<div class="cell">
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># `&gt;` tells cmd line to send the output to a specific file, rather than printing to terminal</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="bu">echo</span> <span class="st">'Banana slugs have no known predators'</span> <span class="op">&gt;</span> SCBC_2022_dir/README.txt</span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>Banana slugs have no known predators</code></pre>
+</div>
+</div>
+<p>Something new here: <code>&gt;</code> is letting us write our <code>echo</code> output to our <code>SCBC_2022_dir/README.txt</code> <strong>file.</strong></p>
+<p>But in this case, we <strong>over-wrote</strong> our original statement!</p>
+</section>
+<section id="printing-to-files-thinking-about-writing" class="slide level2">
+<h2>Printing to files: Thinking about writing</h2>
+<p>How can we re-generate our original <code>SCBC_2022_dir/README.txt</code> ?</p>
+</section>
+<section id="printing-to-files-thinking-about-writing-1" class="slide level2">
+<h2>Printing to files: Thinking about writing</h2>
+<p>How can we re-generate our original <code>SCBC_2022_dir/README.txt</code> ?</p>
+<div class="cell">
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1"></a><span class="bu">echo</span> <span class="st">'Hi im Roman and I like to code'</span> <span class="op">&gt;</span> SCBC_2022_dir/README.txt</span>
+<span id="cb57-2"><a href="#cb57-2"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>Hi im Roman and I like to code</code></pre>
+</div>
+</div>
+</section>
+<section id="printing-to-files-appending-instead-of-over-writing" class="slide level2">
+<h2>Printing to files: Appending instead of over-writing</h2>
+<p>Much like <code>.</code> and <code>..</code> , <code>&gt;</code> and <code>&gt;&gt;</code> have distinct functions.</p>
+<div class="cell">
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1"></a><span class="bu">echo</span> <span class="st">'Banana slugs have no known predators'</span> <span class="op">&gt;&gt;</span> SCBC_2022_dir/README.txt</span>
+<span id="cb59-2"><a href="#cb59-2"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>Hi im Roman and I like to code
+Banana slugs have no known predators</code></pre>
+</div>
+</div>
+<p>now we have both lines!</p>
+</section>
+<section id="prediction-5" class="slide level2">
+<h2>Prediction:</h2>
+<p><code>echo</code> would be a pretty laborious way to write an essay, but what real uses does it have?</p>
 <div class="footer footer-default">
 
 </div>
