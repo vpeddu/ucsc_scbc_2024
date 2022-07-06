@@ -1,7 +1,9 @@
 ---
 title: "Introduction to the command line"
 author: "Roman E. Reggiardo"
-format: revealjs
+format: 
+  revealjs:
+    chalkboard: true
 editor: visual
 ---
 
@@ -111,6 +113,14 @@ Instead of the mouse, how will we navigate the command line?
 
 `user` \@ `host` : `location` `$` *commands you enter here*
 
+`user` : the name your computer calls you (we're all joyvan on PRP)
+
+`host` : the computer you're using
+
+`location` : the `directory/folder` you're in
+
+`$` : prompt that tells you commands come next
+
 ## Before we start: An introduction to *code chunks*
 
 If you see something like this
@@ -215,7 +225,7 @@ cd ..
 pwd .
 ```
 
-looking again, `pwd .` is the same as `pwd` -- `.` is equivalent to pwd, `..` is one step up
+looking again, `pwd .` is the same as `pwd` becuase `.` is equivalent to pwd, `..` is one step up
 
 ## What exactly is `pwd` telling us?
 
@@ -411,6 +421,13 @@ Delete the `SCBC_2022_folder` directory.
 
 There are multiple ways to do this, see if you can find the fastest approach.
 
+```{bash}
+mkdir SCBC_2022_dir
+mkdir SCBC_2022_dir/data SCBC_2022_dir/notes SCBC_2022_dir/code
+touch SCBC_2022_dir/README.txt
+echo 'Hi im Roman and I like to code' > SCBC_2022_dir/README.txt
+```
+
 ## Reflection:
 
 Is it starting to seem like the command line might do some things faster/cleaner/better than the file explorer?
@@ -419,9 +436,93 @@ Is it starting to seem like the command line might do some things faster/cleaner
 
 We've already experienced a minor road block in the GUI -- there's no text editor installed.
 
-The command line can help us here:
+The command line can help us here, just print the whole file out in terminal:
 
 ```{bash echo = TRUE}
 # 'concatenate' or **print** whole **files**
-cat SCBC_2022_folder/README.txt
+cat SCBC_2022_dir/README.txt
 ```
+
+## Printing continued
+
+`cat` works great when we have existing files with content, but what about printing in general?
+
+```{bash echo = TRUE}
+# write/print arguments 
+echo 'Hello World'
+```
+
+## Printing to files: Standard Output
+
+`echo` is not limited to sending stuff to terminal, we can also send this output to a **file**
+
+```{bash echo=TRUE}
+# `>` tells cmd line to send the output to a specific file, rather than printing to terminal
+echo 'Banana slugs have no known predators' > SCBC_2022_dir/README.txt
+cat SCBC_2022_dir/README.txt
+```
+
+Something new here: `>` is letting us write our `echo` output to our `SCBC_2022_dir/README.txt` **file.**
+
+But in this case, we **over-wrote** our original statement!
+
+## Printing to files: Thinking about writing
+
+How can we re-generate our original `SCBC_2022_dir/README.txt` ?
+
+```{bash echo=TRUE}
+echo 'Hi im Roman and I like to code' > SCBC_2022_dir/README.txt
+cat SCBC_2022_dir/README.txt
+```
+
+## Printing to files: Appending instead of over-writing
+
+Much like `.` and `..` , `>` and `>>` have distinct functions.
+
+```{bash echo=TRUE}
+## `>>` lets us append output to an existing file, line by line
+echo 'Banana slugs have no known predators' >> SCBC_2022_dir/README.txt
+cat SCBC_2022_dir/README.txt
+```
+
+now we have both lines!
+
+## Prediction:
+
+`echo` would be a pretty laborious way to write something like an essay, but what real uses might it have?
+
+## Looking inside files with more precision
+
+`cat` is great when we want to see *everything*, but sometimes files are huge and that would be....difficult.
+
+We can also **search** for key terms in files:
+
+```{bash echo=TRUE}
+# `grep` will return lines that contain the input argument
+# grep [text to search for] [file to search in]
+grep "Roman" SCBC_2022_dir/README.txt
+```
+
+the text doesn't have to be in the beginning:
+
+```{bash echo=TRUE}
+grep "predators" SCBC_2022_dir/README.txt
+```
+
+## Reflection:
+
+Does this beat opening up Microsoft word or are you still skeptical?
+
+## Summary 03:
+
+`echo` : prints whatever text you want -- `man echo`
+
+`cat` : prints the entirety of a file (more uses soon) - `man cat`
+
+`grep` : finds your input text inside of a given file - `man grep`
+
+## Detour to the tool shed
+
+We have a lot of tools already, `grep` , `ls`, `cd`, `cat`, `echo`, etc.
+
+But not everything comes built-in:
