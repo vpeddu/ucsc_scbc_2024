@@ -9,6 +9,6 @@ Contact: [Roman Reggiardo](https://rreggiar.github.io) by [email](mailto:rreggia
 Here is the course material in HTML and/or PDF slide format.
 If you need to go from HTML (website-like interaction) please print to PDF from your browser.
 
-[Setting up your "computer" -- Pacific Research Platform access and intro guide](slides/BSCC resource setup.pdf)
+[Lecture 000: Pacific Research Platform access and intro guide](slides/000_prp_resource.pdf)
 
 [Lecture 001: Introduction to command line](slides/001.html)
