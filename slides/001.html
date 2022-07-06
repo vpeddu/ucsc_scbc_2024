@@ -95,6 +95,8 @@
   <link href="001_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="001_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="001_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="001_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="001_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="001_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -510,7 +512,8 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># list directory contents</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>001.html
+<pre><code>000_prp_resource.pdf
+001.html
 001.pdf
 001.qmd
 001_files
@@ -696,7 +699,8 @@ images</code></pre>
 <span id="cb32-2"><a href="#cb32-2"></a><span class="fu">touch</span> temp.txt</span>
 <span id="cb32-3"><a href="#cb32-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>001.html
+<pre><code>000_prp_resource.pdf
+001.html
 001.pdf
 001.qmd
 001_files
@@ -740,7 +744,8 @@ temp.txt</code></pre>
 <p>The file is no longer present in our <code>pwd</code>:</p>
 <div class="cell">
 <div class="cell-output-stdout">
-<pre><code>001.html
+<pre><code>000_prp_resource.pdf
+001.html
 001.pdf
 001.qmd
 001_files
@@ -767,6 +772,7 @@ temporary_dir</code></pre>
 <div class="cell">
 <div class="cell-output-stdout">
 <pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides
+000_prp_resource.pdf
 001.html
 001.pdf
 001.qmd
@@ -787,7 +793,8 @@ temporary_dir</code></pre>
 <span id="cb43-2"><a href="#cb43-2"></a><span class="fu">rm</span> temp.txt</span>
 <span id="cb43-3"><a href="#cb43-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>001.html
+<pre><code>000_prp_resource.pdf
+001.html
 001.pdf
 001.qmd
 001_files
@@ -943,7 +950,8 @@ Banana slugs have no known predators</code></pre>
 </section>
 <section id="detour-to-the-tool-shed" class="slide level2">
 <h2>Detour to the tool shed</h2>
-<p>We have a lot of tools already</p>
+<p>We have a lot of tools already, <code>grep</code> , <code>ls</code>, <code>cd</code>, <code>cat</code>, <code>echo</code>, etc.</p>
+<p>But not everything comes built-in:</p>
 <div class="footer footer-default">
 
 </div>
@@ -959,6 +967,7 @@ Banana slugs have no known predators</code></pre>
   <script src="001_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="001_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="001_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="001_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="001_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   <script src="001_files/libs/revealjs/plugin/notes/notes.js"></script>
   <script src="001_files/libs/revealjs/plugin/search/search.js"></script>
@@ -980,7 +989,8 @@ Banana slugs have no known predators</code></pre>
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
 
         // Display controls in the bottom right corner
@@ -1151,7 +1161,7 @@ Banana slugs have no known predators</code></pre>
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,

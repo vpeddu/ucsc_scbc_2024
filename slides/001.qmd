@@ -1,7 +1,9 @@
 ---
 title: "Introduction to the command line"
 author: "Roman E. Reggiardo"
-format: revealjs
+format: 
+  revealjs:
+    chalkboard: true
 editor: visual
 ---
 
@@ -521,4 +523,6 @@ Does this beat opening up Microsoft word or are you still skeptical?
 
 ## Detour to the tool shed
 
-We have a lot of tools already
+We have a lot of tools already, `grep` , `ls`, `cd`, `cat`, `echo`, etc.
+
+But not everything comes built-in:
