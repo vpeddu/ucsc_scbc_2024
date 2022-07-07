@@ -521,8 +521,6 @@ Does this beat opening up Microsoft word or are you still skeptical?
 
 `grep` : finds your input text inside of a given file - `man grep`
 
-## Detour to the tool shed
+## Practice 04
 
-We have a lot of tools already, `grep` , `ls`, `cd`, `cat`, `echo`, etc.
-
-But not everything comes built-in:
+## 
