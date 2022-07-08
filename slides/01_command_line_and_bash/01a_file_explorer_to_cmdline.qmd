@@ -528,9 +528,32 @@ Does this beat opening up Microsoft word or are you still skeptical?
 
 `grep` : finds your input text inside of a given file - `man grep`
 
+## A tool to bring in something new: `wget`
+
+`wget` : getting stuff from the "World Wide Web"
+
+**Before** you run the following code, `cd` to your `SCBC_2022_dir/data` directory
+
+```{bash echo=TRUE, eval=FALSE}
+# wget [link to file]
+wget 'https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/data/talking.txt'
+```
+
 ## Practice 04
 
-## 
+Now you've got a file: `talking.txt` (make sure you know where it is).
+
+It contains two types of `line` : A line for `speakers` and a line for `statements` .
+
+1.  How many speakers are there?
+2.  What indicates that a line is a speaker vs. a statement?
+3.  Print out only the speaker's names.
+
+finally, use `echo` to add your own speaker ID line and statement of choice (hint: `\n` can be used to represent a new line).
+
+## Reflection:
+
+What other steps in the last practice could we theoretically use command line for instead of doing them manually?
 
 ```{bash}
 # clean up working dirs
