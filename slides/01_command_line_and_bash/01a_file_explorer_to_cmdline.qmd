@@ -573,16 +573,20 @@ What other steps in the last practice could we theoretically use command line fo
 
 ## Final section project:
 
+**Part 1**:
+
 Within your `SCBC_2022_dir/data` directory, create a new file: `book_of_poems.txt` .
 
 Using `echo` and the `\n` trick, add as many lines of `speakers` and `statements` as you'd like to, following the format of **Practice 04.**
+
+## Final section project (pt. 2):
+
+**Part 2**:
 
 Now, utilizing `grep --help`, figure out a way to make two new files:
 
 1.  `poetry.txt` : that contains only the `statements` from `book_of_poems.txt` (maybe they can form a coherent poem together?).
 2.  `authors.txt` : that contains only the names of the authors (plus any annotation that already existed).
-
-when we're done, we can share our poems/screenplays/scripts/etc.
 
 ```{bash}
 # clean up working dirs
