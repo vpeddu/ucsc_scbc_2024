@@ -1,6 +1,7 @@
 ---
 title: "01a: From File Explorer to Command Line"
 author: "Roman E. Reggiardo"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 format: 
   revealjs:
     chalkboard: true
