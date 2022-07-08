@@ -1,5 +1,5 @@
 ---
-title: "Introduction to the command line"
+title: "01a: From File Explorer to Command Line"
 author: "Roman E. Reggiardo"
 format: 
   revealjs:
@@ -19,7 +19,7 @@ What does data look like? Where do we keep it?
 
 The **command line** gives us an opportunity to work with computers in a more direct way compared to "Folders" and "Files".
 
-![](images/Screen%20Shot%202022-06-28%20at%204.02.45%20PM.png){fig-align="center"}
+![](01_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.02.45%20PM.png){fig-align="center"}
 
 ## For example:
 
@@ -29,11 +29,11 @@ Folders?
 
 What's inside?
 
-![](images/Screen%20Shot%202022-06-28%20at%204.25.49%20PM.png){fig-align="center"}
+![](01_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.25.49%20PM.png){fig-align="center"}
 
 ## This sounds like something we could see in everyday life...
 
-![](images/file_cabinet.jpeg){fig-align="center"}
+![](01_file_explorer_to_cmdline_files/images/file_cabinet.jpeg){fig-align="center"}
 
 ## Computers, on the other hand, think differently
 
@@ -43,7 +43,7 @@ Really they operate in binary, on 1's and 0's, but just beneath 'Files' and 'Fol
 
 "Files" == "Paths"
 
-![](images/Screen%20Shot%202022-06-28%20at%204.35.02%20PM.png){fig-align="center"}
+![](../images/Screen%20Shot%202022-06-28%20at%204.35.02%20PM.png){fig-align="center"}
 
 ## **Prediction:**
 
@@ -57,7 +57,7 @@ Using the **Graphical User Interface (GUI)** provided on your Jupyter login, cre
 
 `SCBC_2022_folder`
 
-![](images/Screen%20Shot%202022-06-28%20at%204.37.31%20PM.png){fig-align="center"}
+![](01_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.37.31%20PM.png){fig-align="center"}
 
 ## Practice 01A:
 
@@ -69,13 +69,20 @@ Using the **Graphical User Interface (GUI)** provided on your Jupyter login, cre
 
 `code/`
 
-![](images/Screen%20Shot%202022-06-28%20at%204.38.28%20PM.png){fig-align="right"}
+![](01_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.38.28%20PM.png){fig-align="right"}
 
 ## Practice 01B:
 
 ### Go back to Jupyter and edit README.txt to say something....
 
-![your desktop doesn't have a text editor installed.....yet](images/Screen%20Shot%202022-06-28%20at%204.41.24%20PM.png){fig-align="center"}
+![your desktop doesn't have a text editor installed.....yet](01_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.41.24%20PM.png){fig-align="center"}
+
+```{bash}
+mkdir SCBC_2022_folder
+mkdir SCBC_2022_folder/data SCBC_2022_dir/notes SCBC_2022_folder/code
+touch SCBC_2022_folder/README.txt
+echo 'Hi im Roman and I like to code' > SCBC_2022_folder/README.txt
+```
 
 ## Reflection:
 
@@ -83,7 +90,7 @@ Using the **Graphical User Interface (GUI)** provided on your Jupyter login, cre
 
 Why is this useful? What could it help with moving forward?
 
-![](images/Screen%20Shot%202022-06-28%20at%204.38.28%20PM.png){fig-align="center"}
+![](01_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.38.28%20PM.png){fig-align="center"}
 
 ## So why even bother with the command line? We just did so much!
 
@@ -101,7 +108,7 @@ Bioinformatics asks us to do much more with data, and thus computers, than most.
 
 On your desktops you can **view** and **interact** **with** the command line with a **terminal** -- a piece of software built to enable our use of command line programming
 
-![terminal on left, file explorer on right](images/Screen%20Shot%202022-06-30%20at%2011.53.19%20AM.png){fig-align="center"}
+![terminal on left, file explorer on right](01_file_explorer_to_cmdline_files/images/paste-AF551921.png){fig-align="center"}
 
 ## Prediction:
 
@@ -109,7 +116,7 @@ Instead of the mouse, how will we navigate the command line?
 
 ## Anatomy of the `command line`
 
-![](images/Screen%20Shot%202022-06-30%20at%202.02.21%20PM.png){fig-align="center"}
+![](../images/Screen%20Shot%202022-06-30%20at%202.02.21%20PM.png){fig-align="center"}
 
 `user` \@ `host` : `location` `$` *commands you enter here*
 
@@ -164,7 +171,7 @@ hint: try hitting *tab* to complete the rest of your statements -- it'll auto-co
 
 ## What this looks like in file explorer
 
-![](images/Screen%20Shot%202022-06-30%20at%201.55.51%20PM.png){fig-align="center"}
+![](01_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-30%20at%201.55.51%20PM.png){fig-align="center"}
 
 ## If you're going forward, you should be able to go back too
 
@@ -524,3 +531,9 @@ Does this beat opening up Microsoft word or are you still skeptical?
 ## Practice 04
 
 ## 
+
+```{bash}
+# clean up working dirs
+rm -rf SCBC_2022_dir
+rm -rf SCBC_2022_folder
+```
