@@ -9,6 +9,8 @@ editor: visual
 
 ```{r include=FALSE}
 # need a dummy `R` chunk to get `Bash` chunks to work
+library(knitr)
+opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 ```
 
 ## Prediction:
