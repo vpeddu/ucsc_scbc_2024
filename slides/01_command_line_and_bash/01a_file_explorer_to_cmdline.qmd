@@ -522,11 +522,11 @@ Does this beat opening up Microsoft word or are you still skeptical?
 
 ## Summary 03:
 
-`echo` : prints whatever text you want -- `man echo`
+`echo` : prints whatever text you want -- `echo --help`
 
-`cat` : prints the entirety of a file (more uses soon) - `man cat`
+`cat` : prints the entirety of a file (more uses soon) - `cat --help`
 
-`grep` : finds your input text inside of a given file - `man grep`
+`grep` : finds your input text inside of a given file - `grep --help`
 
 ## A tool to bring in something new: `wget`
 
