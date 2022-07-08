@@ -312,6 +312,16 @@ cd
 
 Do you like moving around with the command line? It is easier than mouse? Is it more challenging?
 
+## Summary 02:
+
+`pwd` : return present working directory - `pwd --help`
+
+`ls` : list contents of directory - `ls --help`
+
+`cd` : change directory - `cd --help`
+
+`. & ..` : represent present working directory and upstream directory, respectively
+
 ## Prediction:
 
 Now we know how to move, what else have we done with the file explorer/mouse that we can do on the command line?
@@ -528,9 +538,15 @@ Does this beat opening up Microsoft word or are you still skeptical?
 
 `grep` : finds your input text inside of a given file - `grep --help`
 
+`rm` : irreversibly deletes files, the `-rf` flag enables recursive deletion of directories - `rm --help`
+
+`mv` : moves a file from A to B directory - `mv --help`
+
+`cp` : copy a file from A to B directory - `cp --help`
+
 ## A tool to bring in something new: `wget`
 
-`wget` : getting stuff from the "World Wide Web"
+`wget` : "World Wide Web" + get
 
 **Before** you run the following code, `cd` to your `SCBC_2022_dir/data` directory
 
@@ -554,6 +570,19 @@ finally, use `echo` to add your own speaker ID line and statement of choice (hin
 ## Reflection:
 
 What other steps in the last practice could we theoretically use command line for instead of doing them manually?
+
+## Final section project:
+
+Within your `SCBC_2022_dir/data` directory, create a new file: `book_of_poems.txt` .
+
+Using `echo` and the `\n` trick, add as many lines of `speakers` and `statements` as you'd like to, following the format of **Practice 04.**
+
+Now, utilizing `grep --help`, figure out a way to make two new files:
+
+1.  `poetry.txt` : that contains only the `statements` from `book_of_poems.txt` (maybe they can form a coherent poem together?).
+2.  `authors.txt` : that contains only the names of the authors (plus any annotation that already existed).
+
+when we're done, we can share our poems/screenplays/scripts/etc.
 
 ```{bash}
 # clean up working dirs

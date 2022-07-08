@@ -688,6 +688,13 @@ SCBC_2022_folder</code></pre>
 <h2>Reflection:</h2>
 <p>Do you like moving around with the command line? It is easier than mouse? Is it more challenging?</p>
 </section>
+<section id="summary-02" class="slide level2">
+<h2>Summary 02:</h2>
+<p><code>pwd</code> : return present working directory - <code>pwd --help</code></p>
+<p><code>ls</code> : list contents of directory - <code>ls --help</code></p>
+<p><code>cd</code> : change directory - <code>cd --help</code></p>
+<p><code>. &amp; ..</code> : represent present working directory and upstream directory, respectively</p>
+</section>
 <section id="prediction-3" class="slide level2">
 <h2>Prediction:</h2>
 <p>Now we know how to move, what else have we done with the file explorer/mouse that we can do on the command line?</p>
@@ -927,10 +934,13 @@ Banana slugs have no known predators</code></pre>
 <p><code>echo</code> : prints whatever text you want – <code>echo --help</code></p>
 <p><code>cat</code> : prints the entirety of a file (more uses soon) - <code>cat --help</code></p>
 <p><code>grep</code> : finds your input text inside of a given file - <code>grep --help</code></p>
+<p><code>rm</code> : irreversibly deletes files, the <code>-rf</code> flag enables recursive deletion of directories - <code>rm --help</code></p>
+<p><code>mv</code> : moves a file from A to B directory - <code>mv --help</code></p>
+<p><code>cp</code> : copy a file from A to B directory - <code>cp --help</code></p>
 </section>
 <section id="a-tool-to-bring-in-something-new-wget" class="slide level2">
 <h2>A tool to bring in something new: <code>wget</code></h2>
-<p><code>wget</code> : getting stuff from the “World Wide Web”</p>
+<p><code>wget</code> : “World Wide Web” + get</p>
 <p><strong>Before</strong> you run the following code, <code>cd</code> to your <code>SCBC_2022_dir/data</code> directory</p>
 <div class="cell">
 <div class="sourceCode" id="cb65"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1"></a><span class="co"># wget [link to file]</span></span>
@@ -951,6 +961,17 @@ Banana slugs have no known predators</code></pre>
 <section id="reflection-4" class="slide level2">
 <h2>Reflection:</h2>
 <p>What other steps in the last practice could we theoretically use command line for instead of doing them manually?</p>
+</section>
+<section id="final-section-project" class="slide level2">
+<h2>Final section project:</h2>
+<p>Within your <code>SCBC_2022_dir/data</code> directory, create a new file: <code>book_of_poems.txt</code> .</p>
+<p>Using <code>echo</code> and the <code>\n</code> trick, add as many lines of <code>speakers</code> and <code>statements</code> as you’d like to, following the format of <strong>Practice 04.</strong></p>
+<p>Now, utilizing <code>grep --help</code>, figure out a way to make two new files:</p>
+<ol type="1">
+<li><code>poetry.txt</code> : that contains only the <code>statements</code> from <code>book_of_poems.txt</code> (maybe they can form a coherent poem together?).</li>
+<li><code>authors.txt</code> : that contains only the names of the authors (plus any annotation that already existed).</li>
+</ol>
+<p>when we’re done, we can share our poems/screenplays/scripts/etc.</p>
 <div class="cell">
 
 </div>
