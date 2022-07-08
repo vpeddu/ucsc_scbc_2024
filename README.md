@@ -11,4 +11,4 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 [Lecture 00a: Pacific Research Platform access and intro guide](slides/00_intro_and_background/00a_prp_resource.pdf)
 
-[Lecture 01a: Introduction to command line](slides/01_command_line_and_bash/01_file_explorer_to_cmdline.html)
+[Lecture 01a: Introduction to command line](slides/01_command_line_and_bash/01a_file_explorer_to_cmdline.html)
