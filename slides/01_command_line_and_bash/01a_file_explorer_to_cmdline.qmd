@@ -4,6 +4,7 @@ author: "Roman E. Reggiardo"
 format: 
   revealjs:
     chalkboard: true
+    smooth-scroll: true
 editor: visual
 ---
 
