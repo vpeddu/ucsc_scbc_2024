@@ -1,0 +1,22 @@
+---
+title: "01b: From Command Line to Bash"
+author: "Roman E. Reggiardo"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+format: 
+  revealjs:
+    chalkboard: true
+    smooth-scroll: true
+editor: visual
+---
+
+## Reflecting on what we've already done
+
+The file you worked with in [01a](https://rreggiar.github.io/ucsc_scbc_2022/slides/01_command_line_and_bash/01a_file_explorer_to_cmdline.html#/title-slide), `talking.txt` , is in `FASTA` format.
+
+```{bash, echo=TRUE}
+head -4 ../../data/talking.txt
+```
+
+What are some things we could do with/to `FASTA` files?
+
+## FASTA files == sequence `data`
