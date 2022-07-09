@@ -337,8 +337,200 @@
   <p class="date">08 July, 2022</p>
 </section>
 
-<section class="slide level2">
+<section id="what-is-data-where-is-data-what-does-data-tell-us" class="slide level2">
+<h2>What is <em>Data</em>, where is <em>Data</em>, what does <em>Data</em> tell us?</h2>
+<p>Welcome to the UCSC Genomics Institute Summer Short Course in <strong>Bioinformatics</strong> and <strong>Coding</strong></p>
+<p>The questions at the top of this slide underlie the principles of Bioinformatics, let’s keep them in mind throughout the course.</p>
+</section>
+<section id="what-is-data" class="slide level2">
+<h2>What is <em>Data</em></h2>
+<p>What examples of data can you think of?</p>
+<p>Here’s one example:</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
+</div>
+</div>
+<p>What are the <code>rows</code>? What are the <code>columns</code>?</p>
+</section>
+<section id="where-is-data" class="slide level2">
+<h2>Where is <em>Data</em></h2>
+<p>Who has it? Any companies out there you like or dislike having your data?</p>
 
+<img data-src="00b_bioinformatics_bio_data_files/images/social-media-icon-collage-334059.png" class="r-stretch"></section>
+<section id="what-about-your-biological-data-anyone-in-that-business" class="slide level2">
+<h2>What about your biological data, anyone in that business?</h2>
+
+<img data-src="00b_bioinformatics_bio_data_files/images/23andme_ancestry_kit.jpeg" class="r-stretch quarto-figure-center"><p class="caption">if this is YOU…they have bits of YOU as…data</p></section>
+<section id="its-usually-hosted-on-servers" class="slide level2">
+<h2>Its usually <em>hosted</em> on <em>servers</em></h2>
+
+<img data-src="00b_bioinformatics_bio_data_files/images/14440633_10103136675873201_6012411229515107747_n.0.0.jpeg" class="r-stretch quarto-figure-center"><p class="caption">which look something like this…</p></section>
+<section id="why-servers" class="slide level2">
+<h2>Why servers?</h2>
+<p>Remote access allows teams of people to work with <em>data</em> to produce <em>reproducible</em> results</p>
+
+<img data-src="00b_bioinformatics_bio_data_files/images/what-is-remote-access-for-1024x536.png" class="r-stretch quarto-figure-center"><p class="caption">a persistent element of Bioinformatics is interfacing with large data sets and the servers that store them – we can’t always use a normal computer setup to achieve this so we’re going to learn how else we can.</p></section>
+<section id="what-does-data-tell-us" class="slide level2">
+<h2>What does <em>Data</em> tell us?</h2>
+<p>Well it depends on where its coming from…</p>
+<ul>
+<li><p>Weather/Climate</p></li>
+<li><p>Social Media</p></li>
+<li><p>Dr’s Office</p></li>
+<li><p>Bioinformatics</p></li>
+</ul>
+</section>
+<section id="how-do-we-generate-data" class="slide level2">
+<h2>How do we generate <em>Data</em>?</h2>
+<p>We take <strong>measurements –</strong> of some kind</p>
+<ul>
+<li><p>Weather/Climate</p></li>
+<li><p>Social Media</p></li>
+<li><p>Dr’s Office</p></li>
+<li><p>Bioinformatics</p></li>
+</ul>
+</section>
+<section id="biology-a-source-of-data-wonder-and-confusion" class="slide level2">
+<h2>Biology: A source of data, wonder, and … confusion</h2>
+<p>With new tools, better understanding, and tons of new scientists we are in the midst of a golden age of biological science.</p>
+<p>Unfortunately, Biology is <strong>complicated</strong>.</p>
+<p>Your body is made up of <em>trillions</em> of cells, all of which have special jobs, some of which are functionally immortal, some of which can contribute to cancerous tumors. Figuring out all of this is going to take a long time, and that’s only Humans…</p>
+</section>
+<section id="how-we-measure-biology-observational-data" class="slide level2">
+<h2>How we <em>measure</em> Biology: Observational Data</h2>
+
+<img data-src="00b_bioinformatics_bio_data_files/images/41586_2018_422_Fig1_HTML.webp" class="r-stretch quarto-figure-center"><p class="caption">A) Some painted Ants! B-D) Complicated data analysis — Ulrich, Y., Saragosti, J., Tokita, C.K. et al.&nbsp;Fitness benefits and emergent division of labour at the onset of group living. Nature 560, 635–638 (2018). https://doi.org/10.1038/s41586-018-0422-6</p><p>why measure ants?</p>
+</section>
+<section id="how-we-measure-biology-physical-data" class="slide level2">
+<h2>How we <em>measure</em> Biology: Physical Data</h2>
+<p>The science of Human throwing – Data!</p>
+
+<img data-src="00b_bioinformatics_bio_data_files/images/41586_2013_Article_BFnature12267_Fig2_HTML.webp" class="r-stretch quarto-figure-center"><p class="caption">Blue lines: “Mean Shoulder Rotational Energy” — Roach, N., Venkadesan, M., Rainbow, M. et al.&nbsp;Elastic energy storage in the shoulder and the evolution of high-speed throwing in Homo . Nature 498, 483–486 (2013). https://doi.org/10.1038/nature12267</p></section>
+<section id="how-we-measure-biology-epidemiological-data" class="slide level2">
+<h2>How we <em>measure</em> Biology: Epidemiological Data</h2>
+
+<img data-src="00b_bioinformatics_bio_data_files/images/41893_2021_781_Fig1_HTML.webp" class="r-stretch quarto-figure-center"><p class="caption">How are access to ‘greenness’ / nature related to COVID-19 infection rates and overall equity? — Benjamin, M., Stoneburner, L.&nbsp;<em>et al.</em>&nbsp;Nature inequity and higher COVID-19 case rates in less-green neighbourhoods in the United States.&nbsp;<em>Nat Sustain</em>&nbsp;<strong>4,</strong> 1092–1098 (2021). https://doi.org/10.1038/s41893-021-00781-9</p></section>
+<section id="how-we-measure-biology-molecular-data" class="slide level2">
+<h2>How we <em>measure</em> Biology: Molecular Data</h2>
+<p>Molecules are the underlying agents of all the behavior, physical prowess, and disease spread measured above.</p>
+<p>One problem: they’re really small.</p>
+<p>When things become too small to see, we need really powerful technology.</p>
+<p>First, some quick background.</p>
+</section>
+<section id="dna" class="slide level2">
+<h2>DNA</h2>
+<p><em><strong>D</strong>eoxyribo<strong>N</strong>ucleic<strong>A</strong>cid</em></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="00b_bioinformatics_bio_data_files/images/Stockphoto-DNA-Simple2.png"></p>
+</div><div class="column" style="width:50%;">
+<p>The four ‘bases’ that make up DNA are the fundamental unit of biological information – they encode for all the <strong>genes</strong> you inherit. They are studied by chemists, physicists, biologists, and <strong>bioinformaticicans.</strong></p>
+<p>image: ASHG</p>
+</div>
+</div>
+</section>
+<section id="rna" class="slide level2">
+<h2>RNA</h2>
+<p><em><strong>R</strong>ibo<strong>N</strong>ucleic<strong>A</strong>cid</em></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="00b_bioinformatics_bio_data_files/images/overview-of-transcription.png"></p>
+<p></p><figcaption aria-hidden="true">image: Khan Academy</figcaption><p></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>RNA is produced by special cellular machinery based on the content of DNA. If DNA is the blueprint, RNA is the messenger that carries out those instructions (with a little help).</p>
+</div>
+</div>
+</section>
+<section id="protein-and-the-central-dogma" class="slide level2">
+<h2>Protein and the “Central Dogma”</h2>
+<p><em>DNA</em> –&gt; <em>RNA</em> —(mostly)—&gt; <em>Protein</em></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="00b_bioinformatics_bio_data_files/images/20ce29384b2e7ff0cdea72acaa5b1dbd7287ab00.png"></p>
+<p></p><figcaption aria-hidden="true">image: Khan Academy</figcaption><p></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Protein is the final product of DNA and RNA (most of the time…) and helps form all of the major organs (including skin, hair, nails) that form our physical being.</p>
+</div>
+</div>
+</section>
+<section id="what-types-of-biological-measurements-can-we-take" class="slide level2">
+<h2>What types of biological measurements can we take?</h2>
+<p>Protein is cool and commonly studied with bioinformatics approaches, but we’ll focus on:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>DNA: What’s there?</strong></p>
+<ul>
+<li><p>What genes does someone have?</p></li>
+<li><p>Do their genes have the expected ‘bases’? Or do they have mutations?</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>RNA: How is it behaving?</strong></p>
+<ul>
+<li><p>How much of a given gene is being produced?</p></li>
+<li><p>Are there any changes to how the gene is processed?</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="next-generation-sequencing-putting-info-in-bioinformatics" class="slide level2">
+<h2>Next Generation Sequencing: Putting <em>info</em> in <em>bioinformatics</em></h2>
+<p>A technological revolution that will shape the rest of our lives (and its already doing a whole lot of shaping).</p>
+<p>How do we <strong>measure</strong> DNA and RNA? Almost in the same way we follow ants around…..</p>
+<p>We <strong>sequence</strong> the molecules: The bases <code>A</code>,<code>C</code>,<code>T</code>/<code>U</code>, &amp; <code>G</code> form sequences/patterns/‘words’ of <code>data</code> that we can read from the RNA/DNA molecules</p>
+<p>Let’s watch (parts) of <a href="https://www.youtube.com/watch?v=fCd6B5HRaZ8">this video</a></p>
+</section>
+<section id="what-can-bioinformatics-help-us-accomplish-with-sequencing-data" class="slide level2">
+<h2>What can Bioinformatics help us accomplish with Sequencing Data?</h2>
+<p>Once we measure DNA/RNA molecules with sequencing, we have <strong>tons of data</strong> that looks something like this:</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>&gt;GENE_ABC|protein_coding
+CCCAGATCTCTTCAGTTTTTATGCCTCATTCTGT</code></pre>
+</div>
+</div>
+<p>The human genome has 3 <strong>billion</strong> bases, meaning we get a lot of DNA sequence to work with.</p>
+</section>
+<section id="basic-discovery-sequence-of-the-novel-coronavirus" class="slide level2">
+<h2>Basic Discovery: Sequence of the Novel Coronavirus</h2>
+<p>Before vaccines, before treatments, before we could fight SARS-CoV-2, we needed to sequence its genome, identify the genes within, and they proteins they encode for.</p>
+
+<img data-src="00b_bioinformatics_bio_data_files/images/41591_2020_820_Fig1_HTML.webp" class="r-stretch quarto-figure-center"><p class="caption">Andersen, K.G., Rambaut, A., Lipkin, W.I. et al.&nbsp;The proximal origin of SARS-CoV-2. Nat Med 26, 450–452 (2020). https://doi.org/10.1038/s41591-020-0820-9</p></section>
+<section id="engineering-new-tools-genome-editing" class="slide level2">
+<h2>Engineering new tools: Genome editing</h2>
+<p>If we’re going to edit the genome, we need to know what’s there already AND if our edit worked!</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>&gt;GENE_ABC|protein_coding_no-edit
+CCCAGATCTCTTCAGTTTTTATGCCTCATTCTGT</code></pre>
+</div>
+<div class="cell-output-stdout">
+<pre><code>&gt;GENE_ABC|protein_coding_three-edit
+CCCAGATCTCTTCATTTTTTATGCCCCATTCTAT</code></pre>
+</div>
+</div>
+</section>
+<section id="clinical-approaches-cell-free-dna-liquid-biopsies" class="slide level2">
+<h2>Clinical approaches: Cell-free DNA Liquid Biopsies</h2>
+<p>Sequence DNA/RNA in the blood, find tumors without scans/surgery</p>
+
+<img data-src="00b_bioinformatics_bio_data_files/images/cells-09-00624-g001.webp" class="r-stretch quarto-figure-center"><p class="caption">image: MDPI</p></section>
+<section id="section" class="slide level2">
+<h2></h2>
 <div class="footer footer-default">
 
 </div>
