@@ -9,14 +9,213 @@ format:
 editor: visual
 ---
 
-## Reflecting on what we've already done
+```{r include=FALSE}
+# need a dummy `R` chunk to get `Bash` chunks to work
+library(knitr)
+opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
+```
 
-The file you worked with in [01a](https://rreggiar.github.io/ucsc_scbc_2022/slides/01_command_line_and_bash/01a_file_explorer_to_cmdline.html#/title-slide), `talking.txt` , is in `FASTA` format.
+## Scenario: Mutations
+
+-   You work for a **molecular** diagnostics laboratory.
+
+-   As their lead **bioinformatician**, you need to process **DNA sequencing** data generated from patients who might have **Lung Cancer**.
+
+-   The laboratory has decided to **identify disease** using a set of **genes** with known Lung Cancer-causing mutations: **KRAS**, **EGFR**, and **TP53**.
+
+-   The lab team is sending data that might need to be processed further before it can be used.
+
+## Scenario: Your First Job
+
+Is to build a **computational approach** that
+
+1.  Builds your panel of potentially mutated genes
+2.  Builds the patient manifest
+
+Eventually, we're going to build a tool that Identifies patient DNA with Lung Cancer-causing mutations
+
+## Reflection
+
+The file you worked with in [01a](https://rreggiar.github.io/ucsc_scbc_2022/slides/01_command_line_and_bash/01a_file_explorer_to_cmdline.html#/title-slide), `talking.txt`, is in `FASTA` format.
 
 ```{bash, echo=TRUE}
 head -4 ../../data/talking.txt
 ```
 
-What are some things we could do with/to `FASTA` files?
+While this file has `.txt` as its *extension*, `FASTA` files usually have `.fa` or `.fasta` -- we'll use `.fa`
 
-## FASTA files == sequence `data`
+What are some things we could do with/to `FASTA` files using the `commandline`?
+
+## FASTA files contain sequence `data`
+
+-   Your team is going to provide with a couple different types of `data`
+
+-   This data is `reference data`
+
+    -   the sequences and locations we **expect** and **understand** the genes of interest to have
+
+## **Prediction:**
+
+Given your experience with the `FASTA` format, what do you expect the `head` and `tail` commands to print if you run them on a larger `.fa` file?
+
+## What data do we need to identify mutations?
+
+-   Mutations are **changes to the sequence** of a gene, at least compared to what its **supposed** to be (lots to say on 'supposed' sequences...)
+
+-   But in order to find the **right** mutations, we need to know **where** the mutation happens in the gene, and where the gene is in the **genome**
+
+## Looking at data from the Laboratory
+
+In this scenario, the Lab has sent you a `.fa` file that contains a number of gene `headers` and their corresponding `sequence`.
+
+-   `gene_panel_database.fa` has headers with 5 pieces of information
+
+    -   Gene Name, chromosome, start position, stop position, strand
+
+    -   The `,` used here are called `delimeters` , we'll use them to separate data into `tables`
+
+## Building the diagnostic panel: `gene_panel_database.fa`
+
+Your Lab team has uploaded the `gene_panel_database.fa` file to your [database](https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/data/gene_panel_database.txt)
+
+-   Download `gene_panel.fa` to your `SCBC_2022_dir/data` directory (using the command line)
+
+take a few moments to explore its contents, are there any problems with the data that we need to address?
+
+## Job #1: Extract the gene panel
+
+`gene_panel_database.fa` contains genes you do not want to check for mutations.
+
+-   Extract the headers for **KRAS, EGFR, and TP53**
+
+-   append the headers to a file `final_gene_panel.csv` with the first line:
+
+    -   `gene,chromosome,start,stop,strand`
+
+-   these are the 'columns' of our data
+
+-   `csv` -- 'comma-separated values'
+
+## 3 genes means we do everything 3x....but not by hand
+
+You're trying to avoid running the same code over and over to extract the information you need from `gene_panel_database.fa`
+
+-   To do this, we can use `for loops` to 'iterate' over our genes
+
+```{bash, echo=T}
+for gene in KRAS EGFR TP53;do echo $gene; done
+```
+
+## Iteration: For Loops and Variables
+
+The `for loop` command structure is as follows
+
+```{bash, echo=T, eval=F}
+for gene in KRAS EGFR TP53;do echo $gene; done
+```
+
+-   for `variable name`
+
+    -   in `list of variable values` ;
+
+        -   do `tool/command` \$`variable name` ;
+
+-   done
+
+in `Bash`, placing `$` in front of a word tells the computer its a `variable`
+
+## Variables in For Loops
+
+Variables (`$variable_name`) allow us to apply the **same operation** to **multiple inputs**
+
+-   In this examples, `$gene` is the variable that we use to represent **KRAS**, **EGFR**, and finally **TP53** in the `for loop`
+
+Try:
+
+```{bash, echo=T, eval=F}
+for gene in KRAS EGFR TP53;do echo gene; done
+```
+
+```{bash, echo=T, eval=F}
+for genetic_element in KRAS EGFR TP53;do echo $gene; done
+```
+
+```{bash, echo=T, eval=F}
+for gene in KRAS EGFR TP53; echo $gene; done
+```
+
+```{bash, echo=T, eval=F}
+for gene in KRAS EGFR TP53;do echo $gene
+```
+
+## Variables in For Loops
+
+Output:
+
+```{bash, echo=T, eval=T, error=T}
+for gene in KRAS EGFR TP53;do echo gene; done
+```
+
+```{bash, echo=T, eval=T, error=T}
+for genetic_element in KRAS EGFR TP53;do echo $gene; done
+```
+
+```{bash, echo=T, eval=T, error=T}
+for gene in KRAS EGFR TP53; echo $gene; done
+```
+
+```{bash, echo=T, eval=T, error=T}
+for gene in KRAS EGFR TP53;do echo $gene
+```
+
+How do we fix each of these?
+
+## Variables in For Loops
+
+Fixed:
+
+```{bash, echo=T, eval=T, error=T}
+for gene in KRAS EGFR TP53;do echo $gene; done
+```
+
+```{bash, echo=T, eval=T, error=T}
+for genetic_element in KRAS EGFR TP53;do echo $genetic_element; done
+```
+
+```{bash, echo=T, eval=T, error=T}
+for gene in KRAS EGFR TP53;do echo $gene; done
+```
+
+```{bash, echo=T, eval=T, error=T}
+for gene in KRAS EGFR TP53;do echo $gene; done
+```
+
+## Job #1.5: Do it with iteration!
+
+`gene_panel_database.fa` contains genes you do not want to check for mutations.
+
+-   **Iteratively** Extract the headers for **KRAS, EGFR, and TP53**
+
+-   append the headers to a file `final_gene_panel.csv` with the first line:
+
+    -   `gene,chromosome,start,stop,strand`
+
+-   these are the 'columns' of our data
+
+-   `csv` -- 'comma-separated values'
+
+## A tool to work with columns: `cut` 
+
+Commandline has yet another built-in tool that can help us out
+
+-   Your `final_gene_panel.csv` should look something like:
+
+## From command line to Bash
+
+This is a bit of a misnomer, as we're already using the `Bash commandline`.
+
+However, we're going to start moving away from doing *everything* on the commandline
+
+Why do you think?
+
+## Saving the code you run and re-using it
