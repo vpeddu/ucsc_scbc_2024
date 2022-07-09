@@ -397,7 +397,7 @@
 <section id="title-slide" class="center">
   <h1 class="title">01a: From File Explorer to Command Line</h1>
   <p class="author">Roman E. Reggiardo</p>
-  <p class="date">08 July, 2022</p>
+  <p class="date">09 July, 2022</p>
 </section>
 
 <section id="prediction" class="slide level2">
@@ -691,10 +691,85 @@ SCBC_2022_folder</code></pre>
 </section>
 <section id="summary-02" class="slide level2">
 <h2>Summary 02:</h2>
-<p><code>pwd</code> : return present working directory - <code>pwd --help</code></p>
-<p><code>ls</code> : list contents of directory - <code>ls --help</code></p>
-<p><code>cd</code> : change directory - <code>cd --help</code></p>
+<p><code>pwd</code> : return present working directory - <code>man pwd</code></p>
+<p><code>ls</code> : list contents of directory - <code>man ls</code></p>
+<p><code>cd</code> : change directory - <code>man cd</code></p>
 <p><code>. &amp; ..</code> : represent present working directory and upstream directory, respectively</p>
+</section>
+<section id="quick-aside-the-command-line-user-man-ual" class="slide level2">
+<h2>Quick aside: the command line user <code>man</code> ual</h2>
+<p>The <code>man</code> tool prints out a manual for the tool you provide it</p>
+<div class="cell">
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># man [name of commandline tool]</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">man</span> pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>PWD(1)                       General Commands Manual                      PWD(1)
+
+NNAAMMEE
+     ppwwdd – return working directory name
+
+SSYYNNOOPPSSIISS
+     ppwwdd [--LL | --PP]
+
+DDEESSCCRRIIPPTTIIOONN
+     The ppwwdd utility writes the absolute pathname of the current working
+     directory to the standard output.
+
+     Some shells may provide a builtin ppwwdd command which is similar or identical
+     to this utility.  Consult the builtin(1) manual page.
+
+     The options are as follows:
+
+     --LL      Display the logical current working directory.
+
+     --PP      Display the physical current working directory (all symbolic links
+             resolved).
+
+     If no options are specified, the --LL option is assumed.
+
+EENNVVIIRROONNMMEENNTT
+     Environment variables used by ppwwdd:
+
+     PWD      Logical current working directory.
+
+EEXXIITT SSTTAATTUUSS
+     The ppwwdd utility exits&nbsp;0 on success, and&nbsp;&gt;0 if an error occurs.
+
+EEXXAAMMPPLLEESS
+     Show current working directory with symbolic links resolved:
+
+           $ /bin/pwd -P
+           /usr/home/fernape
+
+     Show the logical current directory.  Then use file(1) to inspect the _/_h_o_m_e
+     directory:
+
+           $ /bin/pwd
+           /home/fernape
+           $ file /home
+           /home: symbolic link to usr/home
+
+SSEEEE AALLSSOO
+     builtin(1), cd(1), csh(1), realpath(1), sh(1), getcwd(3)
+
+SSTTAANNDDAARRDDSS
+     The ppwwdd utility conforms to IEEE Std 1003.1-2001 (“POSIX.1”).
+
+HHIISSTTOORRYY
+     The ppwwdd command appeared in Version&nbsp;5 AT&amp;T UNIX.
+
+BBUUGGSS
+     In csh(1) the command ddiirrss is always faster because it is built into that
+     shell.  However, it can give a different answer in the rare case that the
+     current directory or a containing directory was moved after the shell
+     descended into it.
+
+     The --LL option does not work unless the PWD environment variable is exported
+     by the shell.
+
+macOS 12.4                      October 24, 2020                      macOS 12.4</code></pre>
+</div>
+</div>
 </section>
 <section id="prediction-3" class="slide level2">
 <h2>Prediction:</h2>
@@ -704,9 +779,9 @@ SCBC_2022_folder</code></pre>
 <h2>More command line: Creating</h2>
 <p>Moving is great, but we can do much more</p>
 <div class="cell">
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># create a **file**</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">touch</span> temp.txt</span>
-<span id="cb33-3"><a href="#cb33-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># create a **file**</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">touch</span> temp.txt</span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>01a_file_explorer_to_cmdline.html
 01a_file_explorer_to_cmdline.qmd
@@ -721,14 +796,14 @@ temp.txt</code></pre>
 <h2>Creating continued</h2>
 <p>We also will need to create <code>directories</code> to help organize our files</p>
 <div class="cell">
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># make a **directory**</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">mkdir</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># make a **directory**</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">mkdir</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>since its a directory, we can <code>cd</code> into it</p>
 <div class="cell">
-<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1"></a><span class="bu">cd</span> temporary_dir</span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="bu">pwd</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a><span class="bu">cd</span> ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1"></a><span class="bu">cd</span> temporary_dir</span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="bu">pwd</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="bu">cd</span> ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides/01_command_line_and_bash/temporary_dir</code></pre>
 </div>
@@ -738,10 +813,10 @@ temp.txt</code></pre>
 <h2>Moving and Copying</h2>
 <p>If we want to organize, we need to be able to move things</p>
 <div class="cell">
-<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># move a **file** to a different **directory**</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="co"># mv [file you want to move] [destination you want to target]</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a><span class="fu">mv</span> temp.txt temporary_dir</span>
-<span id="cb38-4"><a href="#cb38-4"></a><span class="fu">ls</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># move a **file** to a different **directory**</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="co"># mv [file you want to move] [destination you want to target]</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a><span class="fu">mv</span> temp.txt temporary_dir</span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="fu">ls</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>temp.txt</code></pre>
 </div>
@@ -761,10 +836,10 @@ temporary_dir</code></pre>
 <h2>Moving and Copying continued</h2>
 <p>Sometimes moving isn’t quite what we want, in that case we can <strong>copy</strong> a file and keep the original</p>
 <div class="cell">
-<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># copy a **file** to a different **directory**</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="co"># cp [file you want to move] [destination you want to target]</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a><span class="fu">cp</span> temporary_dir/temp.txt .</span>
-<span id="cb41-4"><a href="#cb41-4"></a><span class="fu">ls</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># copy a **file** to a different **directory**</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="co"># cp [file you want to move] [destination you want to target]</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a><span class="fu">cp</span> temporary_dir/temp.txt .</span>
+<span id="cb43-4"><a href="#cb43-4"></a><span class="fu">ls</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>temp.txt</code></pre>
 </div>
@@ -786,9 +861,9 @@ temporary_dir</code></pre>
 <h2>Destroying <strong>cannot be undone!!</strong></h2>
 <p>Well, we called these temporary, so let’s get rid of them <strong>carefully</strong></p>
 <div class="cell">
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># destroy a **file** NOT REVERSIBLE</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="fu">rm</span> temp.txt</span>
-<span id="cb44-3"><a href="#cb44-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># destroy a **file** NOT REVERSIBLE</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="fu">rm</span> temp.txt</span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>01a_file_explorer_to_cmdline.html
 01a_file_explorer_to_cmdline.qmd
@@ -799,8 +874,8 @@ temporary_dir</code></pre>
 </div>
 <p>this doesn’t destroy the copy in <code>temporary_dir</code></p>
 <div class="cell">
-<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># destroy a **file** NOT REVERSIBLE</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a><span class="fu">ls</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># destroy a **file** NOT REVERSIBLE</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a><span class="fu">ls</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>temp.txt</code></pre>
 </div>
@@ -810,12 +885,12 @@ temporary_dir</code></pre>
 <h2>Destroying cannot be undone continued</h2>
 <p>We can also remove <code>directories</code> with <code>-rf</code> (we’ll come back to this later)</p>
 <div class="cell">
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># destroy a **directory** NOT REVERSIBLE</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a><span class="fu">rm</span> <span class="at">-rf</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># destroy a **directory** NOT REVERSIBLE</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="fu">rm</span> <span class="at">-rf</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>now try to <code>cd</code> into our deleted <code>directory</code></p>
 <div class="cell">
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1"></a><span class="bu">cd</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1"></a><span class="bu">cd</span> temporary_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>bash: line 0: cd: temporary_dir: No such file or directory</code></pre>
 </div>
@@ -845,8 +920,8 @@ temporary_dir</code></pre>
 <p>We’ve already experienced a minor road block in the GUI – there’s no text editor installed.</p>
 <p>The command line can help us here, just print the whole file out in terminal:</p>
 <div class="cell">
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># 'concatenate' or **print** whole **files**</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># 'concatenate' or **print** whole **files**</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>Hi im Roman and I like to code</code></pre>
 </div>
@@ -856,8 +931,8 @@ temporary_dir</code></pre>
 <h2>Printing continued</h2>
 <p><code>cat</code> works great when we have existing files with content, but what about printing in general?</p>
 <div class="cell">
-<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># write/print arguments </span></span>
-<span id="cb53-2"><a href="#cb53-2"></a><span class="bu">echo</span> <span class="st">'Hello World'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># write/print arguments </span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="bu">echo</span> <span class="st">'Hello World'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>Hello World</code></pre>
 </div>
@@ -867,9 +942,9 @@ temporary_dir</code></pre>
 <h2>Printing to files: Standard Output</h2>
 <p><code>echo</code> is not limited to sending stuff to terminal, we can also send this output to a <strong>file</strong></p>
 <div class="cell">
-<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># `&gt;` tells cmd line to send the output to a specific file, rather than printing to terminal</span></span>
-<span id="cb55-2"><a href="#cb55-2"></a><span class="bu">echo</span> <span class="st">'Banana slugs have no known predators'</span> <span class="op">&gt;</span> SCBC_2022_dir/README.txt</span>
-<span id="cb55-3"><a href="#cb55-3"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># `&gt;` tells cmd line to send the output to a specific file, rather than printing to terminal</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a><span class="bu">echo</span> <span class="st">'Banana slugs have no known predators'</span> <span class="op">&gt;</span> SCBC_2022_dir/README.txt</span>
+<span id="cb57-3"><a href="#cb57-3"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>Banana slugs have no known predators</code></pre>
 </div>
@@ -881,8 +956,8 @@ temporary_dir</code></pre>
 <h2>Printing to files: Thinking about writing</h2>
 <p>How can we re-generate our original <code>SCBC_2022_dir/README.txt</code> ?</p>
 <div class="cell">
-<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1"></a><span class="bu">echo</span> <span class="st">'Hi im Roman and I like to code'</span> <span class="op">&gt;</span> SCBC_2022_dir/README.txt</span>
-<span id="cb57-2"><a href="#cb57-2"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1"></a><span class="bu">echo</span> <span class="st">'Hi im Roman and I like to code'</span> <span class="op">&gt;</span> SCBC_2022_dir/README.txt</span>
+<span id="cb59-2"><a href="#cb59-2"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>Hi im Roman and I like to code</code></pre>
 </div>
@@ -892,9 +967,9 @@ temporary_dir</code></pre>
 <h2>Printing to files: Appending instead of over-writing</h2>
 <p>Much like <code>.</code> and <code>..</code> , <code>&gt;</code> and <code>&gt;&gt;</code> have distinct functions.</p>
 <div class="cell">
-<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1"></a><span class="co">## `&gt;&gt;` lets us append output to an existing file, line by line</span></span>
-<span id="cb59-2"><a href="#cb59-2"></a><span class="bu">echo</span> <span class="st">'Banana slugs have no known predators'</span> <span class="op">&gt;&gt;</span> SCBC_2022_dir/README.txt</span>
-<span id="cb59-3"><a href="#cb59-3"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1"></a><span class="co">## `&gt;&gt;` lets us append output to an existing file, line by line</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a><span class="bu">echo</span> <span class="st">'Banana slugs have no known predators'</span> <span class="op">&gt;&gt;</span> SCBC_2022_dir/README.txt</span>
+<span id="cb61-3"><a href="#cb61-3"></a><span class="fu">cat</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>Hi im Roman and I like to code
 Banana slugs have no known predators</code></pre>
@@ -911,16 +986,16 @@ Banana slugs have no known predators</code></pre>
 <p><code>cat</code> is great when we want to see <em>everything</em>, but sometimes files are huge and that would be….difficult.</p>
 <p>We can also <strong>search</strong> for key terms in files:</p>
 <div class="cell">
-<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1"></a><span class="co"># `grep` will return lines that contain the input argument</span></span>
-<span id="cb61-2"><a href="#cb61-2"></a><span class="co"># grep [text to search for] [file to search in]</span></span>
-<span id="cb61-3"><a href="#cb61-3"></a><span class="fu">grep</span> <span class="st">"Roman"</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb63-1"><a href="#cb63-1"></a><span class="co"># `grep` will return lines that contain the input argument</span></span>
+<span id="cb63-2"><a href="#cb63-2"></a><span class="co"># grep [text to search for] [file to search in]</span></span>
+<span id="cb63-3"><a href="#cb63-3"></a><span class="fu">grep</span> <span class="st">"Roman"</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>Hi im Roman and I like to code</code></pre>
 </div>
 </div>
 <p>the text doesn’t have to be in the beginning:</p>
 <div class="cell">
-<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">grep</span> <span class="st">"predators"</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1"></a><span class="fu">grep</span> <span class="st">"predators"</span> SCBC_2022_dir/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>Banana slugs have no known predators</code></pre>
 </div>
@@ -932,28 +1007,34 @@ Banana slugs have no known predators</code></pre>
 </section>
 <section id="summary-03" class="slide level2">
 <h2>Summary 03:</h2>
-<p><code>echo</code> : prints whatever text you want – <code>echo --help</code></p>
-<p><code>cat</code> : prints the entirety of a file (more uses soon) - <code>cat --help</code></p>
-<p><code>grep</code> : finds your input text inside of a given file - <code>grep --help</code></p>
-<p><code>rm</code> : irreversibly deletes files, the <code>-rf</code> flag enables recursive deletion of directories - <code>rm --help</code></p>
-<p><code>mv</code> : moves a file from A to B directory - <code>mv --help</code></p>
-<p><code>cp</code> : copy a file from A to B directory - <code>cp --help</code></p>
+<p><code>echo</code> : prints whatever text you want – <code>man echo</code></p>
+<p><code>cat</code> : prints the entirety of a file (more uses soon) - <code>man cat</code></p>
+<p><code>grep</code> : finds your input text inside of a given file - <code>man grep</code></p>
+<p><code>rm</code> : irreversibly deletes files, the <code>-rf</code> flag enables recursive deletion of directories - <code>man rm</code></p>
+<p><code>mv</code> : moves a file from A to B directory - <code>man mv</code></p>
+<p><code>cp</code> : copy a file from A to B directory - <code>man cp</code></p>
 </section>
 <section id="a-tool-to-bring-in-something-new-wget" class="slide level2">
 <h2>A tool to bring in something new: <code>wget</code></h2>
 <p><code>wget</code> : “World Wide Web” + get</p>
 <p><strong>Before</strong> you run the following code, <code>cd</code> to your <code>SCBC_2022_dir/data</code> directory</p>
 <div class="cell">
-<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1"></a><span class="co"># wget [link to file]</span></span>
-<span id="cb65-2"><a href="#cb65-2"></a><span class="fu">wget</span> <span class="st">'https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/data/talking.txt'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1"></a><span class="co"># wget [link to file]</span></span>
+<span id="cb67-2"><a href="#cb67-2"></a><span class="fu">wget</span> <span class="st">'https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/data/talking.txt'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="practice-04" class="slide level2">
-<h2>Practice 04</h2>
+<section id="practice-04-pt.1" class="slide level2">
+<h2>Practice 04 (pt.1)</h2>
 <p>Now you’ve got a file: <code>talking.txt</code> (make sure you know where it is).</p>
 <p>It contains two types of <code>line</code> : A line for <code>speakers</code> and a line for <code>statements</code> .</p>
 <ol type="1">
+<li>Try out two new tools: <code>head -2</code> and <code>tail -2</code>, what do they do?</li>
 <li>How many speakers are there?</li>
+</ol>
+</section>
+<section id="practice-04-pt.2" class="slide level2">
+<h2>Practice 04 (pt.2)</h2>
+<ol type="1">
 <li>What indicates that a line is a speaker vs.&nbsp;a statement?</li>
 <li>Print out only the speaker’s names.</li>
 </ol>
@@ -980,6 +1061,16 @@ Banana slugs have no known predators</code></pre>
 <div class="cell">
 
 </div>
+</section>
+<section id="summary-04" class="slide level2">
+<h2>Summary 04:</h2>
+<p><code>wget</code> : downloads a file from a <code>http/https</code> link - <code>man wget</code></p>
+<p><code>head</code> : print only the top 6 lines of a file (default) - <code>man head</code></p>
+<p><code>tail</code> : print only the last 6 lines of a file (default) - <code>man tail</code></p>
+</section>
+<section id="final-reflection" class="slide level2">
+<h2>Final Reflection</h2>
+<p>What does automation mean, to you, with work that you might try to accomplish with data?</p>
 <div class="footer footer-default">
 
 </div>

@@ -318,13 +318,22 @@ Do you like moving around with the command line? It is easier than mouse? Is it 
 
 ## Summary 02:
 
-`pwd` : return present working directory - `pwd --help`
+`pwd` : return present working directory - `man pwd`
 
-`ls` : list contents of directory - `ls --help`
+`ls` : list contents of directory - `man ls`
 
-`cd` : change directory - `cd --help`
+`cd` : change directory - `man cd`
 
 `. & ..` : represent present working directory and upstream directory, respectively
+
+## Quick aside: the command line user `man` ual
+
+The `man` tool prints out a manual for the tool you provide it
+
+```{bash, echo=TRUE}
+# man [name of commandline tool]
+man pwd
+```
 
 ## Prediction:
 
@@ -536,17 +545,17 @@ Does this beat opening up Microsoft word or are you still skeptical?
 
 ## Summary 03:
 
-`echo` : prints whatever text you want -- `echo --help`
+`echo` : prints whatever text you want -- `man echo`
 
-`cat` : prints the entirety of a file (more uses soon) - `cat --help`
+`cat` : prints the entirety of a file (more uses soon) - `man cat`
 
-`grep` : finds your input text inside of a given file - `grep --help`
+`grep` : finds your input text inside of a given file - `man grep`
 
-`rm` : irreversibly deletes files, the `-rf` flag enables recursive deletion of directories - `rm --help`
+`rm` : irreversibly deletes files, the `-rf` flag enables recursive deletion of directories - `man rm`
 
-`mv` : moves a file from A to B directory - `mv --help`
+`mv` : moves a file from A to B directory - `man mv`
 
-`cp` : copy a file from A to B directory - `cp --help`
+`cp` : copy a file from A to B directory - `man cp`
 
 ## A tool to bring in something new: `wget`
 
@@ -559,15 +568,19 @@ Does this beat opening up Microsoft word or are you still skeptical?
 wget 'https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/data/talking.txt'
 ```
 
-## Practice 04
+## Practice 04 (pt.1)
 
 Now you've got a file: `talking.txt` (make sure you know where it is).
 
 It contains two types of `line` : A line for `speakers` and a line for `statements` .
 
-1.  How many speakers are there?
-2.  What indicates that a line is a speaker vs. a statement?
-3.  Print out only the speaker's names.
+1.  Try out two new tools: `head -2` and `tail -2`, what do they do?
+2.  How many speakers are there?
+
+## Practice 04 (pt.2)
+
+1.  What indicates that a line is a speaker vs. a statement?
+2.  Print out only the speaker's names.
 
 finally, use `echo` to add your own speaker ID line and statement of choice (hint: `\n` can be used to represent a new line).
 
@@ -597,3 +610,15 @@ Now, utilizing `grep --help`, figure out a way to make two new files:
 rm -rf SCBC_2022_dir
 rm -rf SCBC_2022_folder
 ```
+
+## Summary 04:
+
+`wget` : downloads a file from a `http/https` link - `man wget`
+
+`head` : print only the top 6 lines of a file (default) - `man head`
+
+`tail` : print only the last 6 lines of a file (default) - `man tail`
+
+## Final Reflection
+
+What does automation mean, to you, with work that you might try to accomplish with data?
