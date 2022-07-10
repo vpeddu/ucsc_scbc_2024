@@ -200,7 +200,7 @@ for gene in KRAS EGFR TP53;do echo $gene; done
 
 -   `csv` -- 'comma-separated values'
 
-## A tool to work with columns: `cut` 
+## A tool to work with columns: `cut`
 
 -   Your `final_gene_panel.csv` should look something like with **rows** on each line and columns separated by `,`:
 
@@ -226,7 +226,7 @@ cut -d'>' -f2 ../../data/final_gene_panel.csv
 
 -   in this case, we want to cut the file by `>` and keep only the right (second) slice of data: `-f2`
 
-## Practice 05: 
+## Practice 05:
 
 1.  Run:
 
@@ -312,10 +312,36 @@ echo 1,KRAS,45,M
 
 These are each turned into a `file` and uploaded to the database as a `compressed archive`
 
-## Moving directories as files: `tar/gzip` 
+## Moving directories as files: `tar/gzip`
 
 You might have seen these before: directories collapsed into a single, movable, compressed file:
 
 -   Laboratory patient data:
 
-    -   
+    -   [link](https://github.com/rreggiar/ucsc_scbc_2022/raw/master/data/patient_database.gz) (right click and copy)
+
+-   We won't go into detail here, safe to use the following command to `unzip` the archive into the original multiple-file format
+
+```{bash, echo=T, eval=F}
+tar -zxvf patient_database.gz
+```
+
+## Working with multiple files in directory: `wildcards`
+
+Matching everything that begins with `4` or `12`:
+
+```{bash, echo=T}
+cat ../../data/patient_database/4*
+```
+
+```{bash, echo=T}
+ls ../../data/patient_database/12*
+```
+
+## Grob continued `*` 
+
+Matching everything with `healthy` in it
+
+```{bash, echo=T}
+ls ../../data/patient_database/*healthy*
+```

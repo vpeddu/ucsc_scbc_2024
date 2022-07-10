@@ -754,9 +754,51 @@ bash</code></pre>
 <ul>
 <li><p>Laboratory patient data:</p>
 <ul>
-<li></li>
+<li><a href="https://github.com/rreggiar/ucsc_scbc_2022/raw/master/data/patient_database.gz">link</a> (right click and copy)</li>
 </ul></li>
+<li><p>We won’t go into detail here, safe to use the following command to <code>unzip</code> the archive into the original multiple-file format</p></li>
 </ul>
+<div class="cell">
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> patient_database.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="working-with-multiple-files-in-directory-wildcards" class="slide level2">
+<h2>Working with multiple files in directory: <code>wildcards</code></h2>
+<p>Matching everything that begins with <code>4</code> or <code>12</code>:</p>
+<div class="cell">
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">cat</span> ../../data/patient_database/4<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>patient_id,gene,age,sex
+4,KRAS,74,F
+patient_id,gene,age,sex
+4,KRAS,74,F</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">ls</span> ../../data/patient_database/12<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>../../data/patient_database/12_TP53healthy_card 2.csv
+../../data/patient_database/12_TP53healthy_card.csv
+../../data/patient_database/12_TP53mut_card 2.csv
+../../data/patient_database/12_TP53mut_card.csv</code></pre>
+</div>
+</div>
+</section>
+<section id="grob-continued" class="slide level2">
+<h2>Grob continued <code>*</code></h2>
+<p>Matching everything with <code>healthy</code> in it</p>
+<div class="cell">
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>healthy<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>../../data/patient_database/10_TP53healthy_card 2.csv
+../../data/patient_database/10_TP53healthy_card 3.csv
+../../data/patient_database/10_TP53healthy_card.csv
+../../data/patient_database/11_TP53healthy_card 2.csv
+../../data/patient_database/11_TP53healthy_card.csv
+../../data/patient_database/12_TP53healthy_card 2.csv
+../../data/patient_database/12_TP53healthy_card.csv</code></pre>
+</div>
+</div>
 <div class="footer footer-default">
 
 </div>
