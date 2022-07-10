@@ -345,3 +345,54 @@ Matching everything with `healthy` in it
 ```{bash, echo=T}
 ls ../../data/patient_database/*healthy*
 ```
+
+Matching everything that ends in `.csv`
+
+```{bash, echo=T}
+# and truncating a little since there are alot
+ls ../../data/patient_database/*.csv | head
+```
+
+## More limited matching: number of characters `???`
+
+Only double digit patient ID numbers
+
+```{bash, echo=T}
+ls ../../data/patient_database/??_*.csv
+```
+
+## More specific matches: ranges `[]`
+
+Ranges of numbers:
+
+```{bash, echo=T}
+ls ../../data/patient_database/[2-4]_*.csv
+```
+
+List of characters:
+
+```{bash, echo=T}
+ls ../../data/patient_database/*_[T,K]*.csv
+```
+
+## Practice 06: 
+
+Print all the files in the `patient_database/` directory that **are not** test (t\_) or healthy samples.
+
+## Back to work...Job #2
+
+Alright, now we have the tools to do a bit more work with files and directories
+
+-   take the files you captured **Practice 6** and combine them into a single `.csv` with column names.
+
+```{bash, eval=F}
+cat [1-9]*_*mut* | grep -v 'patient'
+```
+
+## Reflection:
+
+-   We can operate on contents `files` : rows, columns
+
+-   We can operate on the contents of `directories` : `files` themselves
+
+-   One thing is missing from making this whole approach fast, reproducible, and easy -- what do you think it is?

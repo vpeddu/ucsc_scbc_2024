@@ -769,17 +769,13 @@ bash</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">cat</span> ../../data/patient_database/4<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
 <pre><code>patient_id,gene,age,sex
-4,KRAS,74,F
-patient_id,gene,age,sex
 4,KRAS,74,F</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode" id="cb41"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">ls</span> ../../data/patient_database/12<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>../../data/patient_database/12_TP53healthy_card 2.csv
-../../data/patient_database/12_TP53healthy_card.csv
-../../data/patient_database/12_TP53mut_card 2.csv
+<pre><code>../../data/patient_database/12_TP53healthy_card.csv
 ../../data/patient_database/12_TP53mut_card.csv</code></pre>
 </div>
 </div>
@@ -790,15 +786,95 @@ patient_id,gene,age,sex
 <div class="cell">
 <div class="sourceCode" id="cb43"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>healthy<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>../../data/patient_database/10_TP53healthy_card 2.csv
-../../data/patient_database/10_TP53healthy_card 3.csv
-../../data/patient_database/10_TP53healthy_card.csv
-../../data/patient_database/11_TP53healthy_card 2.csv
+<pre><code>../../data/patient_database/10_TP53healthy_card.csv
 ../../data/patient_database/11_TP53healthy_card.csv
-../../data/patient_database/12_TP53healthy_card 2.csv
 ../../data/patient_database/12_TP53healthy_card.csv</code></pre>
 </div>
 </div>
+<p>Matching everything that ends in <code>.csv</code></p>
+<div class="cell">
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># and truncating a little since there are alot</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>.csv <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>../../data/patient_database/10_TP53healthy_card.csv
+../../data/patient_database/10_TP53mut_card.csv
+../../data/patient_database/11_TP53healthy_card.csv
+../../data/patient_database/11_TP53mut_card.csv
+../../data/patient_database/12_TP53healthy_card.csv
+../../data/patient_database/12_TP53mut_card.csv
+../../data/patient_database/1_KRASmut_card.csv
+../../data/patient_database/2_KRASmut_card.csv
+../../data/patient_database/3_KRASmut_card.csv
+../../data/patient_database/4_KRASmut_card.csv</code></pre>
+</div>
+</div>
+</section>
+<section id="more-limited-matching-number-of-characters" class="slide level2">
+<h2>More limited matching: number of characters <code>???</code></h2>
+<p>Only double digit patient ID numbers</p>
+<div class="cell">
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">??</span>_<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>../../data/patient_database/10_TP53healthy_card.csv
+../../data/patient_database/10_TP53mut_card.csv
+../../data/patient_database/11_TP53healthy_card.csv
+../../data/patient_database/11_TP53mut_card.csv
+../../data/patient_database/12_TP53healthy_card.csv
+../../data/patient_database/12_TP53mut_card.csv</code></pre>
+</div>
+</div>
+</section>
+<section id="more-specific-matches-ranges" class="slide level2">
+<h2>More specific matches: ranges <code>[]</code></h2>
+<p>Ranges of numbers:</p>
+<div class="cell">
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">ls</span> ../../data/patient_database/[2-4]_<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>../../data/patient_database/2_KRASmut_card.csv
+../../data/patient_database/3_KRASmut_card.csv
+../../data/patient_database/4_KRASmut_card.csv</code></pre>
+</div>
+</div>
+<p>List of characters:</p>
+<div class="cell">
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>_[T,K]<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>../../data/patient_database/10_TP53healthy_card.csv
+../../data/patient_database/10_TP53mut_card.csv
+../../data/patient_database/11_TP53healthy_card.csv
+../../data/patient_database/11_TP53mut_card.csv
+../../data/patient_database/12_TP53healthy_card.csv
+../../data/patient_database/12_TP53mut_card.csv
+../../data/patient_database/1_KRASmut_card.csv
+../../data/patient_database/2_KRASmut_card.csv
+../../data/patient_database/3_KRASmut_card.csv
+../../data/patient_database/4_KRASmut_card.csv
+../../data/patient_database/t_KRASmut_card.csv
+../../data/patient_database/t_TP53mut_card.csv</code></pre>
+</div>
+</div>
+</section>
+<section id="practice-06" class="slide level2">
+<h2>Practice 06:</h2>
+<p>Print all the files in the <code>patient_database/</code> directory that <strong>are not</strong> test (t_) or healthy samples.</p>
+</section>
+<section id="back-to-workjob-2" class="slide level2">
+<h2>Back to work…Job #2</h2>
+<p>Alright, now we have the tools to do a bit more work with files and directories</p>
+<ul>
+<li>take the files you captured <strong>Practice 6</strong> and combine them into a single <code>.csv</code> with column names.</li>
+</ul>
+<div class="cell">
+
+</div>
+</section>
+<section id="reflection-2" class="slide level2">
+<h2>Reflection:</h2>
+<ul>
+<li><p>We can operate on contents <code>files</code> : rows, columns</p></li>
+<li><p>We can operate on the contents of <code>directories</code> : <code>files</code> themselves</p></li>
+<li><p>One thing is missing from making this whole approach fast, reproducible, and easy – what do you think it is?</p></li>
+</ul>
 <div class="footer footer-default">
 
 </div>
