@@ -310,4 +310,12 @@ echo patient_id,gene,age,sex
 echo 1,KRAS,45,M
 ```
 
-These are each turned into a `file` and uploaded to the database as a `zip`
+These are each turned into a `file` and uploaded to the database as a `compressed archive`
+
+## Moving directories as files: `tar/gzip` 
+
+You might have seen these before: directories collapsed into a single, movable, compressed file:
+
+-   Laboratory patient data:
+
+    -   
