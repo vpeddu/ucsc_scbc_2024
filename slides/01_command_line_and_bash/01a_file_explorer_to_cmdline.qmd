@@ -120,7 +120,9 @@ Instead of the mouse, how will we navigate the command line?
 
 ## Anatomy of the `command line`
 
-![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-30%20at%202.02.21%20PM.png){fig-align="center"}
+```{r}
+cat('jovyan@jupyter-rreggiar-40ucsc-2eedu:~$')
+```
 
 `user` \@ `host` : `location` `$` *commands you enter here*
 
