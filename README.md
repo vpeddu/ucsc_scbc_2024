@@ -20,7 +20,7 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 [Lecture 01a: File explorer to command line](slides/01_command_line_and_bash/01a_file_explorer_to_cmdline.html)
 
-[Lecture 01b: Command line to Bash]()
+[Lecture 01b: Command line to Bash](slides/01_command_line_and_bash/01b_commandline_to_bash.html)
 
 [Lecture 01c: Scripting for Automation]()
 
