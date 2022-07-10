@@ -44,7 +44,7 @@ head -4 ../../data/talking.txt
 
 While this file has `.txt` as its *extension*, `FASTA` files usually have `.fa` or `.fasta` -- we'll use `.fa`
 
-What are some things we could do with/to `FASTA` files using the `commandline`?
+What are some things we could do with/to `FASTA` files using the `command line`?
 
 ## FASTA files contain sequence `data`
 
@@ -88,9 +88,7 @@ take a few moments to explore its contents, are there any problems with the data
 
 -   Extract the headers for **KRAS, EGFR, and TP53**
 
--   append the headers to a file `final_gene_panel.csv` with the first line:
-
-    -   `gene,chromosome,start,stop,strand`
+-   print the headers to a file `final_gene_panel.csv`
 
 -   these are the 'columns' of our data
 
@@ -196,9 +194,7 @@ for gene in KRAS EGFR TP53;do echo $gene; done
 
 -   **Iteratively** Extract the headers for **KRAS, EGFR, and TP53**
 
--   append the headers to a file `final_gene_panel.csv` with the first line:
-
-    -   `gene,chromosome,start,stop,strand`
+-   print the headers to a file `final_gene_panel.csv`
 
 -   these are the 'columns' of our data
 
@@ -206,16 +202,113 @@ for gene in KRAS EGFR TP53;do echo $gene; done
 
 ## A tool to work with columns: `cut` 
 
-Commandline has yet another built-in tool that can help us out
+-   Your `final_gene_panel.csv` should look something like with **rows** on each line and columns separated by `,`:
 
--   Your `final_gene_panel.csv` should look something like:
+    ```{bash}
+    cat ../../data/final_gene_panel.csv
+    ```
+
+-   Which is *fine*, but still has the `>` from the `FASTA` format -- not something we need anymore
+
+    ```{bash, echo=T}
+    # cut -d [delimeter] -f [fields/columns] [input_file]
+    cut -d'>' -f2 ../../data/final_gene_panel.csv
+    ```
+
+## `cut`, explained
+
+`cut` can separate files based on `delimeters` that represent columns. It can also return only columns you want:
+
+```{bash, echo=T}
+# cut -d [delimeter] -f [fields/columns] [input_file]
+cut -d'>' -f2 ../../data/final_gene_panel.csv
+```
+
+-   in this case, we want to cut the file by `>` and keep only the right (second) slice of data: `-f2`
+
+## Practice 05: 
+
+1.  Run:
+
+```{bash, echo=T}
+cut -d'>' -f1 ../../data/final_gene_panel.csv
+```
+
+-   why doesn't this return anything?
+
+2.  replace the `delimeter` with `,`
+    1.  what does setting `-f2` return
+
+    2.  `-f1,4,5` ?
+
+## One product, two steps
+
+What we've just seen with `grep` and `cut` has split the one thing we want to do (making a csv) into two steps:
+
+1.  `grep` and print to the csv
+2.  `cut` the file to remove the `>` leftover
+
+instead, we can combine these commands with the `pipe` operator: `|`
+
+```{bash, echo=T}
+grep 'KRAS' ../../data/gene_panel_database.fa | cut -d'>' -f2
+```
+
+## Complex commands: `piping`
+
+Imagine a literal piece of plumbing connecting the `output` of one command to the `input` of another. This is the `|` operator's function
+
+-   `|` takes the output from the left side and uses it as input on the right:
+
+```{bash, echo=T}
+# cmd 1 | cmd 2 [input is derived from | ]
+echo 'gene,chromosome,start,stop,strand' | cut -d, -f1,3,5
+```
+
+```{bash, echo=T}
+# cmd 1 | cmd 2 [input derived from | ] | cmd 3 [input derived from | ]
+pwd
+pwd | cut -d/ -f8 | cut -d_ -f5
+```
+
+## Job #1.75: Putting it all together
+
+`gene_panel_database.fa` contains genes you do not want to check for mutations.
+
+-   **Iteratively** Extract the headers for **KRAS, EGFR, and TP53** and trim off the carrot `>`
+
+-   **append** the headers to a file `final_gene_panel.csv` with the first line:
+
+    -   `gene,chromosome,start,stop,strand`
+
+-   these are the 'columns' of our data
+
+-   `csv` -- 'comma-separated values'
+
+## Reflection:
+
+We just did a lot, what stands out to you as the most generally useful thing?
+
+What is the most frustrating/slow/annoying aspect of how we're doing things now?
+
+## Prediction:
+
+How can we use `for` `pipe` and `$variables` to make our Bioinformatics job smoother?
+
+## Back to work
+
+Your `for loop` works well and you could see your Bioinformatics job getting a lot easier if you could just save this kind of stuff and use it on the other noisy data the Lab sends you....
 
 ## From command line to Bash
 
 This is a bit of a misnomer, as we're already using the `Bash commandline`.
 
-However, we're going to start moving away from doing *everything* on the commandline
+However, we're going to start moving away from doing *everything* on the command line
 
 Why do you think?
 
-## Saving the code you run and re-using it
+## Some formalizing and review of the Bash command line interface
+
+Up till now, we've bee
+
+## 

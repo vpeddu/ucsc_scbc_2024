@@ -431,7 +431,7 @@
 </div>
 </div>
 <p>While this file has <code>.txt</code> as its <em>extension</em>, <code>FASTA</code> files usually have <code>.fa</code> or <code>.fasta</code> – we’ll use <code>.fa</code></p>
-<p>What are some things we could do with/to <code>FASTA</code> files using the <code>commandline</code>?</p>
+<p>What are some things we could do with/to <code>FASTA</code> files using the <code>command line</code>?</p>
 </section>
 <section id="fasta-files-contain-sequence-data" class="slide level2">
 <h2>FASTA files contain sequence <code>data</code></h2>
@@ -478,10 +478,7 @@
 <p><code>gene_panel_database.fa</code> contains genes you do not want to check for mutations.</p>
 <ul>
 <li><p>Extract the headers for <strong>KRAS, EGFR, and TP53</strong></p></li>
-<li><p>append the headers to a file <code>final_gene_panel.csv</code> with the first line:</p>
-<ul>
-<li><code>gene,chromosome,start,stop,strand</code></li>
-</ul></li>
+<li><p>print the headers to a file <code>final_gene_panel.csv</code></p></li>
 <li><p>these are the ‘columns’ of our data</p></li>
 <li><p><code>csv</code> – ‘comma-separated values’</p></li>
 </ul>
@@ -609,7 +606,116 @@ TP53</code></pre>
 <p><code>gene_panel_database.fa</code> contains genes you do not want to check for mutations.</p>
 <ul>
 <li><p><strong>Iteratively</strong> Extract the headers for <strong>KRAS, EGFR, and TP53</strong></p></li>
-<li><p>append the headers to a file <code>final_gene_panel.csv</code> with the first line:</p>
+<li><p>print the headers to a file <code>final_gene_panel.csv</code></p></li>
+<li><p>these are the ‘columns’ of our data</p></li>
+<li><p><code>csv</code> – ‘comma-separated values’</p></li>
+</ul>
+</section>
+<section id="a-tool-to-work-with-columns-cut" class="slide level2">
+<h2>A tool to work with columns: <code>cut</code></h2>
+<ul>
+<li><p>Your <code>final_gene_panel.csv</code> should look something like with <strong>rows</strong> on each line and columns separated by <code>,</code>:</p>
+<div class="cell">
+<div class="cell-output-stdout">
+<pre><code>&gt;gene,chromosome,start,stop,strand
+&gt;EGFR,chr7,55019278,55170544,+
+&gt;KRAS,chr12,25215441,25245384,-
+&gt;TP53,chr17,7661939,7676594,- </code></pre>
+</div>
+</div></li>
+<li><p>Which is <em>fine</em>, but still has the <code>&gt;</code> from the <code>FASTA</code> format – not something we need anymore</p>
+<div class="cell">
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># cut -d [delimeter] -f [fields/columns] [input_file]</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f2</span> ../../data/final_gene_panel.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>gene,chromosome,start,stop,strand
+EGFR,chr7,55019278,55170544,+
+KRAS,chr12,25215441,25245384,-
+TP53,chr17,7661939,7676594,- </code></pre>
+</div>
+</div></li>
+</ul>
+</section>
+<section id="cut-explained" class="slide level2">
+<h2><code>cut</code>, explained</h2>
+<p><code>cut</code> can separate files based on <code>delimeters</code> that represent columns. It can also return only columns you want:</p>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># cut -d [delimeter] -f [fields/columns] [input_file]</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f2</span> ../../data/final_gene_panel.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>gene,chromosome,start,stop,strand
+EGFR,chr7,55019278,55170544,+
+KRAS,chr12,25215441,25245384,-
+TP53,chr17,7661939,7676594,- </code></pre>
+</div>
+</div>
+<ul>
+<li>in this case, we want to cut the file by <code>&gt;</code> and keep only the right (second) slice of data: <code>-f2</code></li>
+</ul>
+</section>
+<section id="practice-05" class="slide level2">
+<h2>Practice 05:</h2>
+<ol type="1">
+<li>Run:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f1</span> ../../data/final_gene_panel.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>why doesn’t this return anything?</li>
+</ul>
+<ol start="2" type="1">
+<li>replace the <code>delimeter</code> with <code>,</code>
+<ol type="1">
+<li><p>what does setting <code>-f2</code> return</p></li>
+<li><p><code>-f1,4,5</code> ?</p></li>
+</ol></li>
+</ol>
+</section>
+<section id="one-product-two-steps" class="slide level2">
+<h2>One product, two steps</h2>
+<p>What we’ve just seen with <code>grep</code> and <code>cut</code> has split the one thing we want to do (making a csv) into two steps:</p>
+<ol type="1">
+<li><code>grep</code> and print to the csv</li>
+<li><code>cut</code> the file to remove the <code>&gt;</code> leftover</li>
+</ol>
+<p>instead, we can combine these commands with the <code>pipe</code> operator: <code>|</code></p>
+<div class="cell">
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">grep</span> <span class="st">'KRAS'</span> ../../data/gene_panel_database.fa <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>KRAS,chr12,25215441,25245384,-</code></pre>
+</div>
+</div>
+</section>
+<section id="complex-commands-piping" class="slide level2">
+<h2>Complex commands: <code>piping</code></h2>
+<p>Imagine a literal piece of plumbing connecting the <code>output</code> of one command to the <code>input</code> of another. This is the <code>|</code> operator’s function</p>
+<ul>
+<li><code>|</code> takes the output from the left side and uses it as input on the right:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># cmd 1 | cmd 2 [input is derived from | ]</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="bu">echo</span> <span class="st">'gene,chromosome,start,stop,strand'</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1,3,5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>gene,start,strand</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash cell-code number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># cmd 1 | cmd 2 [input derived from | ] | cmd 3 [input derived from | ]</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="bu">pwd</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="bu">pwd</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span>/ <span class="at">-f8</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d_</span> <span class="at">-f5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides/01_command_line_and_bash
+bash</code></pre>
+</div>
+</div>
+</section>
+<section id="job-1.75-putting-it-all-together" class="slide level2">
+<h2>Job #1.75: Putting it all together</h2>
+<p><code>gene_panel_database.fa</code> contains genes you do not want to check for mutations.</p>
+<ul>
+<li><p><strong>Iteratively</strong> Extract the headers for <strong>KRAS, EGFR, and TP53</strong> and trim off the carrot <code>&gt;</code></p></li>
+<li><p><strong>append</strong> the headers to a file <code>final_gene_panel.csv</code> with the first line:</p>
 <ul>
 <li><code>gene,chromosome,start,stop,strand</code></li>
 </ul></li>
@@ -617,21 +723,31 @@ TP53</code></pre>
 <li><p><code>csv</code> – ‘comma-separated values’</p></li>
 </ul>
 </section>
-<section id="a-tool-to-work-with-columns-cut" class="slide level2">
-<h2>A tool to work with columns: <code>cut</code></h2>
-<p>Commandline has yet another built-in tool that can help us out</p>
-<ul>
-<li>Your <code>final_gene_panel.csv</code> should look something like:</li>
-</ul>
+<section id="reflection-1" class="slide level2">
+<h2>Reflection:</h2>
+<p>We just did a lot, what stands out to you as the most generally useful thing?</p>
+<p>What is the most frustrating/slow/annoying aspect of how we’re doing things now?</p>
+</section>
+<section id="prediction-1" class="slide level2">
+<h2>Prediction:</h2>
+<p>How can we use <code>for</code> <code>pipe</code> and <code>$variables</code> to make our Bioinformatics job smoother?</p>
+</section>
+<section id="back-to-work" class="slide level2">
+<h2>Back to work</h2>
+<p>Your <code>for loop</code> works well and you could see your Bioinformatics job getting a lot easier if you could just save this kind of stuff and use it on the other noisy data the Lab sends you….</p>
 </section>
 <section id="from-command-line-to-bash" class="slide level2">
 <h2>From command line to Bash</h2>
 <p>This is a bit of a misnomer, as we’re already using the <code>Bash commandline</code>.</p>
-<p>However, we’re going to start moving away from doing <em>everything</em> on the commandline</p>
+<p>However, we’re going to start moving away from doing <em>everything</em> on the command line</p>
 <p>Why do you think?</p>
 </section>
-<section id="saving-the-code-you-run-and-re-using-it" class="slide level2">
-<h2>Saving the code you run and re-using it</h2>
+<section id="some-formalizing-and-review-of-the-bash-command-line-interface" class="slide level2">
+<h2>Some formalizing and review of the Bash command line interface</h2>
+<p>Up till now, we’ve bee</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
 <div class="footer footer-default">
 
 </div>
