@@ -299,16 +299,15 @@ How can we use `for` `pipe` and `$variables` to make our Bioinformatics job smoo
 
 Your `for loop` works well and you could see your Bioinformatics job getting a lot easier if you could just save this kind of stuff and use it on the other noisy data the Lab sends you....
 
-## From command line to Bash
+Before that, let's work with the patient data the Lab has also sent over
 
-This is a bit of a misnomer, as we're already using the `Bash commandline`.
+## Job #2: Figuring out who the patients are
 
-However, we're going to start moving away from doing *everything* on the command line
+Each patient comes into the Lab and fills out a card:
 
-Why do you think?
+```{bash}
+echo patient_id,gene,age,sex
+echo 1,KRAS,45,M
+```
 
-## Some formalizing and review of the Bash command line interface
-
-Up till now, we've bee
-
-## 
+These are each turned into a `file` and uploaded to the database as a `zip`
