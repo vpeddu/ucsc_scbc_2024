@@ -1,0 +1,39 @@
+---
+title: "01c: Scripting for Automation"
+author: "Roman E. Reggiardo"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+format: 
+  revealjs:
+    chalkboard: true
+    smooth-scroll: true
+editor: visual
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+# need a dummy R chunk to get Bash chunks to work 
+library(knitr) opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
+```
+
+## Scenario: Automating molecular diagnosis
+
+Yep, you're still a **Bioinformatician** working for a molecular diagnostics lab
+
+-   The only thing is, you need to start thinking about doing these kind of analyses again and again and again and again ......
+
+-   The lab says they might send 100's if not 1000's of samples through your approach
+
+## Job #3: Automate your approaches in a Bash script
+
+But first.....what's a script?
+
+## Kinda like a tool but you make it yourself
+
+Really, its any assembly of code to accomplish a task or multiple tasks.
+
+-   When you combine a bunch of tools that already exist, you might call it a `pipeline`
+
+-   Similar to the `pipe` we just learned about, this means outputs flowing into inputs for the next set of commands
+
+## 
