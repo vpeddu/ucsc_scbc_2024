@@ -19,7 +19,8 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 #### Command Line and Bash
 
-[Lecture 01a: File explorer to command line](slides/01_command_line_and_bash/01a_file_explorer_to_cmdline.html)
+[Lecture 01a: File explorer to command line](slides/01_command_line_and_bash/01a_file_explorer_to_cmdline.html)  
+	- [July 12th notes](notes/01a_2022_12_07_notes.pdf)  
 
 [Lecture 01b: Command line to Bash](slides/01_command_line_and_bash/01b_commandline_to_bash.html)
 
