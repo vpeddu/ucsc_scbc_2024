@@ -19,6 +19,8 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 #### Command Line and Bash
 
+[Protected: Summer 2022 Lecture Recordings](https://drive.google.com/drive/u/0/folders/1moFGC46iYBm41Lx4wD3f7wuMm8tuFlis)  
+
 [Lecture 01a: File explorer to command line](slides/01_command_line_and_bash/01a_file_explorer_to_cmdline.html)  
 	- [July 12th notes](notes/01a_2022_12_07_notes.pdf)  
 
