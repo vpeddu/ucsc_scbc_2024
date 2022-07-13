@@ -10,6 +10,8 @@ Here is the course material in HTML and/or PDF slide format.
 If you need to go from HTML (website-like interaction) please print to PDF from your browser.
 *Recommended to open these in a new tab: ctrl- or cmd- click*
 
+[Protected: Summer 2022 Lecture Recordings](https://drive.google.com/drive/u/0/folders/1moFGC46iYBm41Lx4wD3f7wuMm8tuFlis)  
+
 #### Background and Setup resources
 
 [Lecture 00a: Pacific Research Platform access and intro guide](slides/00_intro_and_background/00a_prp_resource.pdf)
@@ -18,8 +20,6 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 	- [annotated slides](notes/00b_notes.pdf)
 
 #### Command Line and Bash
-
-[Protected: Summer 2022 Lecture Recordings](https://drive.google.com/drive/u/0/folders/1moFGC46iYBm41Lx4wD3f7wuMm8tuFlis)  
 
 [Lecture 01a: File explorer to command line](slides/01_command_line_and_bash/01a_file_explorer_to_cmdline.html)  
 	- [July 12th notes](notes/01a_2022_12_07_notes.pdf)  
