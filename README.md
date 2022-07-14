@@ -30,3 +30,7 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 [Lecture 01c: Scripting for Automation]()
 
 [Project 01: Making a command line tool -- Iterative Variant Calling]()
+
+### Other Resources  
+
+[UCSC Genome Browser](genome.ucsc.edu)  
