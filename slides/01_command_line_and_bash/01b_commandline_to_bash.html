@@ -388,7 +388,7 @@
 <section id="title-slide" class="center">
   <h1 class="title">01b: From Command Line to Bash</h1>
   <p class="author">Roman E. Reggiardo</p>
-  <p class="date">09 July, 2022</p>
+  <p class="date">18 July, 2022</p>
 </section>
 
 <section id="scenario-mutations" class="slide level2">
@@ -474,6 +474,16 @@
 <li><p><code>csv</code> – ‘comma-separated values’</p></li>
 </ul>
 </section>
+<section id="job-1-output" class="slide level2">
+<h2>Job #1 output</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>&gt;KRAS,chr12,25215441,25245384,-
+&gt;EGFR,chr7,55019278,55170544,+
+&gt;TP53,chr17,7661939,7676594,- </code></pre>
+</div>
+</div>
+</section>
 <section id="genes-means-we-do-everything-3x.but-not-by-hand" class="slide level2">
 <h2>3 genes means we do everything 3x….but not by hand</h2>
 <p>You’re trying to avoid running the same code over and over to extract the information you need from <code>gene_panel_database.fa</code></p>
@@ -481,7 +491,7 @@
 <li>To do this, we can use <code>for loops</code> to ‘iterate’ over our genes</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>KRAS
 EGFR
@@ -493,7 +503,7 @@ TP53</code></pre>
 <h2>Iteration: For Loops and Variables</h2>
 <p>The <code>for loop</code> command structure is as follows</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><p>for <code>variable name</code></p>
@@ -515,23 +525,23 @@ TP53</code></pre>
 </ul>
 <p>Try:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> gene<span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> gene<span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">for</span> genetic_element <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">for</span> genetic_element <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="variables-in-for-loops-1" class="slide level2">
 <h2>Variables in For Loops</h2>
 <p>Output:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> gene<span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> gene<span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>gene
 gene
@@ -539,17 +549,17 @@ gene</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="cf">for</span> genetic_element <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="cf">for</span> genetic_element <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>bash: -c: line 0: syntax error near unexpected token `echo'
 bash: -c: line 0: `for gene in KRAS EGFR TP53; echo $gene; done'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>bash: -c: line 1: syntax error: unexpected end of file</code></pre>
 </div>
@@ -560,7 +570,7 @@ bash: -c: line 0: `for gene in KRAS EGFR TP53; echo $gene; done'</code></pre>
 <h2>Variables in For Loops</h2>
 <p>Fixed:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>KRAS
 EGFR
@@ -568,7 +578,7 @@ TP53</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="cf">for</span> genetic_element <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$genetic_element</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="cf">for</span> genetic_element <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$genetic_element</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>KRAS
 EGFR
@@ -576,7 +586,7 @@ TP53</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>KRAS
 EGFR
@@ -584,7 +594,7 @@ TP53</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="cf">for</span> gene <span class="kw">in</span> KRAS EGFR TP53<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$gene</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>KRAS
 EGFR
@@ -602,24 +612,37 @@ TP53</code></pre>
 <li><p><code>csv</code> – ‘comma-separated values’</p></li>
 </ul>
 </section>
+<section id="job-1.5-output" class="slide level2">
+<h2>Job #1.5 output</h2>
+<p>accomplished in one <code>for loop</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>&gt;KRAS,chr12,25215441,25245384,-
+&gt;EGFR,chr7,55019278,55170544,+
+&gt;TP53,chr17,7661939,7676594,- </code></pre>
+</div>
+</div>
+</section>
 <section id="a-tool-to-work-with-columns-cut" class="slide level2">
 <h2>A tool to work with columns: <code>cut</code></h2>
 <ul>
 <li><p>Your <code>final_gene_panel.csv</code> should look something like with <strong>rows</strong> on each line and columns separated by <code>,</code>:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>&gt;EGFR,chr7,55019278,55170544,+
-&gt;KRAS,chr12,25215441,25245384,-
-&gt;TP53,chr17,7661939,7676594,- </code></pre>
+<pre><code>gene,chromosome,start,stop,strand
+KRAS,chr12,25215441,25245384,-
+EGFR,chr7,55019278,55170544,+
+TP53,chr17,7661939,7676594,- </code></pre>
 </div>
 </div></li>
 <li><p>Which is <em>fine</em>, but still has the <code>&gt;</code> from the <code>FASTA</code> format – not something we need anymore</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># cut -d [delimeter] -f [fields/columns] [input_file]</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f2</span> ../../data/final_gene_panel.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># cut -d [delimeter] -f [fields/columns] [input_file]</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f2</span> ../../data/final_gene_panel.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>EGFR,chr7,55019278,55170544,+
+<pre><code>gene,chromosome,start,stop,strand
 KRAS,chr12,25215441,25245384,-
+EGFR,chr7,55019278,55170544,+
 TP53,chr17,7661939,7676594,- </code></pre>
 </div>
 </div></li>
@@ -629,11 +652,12 @@ TP53,chr17,7661939,7676594,- </code></pre>
 <h2><code>cut</code>, explained</h2>
 <p><code>cut</code> can separate files based on <code>delimeters</code> that represent columns. It can also return only columns you want:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># cut -d [delimeter] -f [fields/columns] [input_file]</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f2</span> ../../data/final_gene_panel.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># cut -d [delimeter] -f [fields/columns] [input_file]</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f2</span> ../../data/final_gene_panel.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>EGFR,chr7,55019278,55170544,+
+<pre><code>gene,chromosome,start,stop,strand
 KRAS,chr12,25215441,25245384,-
+EGFR,chr7,55019278,55170544,+
 TP53,chr17,7661939,7676594,- </code></pre>
 </div>
 </div>
@@ -647,7 +671,13 @@ TP53,chr17,7661939,7676594,- </code></pre>
 <li>Run:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f1</span> ../../data/final_gene_panel.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f1</span> ../../data/final_gene_panel.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>gene,chromosome,start,stop,strand
+KRAS,chr12,25215441,25245384,-
+EGFR,chr7,55019278,55170544,+
+TP53,chr17,7661939,7676594,- </code></pre>
+</div>
 </div>
 <ul>
 <li>why doesn’t this return anything?</li>
@@ -660,6 +690,38 @@ TP53,chr17,7661939,7676594,- </code></pre>
 </ol></li>
 </ol>
 </section>
+<section id="practice-05-output" class="slide level2">
+<h2>Practice 05 output:</h2>
+<ol type="1">
+<li></li>
+</ol>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>gene,chromosome,start,stop,strand
+KRAS,chr12,25215441,25245384,-
+EGFR,chr7,55019278,55170544,+
+TP53,chr17,7661939,7676594,- </code></pre>
+</div>
+</div>
+<p>2.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>chromosome
+chr12
+chr7
+chr17</code></pre>
+</div>
+</div>
+<p>3.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>gene,stop,strand
+KRAS,25245384,-
+EGFR,55170544,+
+TP53,7676594,- </code></pre>
+</div>
+</div>
+</section>
 <section id="one-product-two-steps" class="slide level2">
 <h2>One product, two steps</h2>
 <p>What we’ve just seen with <code>grep</code> and <code>cut</code> has split the one thing we want to do (making a csv) into two steps:</p>
@@ -669,7 +731,7 @@ TP53,chr17,7661939,7676594,- </code></pre>
 </ol>
 <p>instead, we can combine these commands with the <code>pipe</code> operator: <code>|</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">grep</span> <span class="st">'KRAS'</span> ../../data/gene_panel_database.fa <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">grep</span> <span class="st">'KRAS'</span> ../../data/gene_panel_database.fa <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span><span class="st">'&gt;'</span> <span class="at">-f2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>KRAS,chr12,25215441,25245384,-</code></pre>
 </div>
@@ -682,16 +744,16 @@ TP53,chr17,7661939,7676594,- </code></pre>
 <li><code>|</code> takes the output from the left side and uses it as input on the right:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># cmd 1 | cmd 2 [input is derived from | ]</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="bu">echo</span> <span class="st">'gene,chromosome,start,stop,strand'</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1,3,5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># cmd 1 | cmd 2 [input is derived from | ]</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="bu">echo</span> <span class="st">'gene,chromosome,start,stop,strand'</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d,</span> <span class="at">-f1,3,5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>gene,start,strand</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># cmd 1 | cmd 2 [input derived from | ] | cmd 3 [input derived from | ]</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="bu">pwd</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a><span class="bu">pwd</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span>/ <span class="at">-f8</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d_</span> <span class="at">-f5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># cmd 1 | cmd 2 [input derived from | ] | cmd 3 [input derived from | ]</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="bu">pwd</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="bu">pwd</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span>/ <span class="at">-f8</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d_</span> <span class="at">-f5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/Users/rreggiar/Documents/teaching/ucsc_scbc_2022/slides/01_command_line_and_bash
 bash</code></pre>
@@ -711,6 +773,17 @@ bash</code></pre>
 <li><p><code>csv</code> – ‘comma-separated values’</p></li>
 </ul>
 </section>
+<section id="job-1.75-output" class="slide level2">
+<h2>Job #1.75 output:</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>gene,chromosome,start,stop,strand
+KRAS,chr12,25215441,25245384,-
+EGFR,chr7,55019278,55170544,+
+TP53,chr17,7661939,7676594,- </code></pre>
+</div>
+</div>
+</section>
 <section id="reflection-1" class="slide level2">
 <h2>Reflection:</h2>
 <p>We just did a lot, what stands out to you as the most generally useful thing?</p>
@@ -718,7 +791,21 @@ bash</code></pre>
 </section>
 <section id="prediction-1" class="slide level2">
 <h2>Prediction:</h2>
-<p>How can we use <code>for</code> <code>pipe</code> and <code>$variables</code> to make our Bioinformatics job smoother?</p>
+<p>How can we use <code>for</code> , <code>pipe</code> and <code>$variables</code> to make our Bioinformatics job smoother?</p>
+</section>
+<section id="summary-job-1" class="slide level2">
+<h2>Summary Job #1</h2>
+<ul>
+<li><p><code>for</code> loops enable iteration over multiple values represented by a variable</p>
+<ul>
+<li>uses <code>in</code> , <code>do</code> , and <code>done</code></li>
+</ul></li>
+<li><p><code>cut</code> separated files based on <code>delimeters</code> (<code>-d</code> ) and allows you to select fields/columns (<code>-f</code>) to return</p></li>
+<li><p><code>|</code> pipe operator the end-to-end connection of commands by supplying the output from the left side of <code>|</code> as input to the right side.</p>
+<ul>
+<li><code>cmd1 | cmd2 {output from 1} | cmd3 {output from 2}  …</code></li>
+</ul></li>
+</ul>
 </section>
 <section id="back-to-work" class="slide level2">
 <h2>Back to work</h2>
@@ -747,21 +834,24 @@ bash</code></pre>
 <li><p>We won’t go into detail here, safe to use the following command to <code>unzip</code> the archive into the original multiple-file format</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> patient_database.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> patient_database.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="working-with-multiple-files-in-directory-wildcards" class="slide level2">
 <h2>Working with multiple files in directory: <code>wildcards</code></h2>
+<ul>
+<li><code>*</code> is called ‘grob’ and it matches or completes to <em>anything</em></li>
+</ul>
 <p>Matching everything that begins with <code>4</code> or <code>12</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">cat</span> ../../data/patient_database/4<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">cat</span> ../../data/patient_database/4<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>patient_id,gene,age,sex
 4,KRAS,74,F</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">ls</span> ../../data/patient_database/12<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">ls</span> ../../data/patient_database/12<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>../../data/patient_database/12_TP53healthy_card.csv
 ../../data/patient_database/12_TP53mut_card.csv</code></pre>
@@ -772,7 +862,7 @@ bash</code></pre>
 <h2>Grob continued <code>*</code></h2>
 <p>Matching everything with <code>healthy</code> in it</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>healthy<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>healthy<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>../../data/patient_database/10_TP53healthy_card.csv
 ../../data/patient_database/11_TP53healthy_card.csv
@@ -781,8 +871,8 @@ bash</code></pre>
 </div>
 <p>Matching everything that ends in <code>.csv</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># and truncating a little since there are alot</span></span>
-<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>.csv <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># and truncating a little since there are alot</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>.csv <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>../../data/patient_database/10_TP53healthy_card.csv
 ../../data/patient_database/10_TP53mut_card.csv
@@ -797,11 +887,38 @@ bash</code></pre>
 </div>
 </div>
 </section>
+<section id="practice-06-grob" class="slide level2">
+<h2>Practice 06: Grob</h2>
+<p>Print all the file names that contain <code>mut</code></p>
+<h3 id="output">output</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>../../data/patient_database/10_TP53mut_card.csv
+../../data/patient_database/11_TP53mut_card.csv
+../../data/patient_database/12_TP53mut_card.csv
+../../data/patient_database/1_KRASmut_card.csv
+../../data/patient_database/2_KRASmut_card.csv
+../../data/patient_database/3_KRASmut_card.csv
+../../data/patient_database/4_KRASmut_card.csv
+../../data/patient_database/5_EGFRmut_card.csv
+../../data/patient_database/6_EGFRmut_card.csv
+../../data/patient_database/7_EGFRmut_card.csv
+../../data/patient_database/8_EGFRmut_card.csv
+../../data/patient_database/9_EGFRmut_card.csv
+../../data/patient_database/t_EGFRmut_card.csv
+../../data/patient_database/t_KRASmut_card.csv
+../../data/patient_database/t_TP53mut_card.csv</code></pre>
+</div>
+</div>
+</section>
 <section id="more-limited-matching-number-of-characters" class="slide level2">
 <h2>More limited matching: number of characters <code>???</code></h2>
+<ul>
+<li><code>?</code> is used when the <em>number unknown of characters</em> is known</li>
+</ul>
 <p>Only double digit patient ID numbers</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">??</span>_<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">??</span>_<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>../../data/patient_database/10_TP53healthy_card.csv
 ../../data/patient_database/10_TP53mut_card.csv
@@ -812,11 +929,56 @@ bash</code></pre>
 </div>
 </div>
 </section>
+<section id="more-limited-matching-number-of-characters-1" class="slide level2">
+<h2>More limited matching: number of characters <code>???</code></h2>
+<p>Only single digit patient ID numbers</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">?</span>_<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>../../data/patient_database/1_KRASmut_card.csv
+../../data/patient_database/2_KRASmut_card.csv
+../../data/patient_database/3_KRASmut_card.csv
+../../data/patient_database/4_KRASmut_card.csv
+../../data/patient_database/5_EGFRmut_card.csv
+../../data/patient_database/6_EGFRmut_card.csv
+../../data/patient_database/7_EGFRmut_card.csv
+../../data/patient_database/8_EGFRmut_card.csv
+../../data/patient_database/9_EGFRmut_card.csv
+../../data/patient_database/t_EGFRmut_card.csv
+../../data/patient_database/t_KRASmut_card.csv
+../../data/patient_database/t_TP53mut_card.csv</code></pre>
+</div>
+</div>
+</section>
+<section id="practice-07" class="slide level2">
+<h2>Practice 07: <code>?</code></h2>
+<p>Print all file names that contain <code>mut</code> without explicitly including <code>mut</code> in the command</p>
+<h3 id="output-1">output</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>../../data/patient_database/10_TP53mut_card.csv
+../../data/patient_database/11_TP53mut_card.csv
+../../data/patient_database/12_TP53mut_card.csv
+../../data/patient_database/1_KRASmut_card.csv
+../../data/patient_database/2_KRASmut_card.csv
+../../data/patient_database/3_KRASmut_card.csv
+../../data/patient_database/4_KRASmut_card.csv
+../../data/patient_database/5_EGFRmut_card.csv
+../../data/patient_database/6_EGFRmut_card.csv
+../../data/patient_database/7_EGFRmut_card.csv
+../../data/patient_database/8_EGFRmut_card.csv
+../../data/patient_database/9_EGFRmut_card.csv
+../../data/patient_database/t_EGFRmut_card.csv
+../../data/patient_database/t_KRASmut_card.csv
+../../data/patient_database/t_TP53mut_card.csv</code></pre>
+</div>
+</div>
+</section>
 <section id="more-specific-matches-ranges" class="slide level2">
 <h2>More specific matches: ranges <code>[]</code></h2>
 <p>Ranges of numbers:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">ls</span> ../../data/patient_database/[2-4]_<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">ls</span> ../../data/patient_database/[2-4]_<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>../../data/patient_database/2_KRASmut_card.csv
 ../../data/patient_database/3_KRASmut_card.csv
@@ -825,7 +987,7 @@ bash</code></pre>
 </div>
 <p>List of characters:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>_[T,K]<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1"></a><span class="fu">ls</span> ../../data/patient_database/<span class="pp">*</span>_[T,K]<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>../../data/patient_database/10_TP53healthy_card.csv
 ../../data/patient_database/10_TP53mut_card.csv
@@ -842,25 +1004,60 @@ bash</code></pre>
 </div>
 </div>
 </section>
-<section id="practice-06" class="slide level2">
-<h2>Practice 06:</h2>
-<p>Print all the files in the <code>patient_database/</code> directory that <strong>are not</strong> test (t_) or healthy samples.</p>
+<section id="practice-08" class="slide level2">
+<h2>Practice 08: <code>[]</code></h2>
+<p>Print all file names that start with digits 1 - 9</p>
+<h3 id="output-2">output</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>../../data/patient_database/1_KRASmut_card.csv
+../../data/patient_database/2_KRASmut_card.csv
+../../data/patient_database/3_KRASmut_card.csv
+../../data/patient_database/4_KRASmut_card.csv
+../../data/patient_database/5_EGFRmut_card.csv
+../../data/patient_database/6_EGFRmut_card.csv
+../../data/patient_database/7_EGFRmut_card.csv
+../../data/patient_database/8_EGFRmut_card.csv
+../../data/patient_database/9_EGFRmut_card.csv</code></pre>
+</div>
+</div>
 </section>
 <section id="back-to-workjob-2" class="slide level2">
 <h2>Back to work…Job #2</h2>
 <p>Alright, now we have the tools to do a bit more work with files and directories</p>
 <ul>
-<li>take the files you captured <strong>Practice 6</strong> and combine them into a single <code>.csv</code> with column names.</li>
+<li>take the files you captured <strong>Practice 08</strong> and combine them into a single <code>patient_data.csv</code> with column names.</li>
 </ul>
+</section>
+<section id="job-2-output" class="slide level2">
+<h2>Job #2 Output</h2>
+<p>on my mac (<code>zsh</code>), [1-9] include 10,11,12, this doesn’t seem to generalize</p>
 <div class="cell">
-
+<div class="cell-output cell-output-stdout">
+<pre><code>patient_id,gene,age,sex
+10,TP53,56,M
+11,TP53,56,M
+12,TP53,56,M
+1,KRAS,56,M
+2,KRAS,74,F
+3,KRAS,74,F
+4,KRAS,74,F
+5,EGFR,63,F
+6,EGFR,63,F
+7,EGFR,63,F
+8,EGFR,63,F
+9,EGFR,63,F</code></pre>
+</div>
 </div>
 </section>
 <section id="reflection-2" class="slide level2">
 <h2>Reflection:</h2>
 <ul>
 <li><p>We can operate on contents <code>files</code> : rows, columns</p></li>
-<li><p>We can operate on the contents of <code>directories</code> : <code>files</code> themselves</p></li>
+<li><p>We can operate on the contents of <code>directories</code> : <code>files</code> themselves</p>
+<ul>
+<li>this is greatly facilitated by <code>wildcards</code></li>
+</ul></li>
 <li><p>One thing is missing from making this whole approach fast, reproducible, and easy – what do you think it is?</p></li>
 </ul>
 <div class="footer footer-default">
