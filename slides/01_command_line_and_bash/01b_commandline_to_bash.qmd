@@ -94,6 +94,14 @@ take a few moments to explore its contents, are there any problems with the data
 
 -   `csv` -- 'comma-separated values'
 
+## Job #1 output
+
+```{bash}
+rm ../../data/final_gene_panel.fa
+for gene in KRAS EGFR TP53; do grep $gene ../../data/gene_panel_database.fa >> ../../data/final_gene_panel.fa; done
+cat ../../data/final_gene_panel.fa
+```
+
 ## 3 genes means we do everything 3x....but not by hand
 
 You're trying to avoid running the same code over and over to extract the information you need from `gene_panel_database.fa`
@@ -200,6 +208,14 @@ for gene in KRAS EGFR TP53;do echo $gene; done
 
 -   `csv` -- 'comma-separated values'
 
+## Job #1.5 output
+
+accomplished in one `for loop`
+
+```{bash}
+cat ../../data/final_gene_panel.fa
+```
+
 ## A tool to work with columns: `cut`
 
 -   Your `final_gene_panel.csv` should look something like with **rows** on each line and columns separated by `,`:
@@ -240,6 +256,26 @@ cut -d'>' -f1 ../../data/final_gene_panel.csv
     1.  what does setting `-f2` return
 
     2.  `-f1,4,5` ?
+
+## Practice 05 output:
+
+1.  
+
+```{bash}
+cut -d'>' -f1 ../../data/final_gene_panel.csv
+```
+
+2\.
+
+```{bash}
+cut -d',' -f2 ../../data/final_gene_panel.csv
+```
+
+3\.
+
+```{bash}
+cut -d',' -f1,4,5 ../../data/final_gene_panel.csv
+```
 
 ## One product, two steps
 
@@ -285,6 +321,13 @@ pwd | cut -d/ -f8 | cut -d_ -f5
 
 -   `csv` -- 'comma-separated values'
 
+## Job #1.75 output:
+
+```{bash}
+echo 'gene,chromosome,start,stop,strand' > ../../data/final_gene_panel.csv & for gene in KRAS EGFR TP53; do grep $gene ../../data/gene_panel_database.fa| cut -d'>' -f2 >> ../../data/final_gene_panel.csv; done
+cat ../../data/final_gene_panel.csv
+```
+
 ## Reflection:
 
 We just did a lot, what stands out to you as the most generally useful thing?
@@ -293,7 +336,19 @@ What is the most frustrating/slow/annoying aspect of how we're doing things now?
 
 ## Prediction:
 
-How can we use `for` `pipe` and `$variables` to make our Bioinformatics job smoother?
+How can we use `for` , `pipe` and `$variables` to make our Bioinformatics job smoother?
+
+## Summary Job #1
+
+-   `for` loops enable iteration over multiple values represented by a variable
+
+    -   uses `in` , `do` , and `done`
+
+-   `cut` separated files based on `delimeters` (`-d` ) and allows you to select fields/columns (`-f`) to return
+
+-   `|` pipe operator the end-to-end connection of commands by supplying the output from the left side of `|` as input to the right side.
+
+    -   `cmd1 | cmd2 {output from 1} | cmd3 {output from 2}  …`
 
 ## Back to work
 
@@ -328,6 +383,8 @@ tar -zxvf patient_database.gz
 
 ## Working with multiple files in directory: `wildcards`
 
+-   `*` is called 'grob' and it matches or completes to *anything*
+
 Matching everything that begins with `4` or `12`:
 
 ```{bash, echo=T}
@@ -353,12 +410,42 @@ Matching everything that ends in `.csv`
 ls ../../data/patient_database/*.csv | head
 ```
 
+## Practice 06: Grob
+
+Print all the file names that contain `mut`
+
+### output
+
+```{bash}
+ls ../../data/patient_database/*mut*
+```
+
 ## More limited matching: number of characters `???`
+
+-   `?` is used when the *number unknown of characters* is known
 
 Only double digit patient ID numbers
 
 ```{bash, echo=T}
 ls ../../data/patient_database/??_*.csv
+```
+
+## More limited matching: number of characters `???`
+
+Only single digit patient ID numbers
+
+```{bash, echo=T}
+ls ../../data/patient_database/?_*.csv
+```
+
+## Practice 07: `?` 
+
+Print all file names that contain `mut` without explicitly including `mut` in the command
+
+### output
+
+```{bash}
+ls ../../data/patient_database/*_???????_card.csv
 ```
 
 ## More specific matches: ranges `[]`
@@ -375,18 +462,29 @@ List of characters:
 ls ../../data/patient_database/*_[T,K]*.csv
 ```
 
-## Practice 06:
+## Practice 08: `[]`
 
-Print all the files in the `patient_database/` directory that **are not** test (t\_) or healthy samples.
+Print all file names that start with digits 1 - 9
+
+### output
+
+```{bash}
+ls ../../data/patient_database/[1-9]_*
+```
 
 ## Back to work...Job #2
 
 Alright, now we have the tools to do a bit more work with files and directories
 
--   take the files you captured **Practice 6** and combine them into a single `.csv` with column names.
+-   take the files you captured **Practice 08** and combine them into a single `patient_data.csv` with column names.
 
-```{bash, eval=F}
-cat [1-9]*_*mut* | grep -v 'patient'
+## Job #2 Output
+
+on my mac (`zsh`), \[1-9\] include 10,11,12, this doesn't seem to generalize
+
+```{bash}
+head -1 ../../data/patient_database/10_TP53healthy_card.csv > ../../data/patient_data.csv & cat ../../data/patient_database/[1-9]*_*mut* | grep -v 'patient' >> ../../data/patient_data.csv
+cat ../../data/patient_data.csv
 ```
 
 ## Reflection:
@@ -394,5 +492,7 @@ cat [1-9]*_*mut* | grep -v 'patient'
 -   We can operate on contents `files` : rows, columns
 
 -   We can operate on the contents of `directories` : `files` themselves
+
+    -   this is greatly facilitated by `wildcards`
 
 -   One thing is missing from making this whole approach fast, reproducible, and easy -- what do you think it is?
