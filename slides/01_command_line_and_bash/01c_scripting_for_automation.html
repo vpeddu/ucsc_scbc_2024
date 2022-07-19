@@ -474,7 +474,7 @@ echo "The contents of $PWD are:" $(ls)</code></pre>
 <pre><code>total 24
 -rw-r--r--  1 rreggiar  staff  477 Jul 18 22:16 first_script.sh
 -rwxr-xr-x  1 rreggiar  staff  374 Jul 18 22:38 process_lab_data.sh
--rwxr-xr-x  1 rreggiar  staff  532 Jul 18 22:16 second_script.sh
+-rwxr-xr-x  1 rreggiar  staff  635 Jul 18 22:56 second_script.sh
 -rw-r--r--  1 rreggiar  staff    0 Jul 18 22:16 skeleton.sh</code></pre>
 </div>
 </div>
@@ -487,7 +487,7 @@ echo "The contents of $PWD are:" $(ls)</code></pre>
 <pre><code>total 24
 -rw-r--r--  1 rreggiar  staff  477 Jul 18 22:16 first_script.sh
 -rwxr-xr-x  1 rreggiar  staff  374 Jul 18 22:38 process_lab_data.sh
--rwxr-xr-x  1 rreggiar  staff  532 Jul 18 22:16 second_script.sh
+-rwxr-xr-x  1 rreggiar  staff  635 Jul 18 22:56 second_script.sh
 -rw-r--r--  1 rreggiar  staff    0 Jul 18 22:16 skeleton.sh</code></pre>
 </div>
 </div>
@@ -514,7 +514,7 @@ echo "The contents of $PWD are:" $(ls)</code></pre>
 <pre><code>total 24
 -rwxr-xr-x  1 rreggiar  staff  477 Jul 18 22:16 first_script.sh
 -rwxr-xr-x  1 rreggiar  staff  374 Jul 18 22:38 process_lab_data.sh
--rwxr-xr-x  1 rreggiar  staff  532 Jul 18 22:16 second_script.sh
+-rwxr-xr-x  1 rreggiar  staff  635 Jul 18 22:56 second_script.sh
 -rw-r--r--  1 rreggiar  staff    0 Jul 18 22:16 skeleton.sh</code></pre>
 </div>
 </div>
@@ -721,6 +721,222 @@ TP53,chr17,7661939,7676594,- </code></pre>
 <section id="prediction-3" class="slide level2">
 <h2>Prediction:</h2>
 <p>What’s something else our tool might able to use that command line tools already use?</p>
+</section>
+<section id="defining-script-variables-at-the-cmd-line" class="slide level2">
+<h2>Defining script variables at the cmd line</h2>
+<p>Bash scripts have special values that correspond to <strong>positions</strong> on the command line:</p>
+<p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> ….</p>
+<p>that let us implement command line <strong>arguments</strong></p>
+<ul>
+<li>to see more, download this <a href="https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/code/second_script.sh">script</a></li>
+</ul>
+</section>
+<section id="checking-out-second_script.sh" class="slide level2">
+<h2>Checking out <code>second_script.sh</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1"></a><span class="bu">cd</span> ../../code</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">tail</span> <span class="at">-16</span> second_script.sh <span class="co"># for some reason only this many lines fit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># 2022-07-18
+
+cmd_recieved=$0 # $0 stores the command entered to the cmd line
+script_name=$(basename $0) # basename extracts the last entry in a path
+input_var=${1:-10} # $1 stores the first cmd line argument
+# :-VAL sets VAL to the default value of the argument
+print_info=${2:-"TRUE"} # $2 stores the second cmd line argument
+
+if [ $print_info = "TRUE" ]; then
+    echo "command: " $cmd_recieved
+    # echo can print combinations of text and variables
+    echo "The name of this script is: " $script_name 
+    # bash can do math inside $(())
+    echo $input_var / 2 = $((input_var/2))
+fi</code></pre>
+</div>
+</div>
+</section>
+<section id="running-second_script.sh" class="slide level2">
+<h2>Running <code>second_script.sh</code></h2>
+<p><em>remember to make <code>second_script.sh</code> executable</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="ex">../../code/second_script.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>command:  ../../code/second_script.sh
+The name of this script is:  second_script.sh
+10 / 2 = 5</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1"></a><span class="ex">../../code/second_script.sh</span> 640 TRUE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>command:  ../../code/second_script.sh
+The name of this script is:  second_script.sh
+640 / 2 = 320</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1"></a><span class="ex">../../code/second_script.sh</span> 1200 FALSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>what does each command line argument appear to do?</li>
+</ul>
+</section>
+<section id="breaking-down-second_script.sh" class="slide level2">
+<h2>Breaking down <code>second_script.sh</code></h2>
+<p>The top bit looks <strong>the same</strong> except for minor details</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">head</span> <span class="at">-4</span> ../../code/second_script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#!/usr/bin/env bash
+# second_script.sh
+# rreggiar@ucsc.edu
+# 2022-07-18</code></pre>
+</div>
+</div>
+<ul>
+<li>why this is sometimes called “boilerplate”</li>
+</ul>
+</section>
+<section id="variables-look-similar-but-values-are-different" class="slide level2">
+<h2>Variables look similar but values are different</h2>
+<p>Bash scripts have special values that correspond to <strong>positions</strong> on the command line:</p>
+<p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> ….</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">head</span> <span class="at">-10</span> ../../code/second_script.sh <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>cmd_recieved=$0 # $0 stores the command entered to the cmd line
+script_name=$(basename $0) # basename extracts the last entry in a path
+input_var=${1:-10} # $1 stores the first cmd line argument
+# :-VAL sets VAL to the default value of the argument
+print_info=${2:-"TRUE"} # $2 stores the second cmd line argument</code></pre>
+</div>
+</div>
+</section>
+<section id="is-the-command-itself" class="slide level2">
+<h2><code>$0</code> is the command itself</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">head</span> <span class="at">-10</span> ../../code/second_script.sh <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-5</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>cmd_recieved=$0 # $0 stores the command entered to the cmd line
+script_name=$(basename $0) # basename extracts the last entry in a path</code></pre>
+</div>
+</div>
+<p><code>basename</code> is a tool that takes the last entry in a path</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1"></a><span class="bu">cd</span> ../../code</span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">basename</span> <span class="va">$PWD</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>code</code></pre>
+</div>
+</div>
+</section>
+<section id="is-the-first-positional-argument" class="slide level2">
+<h2><code>$1</code> is the first positional argument</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">head</span> <span class="at">-10</span> ../../code/second_script.sh <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-3</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>input_var=${1:-10} # $1 stores the first cmd line argument
+# :-VAL sets VAL to the default value of the argument</code></pre>
+</div>
+</div>
+<p>Here, ${1:-10} is being used to set a default value of 10 for the first positional value <code>$1</code></p>
+</section>
+<section id="practice-11" class="slide level2">
+<h2>Practice 11:</h2>
+<p>Get <code>second_script.sh</code> to return <code>21436</code> as the output value</p>
+</section>
+<section id="is-the-second-positional-argument" class="slide level2">
+<h2><code>$2</code> is the second positional argument</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">head</span> <span class="at">-10</span> ../../code/second_script.sh <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>print_info=${2:-"TRUE"} # $2 stores the second cmd line argument</code></pre>
+</div>
+</div>
+<ul>
+<li>As before, we set a default arg of <code>TRUE</code> for <code>$2</code> , what happens if we change it?</li>
+</ul>
+</section>
+<section id="print_info-operates-in-an-if-statement" class="slide level2">
+<h2><code>$2</code> -&gt; <code>print_info</code> operates in an <code>if</code> statement</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">tail</span> <span class="at">-8</span> ../../code/second_script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>if [ $print_info = "TRUE" ]; then
+    echo "command: " $cmd_recieved
+    # echo can print combinations of text and variables
+    echo "The name of this script is: " $script_name 
+    # bash can do math inside $(())
+    echo $input_var / 2 = $((input_var/2))
+fi</code></pre>
+</div>
+</div>
+</section>
+<section id="another-critical-tool-if-statements" class="slide level2">
+<h2>Another critical tool: <code>IF</code> statements</h2>
+<p>Much like <code>for</code> loops, <code>if</code> statements are multi-part commands that enable complex logic</p>
+<ul>
+<li><p>if</p>
+<ul>
+<li><p>[ condition to check for ]</p>
+<ul>
+<li><p>then (equivalent to do)</p>
+<ul>
+<li>do something</li>
+</ul></li>
+<li><p>fi (equivalent to done)</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><code>if</code> statements allow us to <strong>check</strong> something before running</p>
+</section>
+<section id="practice-12" class="slide level2">
+<h2>Practice 12:</h2>
+<p>Try <code>if</code> on the command line</p>
+<ul>
+<li>change <code>tmp_var</code> around until you can figure out what condition we are “satisfying”</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1"></a><span class="va">tmp_var</span><span class="op">=</span>7</span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="cf">if</span> <span class="bu">[</span> <span class="va">$(($tmp_var</span><span class="op">%</span><span class="dv">2</span><span class="va">))</span> <span class="ot">=</span> 0 <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span> <span class="bu">echo</span> <span class="st">"satisfied"</span><span class="kw">;</span> <span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="prediction-4" class="slide level2">
+<h2>Prediction:</h2>
+<p>What is missing from the current <code>if</code> statement that might be useful to adapt to different challenges?</p>
+</section>
+<section id="job-3-pt.5" class="slide level2">
+<h2>Job #3 (pt.5)</h2>
+<ol type="1">
+<li>Add two command line arguments to <code>process_lab_data.sh</code>
+<ol type="1">
+<li><p><code>proc_genes</code></p></li>
+<li><p><code>proc_patients</code></p></li>
+</ol></li>
+<li>Use these variables to enable command-line control over whether <code>final_gene_panel.csv</code> and <code>patient_data.csv</code> are generated</li>
+</ol>
+</section>
+<section id="reflection-3" class="slide level2">
+<h2>Reflection:</h2>
+<p>How has writing scripts changed your view on command line and Bash programming?</p>
 <div class="footer footer-default">
 
 </div>

@@ -276,3 +276,146 @@ Compare my `first_script.sh` to your `process_lab_data.sh` -- what's different?
 ## Prediction:
 
 What's something else our tool might able to use that command line tools already use?
+
+## Defining script variables at the cmd line
+
+Bash scripts have special values that correspond to **positions** on the command line:
+
+`$0` `$1` `$2` `$3` ....
+
+that let us implement command line **arguments**
+
+-   to see more, download this [script](https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/code/second_script.sh)
+
+## Checking out `second_script.sh`
+
+```{bash, echo=T}
+cd ../../code
+tail -16 second_script.sh # for some reason only this many lines fit
+```
+
+## Running `second_script.sh` 
+
+*remember to make `second_script.sh` executable*
+
+```{bash, echo=T}
+../../code/second_script.sh
+```
+
+```{bash, echo=T}
+../../code/second_script.sh 640 TRUE
+```
+
+```{bash, echo=T}
+../../code/second_script.sh 1200 FALSE
+```
+
+-   what does each command line argument appear to do?
+
+## Breaking down `second_script.sh`
+
+The top bit looks **the same** except for minor details
+
+```{bash, echo=T}
+#| code-fold: true
+head -4 ../../code/second_script.sh
+```
+
+-   why this is sometimes called "boilerplate"
+
+## Variables look similar but values are different
+
+Bash scripts have special values that correspond to **positions** on the command line:
+
+`$0` `$1` `$2` `$3` ....
+
+```{bash, echo=T}
+#| code-fold: true
+head -10 ../../code/second_script.sh | tail -5
+```
+
+## `$0` is the command itself
+
+```{bash, echo=T}
+#| code-fold: true
+head -10 ../../code/second_script.sh | tail -5 | head -2
+```
+
+`basename` is a tool that takes the last entry in a path
+
+```{bash, echo=T}
+cd ../../code
+basename $PWD
+```
+
+## `$1` is the first positional argument
+
+```{bash, echo=T}
+#| code-fold: true
+head -10 ../../code/second_script.sh | tail -3 | head -2
+```
+
+Here, \${1:-10} is being used to set a default value of 10 for the first positional value `$1`
+
+## Practice 11:
+
+Get `second_script.sh` to return `21436` as the output value
+
+## `$2` is the second positional argument
+
+```{bash, echo=T}
+#| code-fold: true
+head -10 ../../code/second_script.sh | tail -1
+```
+
+-   As before, we set a default arg of `TRUE` for `$2` , what happens if we change it?
+
+## `$2` -\> `print_info` operates in an `if` statement
+
+```{bash, echo=T}
+#| code-fold: true
+tail -8 ../../code/second_script.sh
+```
+
+## Another critical tool: `IF` statements
+
+Much like `for` loops, `if` statements are multi-part commands that enable complex logic
+
+-   if
+
+    -   \[ condition to check for \]
+
+        -   then (equivalent to do)
+
+            -   do something
+
+        -   fi (equivalent to done)
+
+`if` statements allow us to **check** something before running
+
+## Practice 12:
+
+Try `if` on the command line
+
+-   change `tmp_var` around until you can figure out what condition we are "satisfying"
+
+```{bash, echo=TRUE}
+tmp_var=7
+if [ $(($tmp_var%2)) = 0 ]; then echo "satisfied"; fi
+```
+
+## Prediction:
+
+What is missing from the current `if` statement that might be useful to adapt to different challenges?
+
+## Job #3 (pt.5)
+
+1.  Add two command line arguments to `process_lab_data.sh`
+    1.  `proc_genes`
+
+    2.  `proc_patients`
+2.  Use these variables to enable command-line control over whether `final_gene_panel.csv` and `patient_data.csv` are generated
+
+## Reflection:
+
+How has writing scripts changed your view on command line and Bash programming?
