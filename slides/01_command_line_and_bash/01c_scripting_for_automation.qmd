@@ -120,11 +120,11 @@ How could we use permission to modify the role and use of files we create and us
 
 ## Exploring `first_script.sh` and reviewing commands
 
-Take a look at the first three lines, the **shebang** and **boilerplate**
+Take a look at the first four lines, the **shebang** and **boilerplate**
 
 ```{bash, eval=T, echo=T}
 #| code-fold: true
-head -3 ../../code/first_script.sh
+head -4 ../../code/first_script.sh
 ```
 
 The **shebang**, tells the computer we're using **bash** and where to find it to run the script -- try `which bash` in cmd line
@@ -133,16 +133,108 @@ The **shebang**, tells the computer we're using **bash** and where to find it to
 head -1 ../../code/first_script.sh
 ```
 
--   The rest is just a contact and a date of completion
+-   The rest is just useful information
 
 ## Exploring `first_script.sh`: variable assignment
 
 ```{bash, eval=T, echo=T}
 #| code-fold: true
-grep '=' ../../code/first_script.sh | grep -v 'echo'
+grep '=' ../../code/first_script.sh
 ```
 
 Assigning **variables** is just `variable` = `value`
+
+**Try**: `echo $script_name` on the command line, what do you get?
+
+## Exploring `first_script.sh`: operations
+
+```{bash, eval=T, echo=T}
+#| code-fold: true
+tail -7 ../../code/first_script.sh
+```
+
+Three `echo` commands, each using either a variable or a command along with text
+
+## Prediction:
+
+Where could `echo` with text and variables be useful going forward?
+
+## Exploring `first_script.sh`: using cmd line tools
+
+```{bash, eval=T, echo=T}
+#| code-fold: true
+tail -2 ../../code/first_script.sh
+```
+
+Sometimes we'll need to explicitly mark the tool for execution use `$()` , otherwise we'll just print `ls` here
+
+## Practice 10:
+
+On the **command line**, run each `echo` line from `first_script.sh`, what do you get?
+
+```{bash}
+grep 'echo' ../../code/first_script.sh | grep -v '^#'
+```
+
+why do some work and others don't?
+
+## Practice 10 output:
+
+1\.
+
+```{bash}
+echo "The name of this script is:" $script_name
+```
+
+2\.
+
+```{bash}
+echo "Your user ID is:" $input_userID
+```
+
+3\.
+
+```{bash}
+cd ../../code
+echo "Your present working directory is:" $PWD
+```
+
+4\.
+
+```{bash}
+cd ../../code
+echo "The contents of $PWD are:" $(ls)
+```
+
+## Reflection:
+
+Why do you think the script is structured like this:
+
+1.  Shebang
+2.  Variable assignment
+3.  Operations
+
+?
+
+## Prediction:
+
+Since we can't see the output of commands in a script like we can at the command line, how can we test our work to make sure its doing what we expect?
+
+## Remember...Job #3!
+
+#### Automate your gene and patient extraction in a Bash script
+
+1.  create a bash script: `process_lab_data.sh` , open it in `text editor`
+
+2.  within `process_lab_data.sh`
+
+    1.  write shebang/boilerplate code in the first lines
+
+    2.  make a `gene_db` variable that stores the **path** to your `gene_panel_database.fa`
+
+    3.  make a `patient_db` variable that stores the **path** to your `patient_database` **directory**
+
+## More script automation: special values
 
 Special values:
 

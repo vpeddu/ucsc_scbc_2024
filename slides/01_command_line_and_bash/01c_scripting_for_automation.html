@@ -432,19 +432,20 @@
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">cat</span> ../../code/first_script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#!/usr/bin/env bash
+# first_script.sh
 # rreggiar@ucsc.edu
 # 2022-07-18
 
-script_path=$0 # $0 stores the name of the script in its path
-script_name=$(basename $0) # basename extracts the last entry in a path
-input_var=${1:-10} # $1 stores the first cmd line argument
-input_userID=$UID # $USER is a global bash variable that stores your user ID
+script_name='first_script.sh' # variable_name = value
+input_userID='1000' 
 
-echo The name of this script is: $script_name 
+echo "The name of this script is:" $script_name 
 # echo can print combinations of text and variables
-echo Your user ID is: $input_userID
-# bash can do math inside $(())
-echo $input_var / 2 = $((input_var/2))</code></pre>
+echo "Your user ID is:" $input_userID
+# some values, like PWD, are stored in 'global' variables
+echo "Your present working directory is:" $PWD
+# to execute cmdline tools, wrap them in $()
+echo "The contents of $PWD are:" $(ls)</code></pre>
 </div>
 </div>
 </section>
@@ -456,8 +457,9 @@ echo $input_var / 2 = $((input_var/2))</code></pre>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="ex">./first_script.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The name of this script is: first_script.sh
-Your user ID is: 501
-10 / 2 = 5</code></pre>
+Your user ID is: 1000
+Your present working directory is: /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code
+The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: first_script.sh second_script.sh skeleton.sh</code></pre>
 </div>
 </div>
 <p>uh oh…permission denied? this is our computer!!</p>
@@ -472,8 +474,9 @@ Your user ID is: 501
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ls</span> <span class="at">-l</span> ../../code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>total 8
--rwxr-xr-x  1 rreggiar  staff  532 Jul 18 16:41 first_script.sh
+<pre><code>total 16
+-rwxr-xr-x  1 rreggiar  staff  477 Jul 18 17:57 first_script.sh
+-rwxr-xr-x  1 rreggiar  staff  532 Jul 18 17:16 second_script.sh
 -rw-r--r--  1 rreggiar  staff    0 Jul 18 15:53 skeleton.sh</code></pre>
 </div>
 </div>
@@ -483,8 +486,9 @@ Your user ID is: 501
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ls</span> <span class="at">-l</span> ../../code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>total 8
--rwxr-xr-x  1 rreggiar  staff  532 Jul 18 16:41 first_script.sh
+<pre><code>total 16
+-rwxr-xr-x  1 rreggiar  staff  477 Jul 18 17:57 first_script.sh
+-rwxr-xr-x  1 rreggiar  staff  532 Jul 18 17:16 second_script.sh
 -rw-r--r--  1 rreggiar  staff    0 Jul 18 15:53 skeleton.sh</code></pre>
 </div>
 </div>
@@ -508,8 +512,9 @@ Your user ID is: 501
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ls</span> <span class="at">-l</span> ../../code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>total 8
--rwxr-xr-x  1 rreggiar  staff  532 Jul 18 16:41 first_script.sh
+<pre><code>total 16
+-rwxr-xr-x  1 rreggiar  staff  477 Jul 18 17:57 first_script.sh
+-rwxr-xr-x  1 rreggiar  staff  532 Jul 18 17:16 second_script.sh
 -rw-r--r--  1 rreggiar  staff    0 Jul 18 15:53 skeleton.sh</code></pre>
 </div>
 </div>
@@ -521,14 +526,15 @@ Your user ID is: 501
 </section>
 <section id="exploring-first_script.sh-and-reviewing-commands" class="slide level2">
 <h2>Exploring <code>first_script.sh</code> and reviewing commands</h2>
-<p>Take a look at the first three lines, the <strong>shebang</strong> and <strong>boilerplate</strong></p>
+<p>Take a look at the first four lines, the <strong>shebang</strong> and <strong>boilerplate</strong></p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">head</span> <span class="at">-3</span> ../../code/first_script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">head</span> <span class="at">-4</span> ../../code/first_script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#!/usr/bin/env bash
+# first_script.sh
 # rreggiar@ucsc.edu
 # 2022-07-18</code></pre>
 </div>
@@ -540,7 +546,7 @@ Your user ID is: 501
 </div>
 </div>
 <ul>
-<li>The rest is just a contact and a date of completion</li>
+<li>The rest is just useful information</li>
 </ul>
 </section>
 <section id="exploring-first_script.sh-variable-assignment" class="slide level2">
@@ -548,16 +554,120 @@ Your user ID is: 501
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">grep</span> <span class="st">'='</span> ../../code/first_script.sh <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="st">'echo'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">grep</span> <span class="st">'='</span> ../../code/first_script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>script_path=$0 # $0 stores the name of the script in its path
-script_name=$(basename $0) # basename extracts the last entry in a path
-input_var=${1:-10} # $1 stores the first cmd line argument
-input_userID=$UID # $USER is a global bash variable that stores your user ID</code></pre>
+<pre><code>script_name='first_script.sh' # variable_name = value
+input_userID='1000' </code></pre>
 </div>
 </div>
 <p>Assigning <strong>variables</strong> is just <code>variable</code> = <code>value</code></p>
+<p><strong>Try</strong>: <code>echo $script_name</code> on the command line, what do you get?</p>
+</section>
+<section id="exploring-first_script.sh-operations" class="slide level2">
+<h2>Exploring <code>first_script.sh</code>: operations</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">tail</span> <span class="at">-7</span> ../../code/first_script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># echo can print combinations of text and variables
+echo "Your user ID is:" $input_userID
+# some values, like PWD, are stored in 'global' variables
+echo "Your present working directory is:" $PWD
+# to execute cmdline tools, wrap them in $()
+echo "The contents of $PWD are:" $(ls)</code></pre>
+</div>
+</div>
+<p>Three <code>echo</code> commands, each using either a variable or a command along with text</p>
+</section>
+<section id="prediction-1" class="slide level2">
+<h2>Prediction:</h2>
+<p>Where could <code>echo</code> with text and variables be useful going forward?</p>
+</section>
+<section id="exploring-first_script.sh-using-cmd-line-tools" class="slide level2">
+<h2>Exploring <code>first_script.sh</code>: using cmd line tools</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">tail</span> <span class="at">-2</span> ../../code/first_script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>echo "The contents of $PWD are:" $(ls)</code></pre>
+</div>
+</div>
+<p>Sometimes we’ll need to explicitly mark the tool for execution use <code>$()</code> , otherwise we’ll just print <code>ls</code> here</p>
+</section>
+<section id="practice-10" class="slide level2">
+<h2>Practice 10:</h2>
+<p>On the <strong>command line</strong>, run each <code>echo</code> line from <code>first_script.sh</code>, what do you get?</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>echo "The name of this script is:" $script_name 
+echo "Your user ID is:" $input_userID
+echo "Your present working directory is:" $PWD
+echo "The contents of $PWD are:" $(ls)</code></pre>
+</div>
+</div>
+<p>why do some work and others don’t?</p>
+</section>
+<section id="practice-10-output" class="slide level2">
+<h2>Practice 10 output:</h2>
+<p>1.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>The name of this script is:</code></pre>
+</div>
+</div>
+<p>2.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Your user ID is:</code></pre>
+</div>
+</div>
+<p>3.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Your present working directory is: /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code</code></pre>
+</div>
+</div>
+<p>4.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: first_script.sh second_script.sh skeleton.sh</code></pre>
+</div>
+</div>
+</section>
+<section id="reflection-1" class="slide level2">
+<h2>Reflection:</h2>
+<p>Why do you think the script is structured like this:</p>
+<ol type="1">
+<li>Shebang</li>
+<li>Variable assignment</li>
+<li>Operations</li>
+</ol>
+<p>?</p>
+</section>
+<section id="prediction-2" class="slide level2">
+<h2>Prediction:</h2>
+<p>Since we can’t see the output of commands in a script like we can at the command line, how can we test our work to make sure its doing what we expect?</p>
+</section>
+<section id="rememberjob-3" class="slide level2">
+<h2>Remember…Job #3!</h2>
+<h4 id="automate-your-gene-and-patient-extraction-in-a-bash-script">Automate your gene and patient extraction in a Bash script</h4>
+<ol type="1">
+<li><p>create a bash script: <code>process_lab_data.sh</code> , open it in <code>text editor</code></p></li>
+<li><p>within <code>process_lab_data.sh</code></p>
+<ol type="1">
+<li><p>write shebang/boilerplate code in the first lines</p></li>
+<li><p>make a <code>gene_db</code> variable that stores the <strong>path</strong> to your <code>gene_panel_database.fa</code></p></li>
+<li><p>make a <code>patient_db</code> variable that stores the <strong>path</strong> to your <code>patient_database</code> <strong>directory</strong></p></li>
+</ol></li>
+</ol>
+</section>
+<section id="more-script-automation-special-values" class="slide level2">
+<h2>More script automation: special values</h2>
 <p>Special values:</p>
 <ol start="0" type="1">
 <li><code>$0</code></li>
