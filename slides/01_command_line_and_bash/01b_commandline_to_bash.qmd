@@ -378,7 +378,7 @@ You might have seen these before: directories collapsed into a single, movable, 
 -   We won't go into detail here, safe to use the following command to `unzip` the archive into the original multiple-file format
 
 ```{bash, echo=T, eval=F}
-tar -zxvf patient_database.gz
+tar -zxvf patient_database.tar.gz
 ```
 
 ## Working with multiple files in directory: `wildcards`
