@@ -23,9 +23,13 @@ Yep, you're still a **Bioinformatician** working for a molecular diagnostics lab
 
 -   The lab says they might send 100's if not 1000's of samples through your approach
 
+## Prediction:
+
+What's a script?
+
 ## Job #3: Automate your approaches in a Bash script
 
-But first.....what's a script?
+But first.....what's a **script**?
 
 ## Kinda like a tool but you make it yourself
 
@@ -35,4 +39,113 @@ Really, its any assembly of code to accomplish a task or multiple tasks.
 
 -   Similar to the `pipe |` we just learned about, this means outputs flowing into inputs for the next set of commands
 
-## 
+## From command-line to command...code?
+
+A bash **script** exists in a type of **text file**
+
+-   they have special extensions: `.sh`
+
+-   and need to be `executable` (more on this in a minute)
+
+### navigate into your `code` directory
+
+and download this [script](https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/rer_slides/code/first_script.sh)
+
+## So, what do we do with new files?
+
+Take a look! Remember, `#` means the following is a comment
+
+```{bash, echo=T}
+cat ../../code/first_script.sh
+```
+
+## What do we do with scripts? 
+
+Execute them!
+
+```{bash, echo=T, error=T}
+cd ../../code
+./first_script.sh
+```
+
+uh oh...permission denied? this is our computer!!
+
+-   We need to change the permissions on the file to allow `execution`
+
+## Quick aside: permissions for execution
+
+Files are protected from being used incorrectly by `permissions`
+
+we can view permissions with
+
+```{bash, echo=T}
+ls -l ../../code
+```
+
+## Viewing permissions
+
+```{bash, echo=T}
+ls -l ../../code
+```
+
+three main types of permission are available:
+
+1.  `r` - read
+2.  `w` - write
+3.  `x` - execute
+
+what types of permission does `first_script.sh` have?
+
+## Let's just add some execution permissions and move on...
+
+To make a file `executable`
+
+```{bash, echo=T}
+# chmod -- change file modes, +x adds exec to file
+# chmod [mode change] [input file]
+chmod +x ../../code/first_script.sh
+```
+
+now, what does this look like?
+
+```{bash, echo=T}
+ls -l ../../code
+```
+
+notice the added `x`'s
+
+## Reflection:
+
+How could we use permission to modify the role and use of files we create and use?
+
+## Exploring `first_script.sh` and reviewing commands
+
+Take a look at the first three lines, the **shebang** and **boilerplate**
+
+```{bash, eval=T, echo=T}
+#| code-fold: true
+head -3 ../../code/first_script.sh
+```
+
+The **shebang**, tells the computer we're using **bash** and where to find it to run the script -- try `which bash` in cmd line
+
+```{bash, echo=F}
+head -1 ../../code/first_script.sh
+```
+
+-   The rest is just a contact and a date of completion
+
+## Exploring `first_script.sh`: variable assignment
+
+```{bash, eval=T, echo=T}
+#| code-fold: true
+grep '=' ../../code/first_script.sh | grep -v 'echo'
+```
+
+Assigning **variables** is just `variable` = `value`
+
+Special values:
+
+0.  `$0`
+1.  `$1`
+2.  `$USER`
