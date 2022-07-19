@@ -276,11 +276,3 @@ Compare my `first_script.sh` to your `process_lab_data.sh` -- what's different?
 ## Prediction:
 
 What's something else our tool might able to use that command line tools already use?
-
-## More script automation: special values
-
-Special values:
-
-0.  `$0`
-1.  `$1`
-2.  `$USER`
