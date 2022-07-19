@@ -373,7 +373,7 @@ You might have seen these before: directories collapsed into a single, movable, 
 
 -   Laboratory patient data:
 
-    -   [link](https://github.com/rreggiar/ucsc_scbc_2022/raw/master/data/patient_database.gz) (right click and copy)
+    -   [link](https://github.com/rreggiar/ucsc_scbc_2022/raw/master/data/patient_database.tar.gz) (right click and copy)
 
 -   We won't go into detail here, safe to use the following command to `unzip` the archive into the original multiple-file format
 
@@ -438,7 +438,7 @@ Only single digit patient ID numbers
 ls ../../data/patient_database/?_*.csv
 ```
 
-## Practice 07: `?` 
+## Practice 07: `?`
 
 Print all file names that contain `mut` without explicitly including `mut` in the command
 
