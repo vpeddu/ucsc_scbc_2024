@@ -456,10 +456,7 @@ echo "The contents of $PWD are:" $(ls)</code></pre>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="bu">cd</span> ../../code</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="ex">./first_script.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>The name of this script is: first_script.sh
-Your user ID is: 1000
-Your present working directory is: /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code
-The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: first_script.sh process_lab_data.sh second_script.sh skeleton.sh</code></pre>
+<pre><code>bash: line 1: ./first_script.sh: Permission denied</code></pre>
 </div>
 </div>
 <p>uh oh…permission denied? this is our computer!!</p>
@@ -475,10 +472,10 @@ The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: firs
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ls</span> <span class="at">-l</span> ../../code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>total 24
--rwxr-xr-x  1 rreggiar  staff  477 Jul 18 17:57 first_script.sh
+-rw-r--r--  1 rreggiar  staff  477 Jul 18 22:16 first_script.sh
 -rwxr-xr-x  1 rreggiar  staff  323 Jul 18 18:34 process_lab_data.sh
--rwxr-xr-x  1 rreggiar  staff  532 Jul 18 17:16 second_script.sh
--rw-r--r--  1 rreggiar  staff    0 Jul 18 15:53 skeleton.sh</code></pre>
+-rwxr-xr-x  1 rreggiar  staff  532 Jul 18 22:16 second_script.sh
+-rw-r--r--  1 rreggiar  staff    0 Jul 18 22:16 skeleton.sh</code></pre>
 </div>
 </div>
 </section>
@@ -488,10 +485,10 @@ The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: firs
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ls</span> <span class="at">-l</span> ../../code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>total 24
--rwxr-xr-x  1 rreggiar  staff  477 Jul 18 17:57 first_script.sh
+-rw-r--r--  1 rreggiar  staff  477 Jul 18 22:16 first_script.sh
 -rwxr-xr-x  1 rreggiar  staff  323 Jul 18 18:34 process_lab_data.sh
--rwxr-xr-x  1 rreggiar  staff  532 Jul 18 17:16 second_script.sh
--rw-r--r--  1 rreggiar  staff    0 Jul 18 15:53 skeleton.sh</code></pre>
+-rwxr-xr-x  1 rreggiar  staff  532 Jul 18 22:16 second_script.sh
+-rw-r--r--  1 rreggiar  staff    0 Jul 18 22:16 skeleton.sh</code></pre>
 </div>
 </div>
 <p>three main types of permission are available:</p>
@@ -515,10 +512,10 @@ The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: firs
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ls</span> <span class="at">-l</span> ../../code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>total 24
--rwxr-xr-x  1 rreggiar  staff  477 Jul 18 17:57 first_script.sh
+-rwxr-xr-x  1 rreggiar  staff  477 Jul 18 22:16 first_script.sh
 -rwxr-xr-x  1 rreggiar  staff  323 Jul 18 18:34 process_lab_data.sh
--rwxr-xr-x  1 rreggiar  staff  532 Jul 18 17:16 second_script.sh
--rw-r--r--  1 rreggiar  staff    0 Jul 18 15:53 skeleton.sh</code></pre>
+-rwxr-xr-x  1 rreggiar  staff  532 Jul 18 22:16 second_script.sh
+-rw-r--r--  1 rreggiar  staff    0 Jul 18 22:16 skeleton.sh</code></pre>
 </div>
 </div>
 <p>notice the added <code>x</code>’s</p>

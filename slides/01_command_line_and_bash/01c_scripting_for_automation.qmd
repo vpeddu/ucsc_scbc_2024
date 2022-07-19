@@ -15,6 +15,10 @@ library(knitr)
 opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 ```
 
+```{bash, include=FALSE}
+chmod -x ../../code/first_script.sh
+```
+
 ## Scenario: Automating molecular diagnosis
 
 Yep, you're still a **Bioinformatician** working for a molecular diagnostics lab
@@ -59,7 +63,7 @@ Take a look! Remember, `#` means the following is a comment
 cat ../../code/first_script.sh
 ```
 
-## What do we do with scripts? 
+## What do we do with scripts?
 
 Execute them!
 
