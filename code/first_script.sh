@@ -3,9 +3,9 @@
 # rreggiar@ucsc.edu
 # 2022-07-18
 
-script_name='first_script.sh' # basename extracts the last entry in a path
-input_var='10' # $1 stores the first cmd line argument
-input_userID='1000' # $USER is a global bash variable that stores your user ID
+script_name='first_script.sh' # variable_name = value
+input_var='10' 
+input_userID='1000' 
 
 echo The name of this script is: $script_name 
 # echo can print combinations of text and variables
