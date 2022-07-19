@@ -294,7 +294,7 @@ cd ../../code
 tail -16 second_script.sh # for some reason only this many lines fit
 ```
 
-## Running `second_script.sh` 
+## Running `second_script.sh`
 
 *remember to make `second_script.sh` executable*
 
