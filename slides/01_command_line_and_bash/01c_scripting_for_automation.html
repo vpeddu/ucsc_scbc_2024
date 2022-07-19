@@ -459,7 +459,7 @@ echo "The contents of $PWD are:" $(ls)</code></pre>
 <pre><code>The name of this script is: first_script.sh
 Your user ID is: 1000
 Your present working directory is: /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code
-The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: first_script.sh second_script.sh skeleton.sh</code></pre>
+The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: first_script.sh process_lab_data.sh second_script.sh skeleton.sh</code></pre>
 </div>
 </div>
 <p>uh oh…permission denied? this is our computer!!</p>
@@ -474,8 +474,9 @@ The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: firs
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ls</span> <span class="at">-l</span> ../../code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>total 16
+<pre><code>total 24
 -rwxr-xr-x  1 rreggiar  staff  477 Jul 18 17:57 first_script.sh
+-rwxr-xr-x  1 rreggiar  staff  323 Jul 18 18:34 process_lab_data.sh
 -rwxr-xr-x  1 rreggiar  staff  532 Jul 18 17:16 second_script.sh
 -rw-r--r--  1 rreggiar  staff    0 Jul 18 15:53 skeleton.sh</code></pre>
 </div>
@@ -486,8 +487,9 @@ The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: firs
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ls</span> <span class="at">-l</span> ../../code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>total 16
+<pre><code>total 24
 -rwxr-xr-x  1 rreggiar  staff  477 Jul 18 17:57 first_script.sh
+-rwxr-xr-x  1 rreggiar  staff  323 Jul 18 18:34 process_lab_data.sh
 -rwxr-xr-x  1 rreggiar  staff  532 Jul 18 17:16 second_script.sh
 -rw-r--r--  1 rreggiar  staff    0 Jul 18 15:53 skeleton.sh</code></pre>
 </div>
@@ -512,8 +514,9 @@ The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: firs
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ls</span> <span class="at">-l</span> ../../code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>total 16
+<pre><code>total 24
 -rwxr-xr-x  1 rreggiar  staff  477 Jul 18 17:57 first_script.sh
+-rwxr-xr-x  1 rreggiar  staff  323 Jul 18 18:34 process_lab_data.sh
 -rwxr-xr-x  1 rreggiar  staff  532 Jul 18 17:16 second_script.sh
 -rw-r--r--  1 rreggiar  staff    0 Jul 18 15:53 skeleton.sh</code></pre>
 </div>
@@ -635,7 +638,7 @@ echo "The contents of $PWD are:" $(ls)</code></pre>
 <p>4.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: first_script.sh second_script.sh skeleton.sh</code></pre>
+<pre><code>The contents of /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/code are: first_script.sh process_lab_data.sh second_script.sh skeleton.sh</code></pre>
 </div>
 </div>
 </section>
@@ -653,17 +656,68 @@ echo "The contents of $PWD are:" $(ls)</code></pre>
 <h2>Prediction:</h2>
 <p>Since we can’t see the output of commands in a script like we can at the command line, how can we test our work to make sure its doing what we expect?</p>
 </section>
-<section id="rememberjob-3" class="slide level2">
-<h2>Remember…Job #3!</h2>
+<section id="rememberjob-3-pt.-1" class="slide level2">
+<h2>Remember…Job #3! (pt.&nbsp;1)</h2>
 <h4 id="automate-your-gene-and-patient-extraction-in-a-bash-script">Automate your gene and patient extraction in a Bash script</h4>
 <ol type="1">
-<li><p>create a bash script: <code>process_lab_data.sh</code> , open it in <code>text editor</code></p></li>
-<li><p>within <code>process_lab_data.sh</code></p>
+<li>create a bash script: <code>process_lab_data.sh</code> , open it in <code>text editor</code>
+<ol type="1">
+<li>make it <code>executable</code></li>
+</ol></li>
+<li>within <code>process_lab_data.sh</code>
 <ol type="1">
 <li><p>write shebang/boilerplate code in the first lines</p></li>
 <li><p>make a <code>gene_db</code> variable that stores the <strong>path</strong> to your <code>gene_panel_database.fa</code></p></li>
-<li><p>make a <code>patient_db</code> variable that stores the <strong>path</strong> to your <code>patient_database</code> <strong>directory</strong></p></li>
+<li><p>make a <code>patient_db</code> variable that stores the <strong>path</strong> to your <code>patient_database/</code> <strong>directory</strong></p></li>
 </ol></li>
+</ol>
+</section>
+<section id="job-3-pt.2" class="slide level2">
+<h2>Job #3 (pt.2)</h2>
+<p>Test your code by introducing <code>echo</code> commands that:</p>
+<ol type="1">
+<li>print the paths to your data</li>
+<li>print the contents of the <code>patient_database</code> directory</li>
+</ol>
+<h4 id="output">Output:</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>gene database:  /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/data/gene_panel_database.fa
+patient database:  /Users/rreggiar/Documents/teaching/ucsc_scbc_2022/data/patient_database/</code></pre>
+</div>
+</div>
+</section>
+<section id="job-3-pt.3" class="slide level2">
+<h2>Job #3 (pt.3)</h2>
+<ol type="1">
+<li><p>Introduce the <strong>commands</strong> that generate <code>final_gene_panel.fa</code> by operating on the variable you’ve set to <code>gene_panel_database.fa</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>gene,chromosome,start,stop,strand
+KRAS,chr12,25215441,25245384,-
+EGFR,chr7,55019278,55170544,+
+TP53,chr17,7661939,7676594,- </code></pre>
+</div>
+</div></li>
+<li><p>Introduce the <strong>commands</strong> that generate <code>patient_data.csv</code> by operating on the variable you’ve set to <code>patient_database/</code> (output is just <code>head -3</code>)</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>patient_id,gene,age,sex
+10,TP53,56,M
+11,TP53,56,M</code></pre>
+</div>
+</div></li>
+</ol>
+</section>
+<section id="reflection-2" class="slide level2">
+<h2>Reflection:</h2>
+<p>Compare my <code>first_script.sh</code> to your <code>process_lab_data.sh</code> – what’s different?</p>
+</section>
+<section id="job-3-pt.4" class="slide level2">
+<h2>Job #3 (pt.4)</h2>
+<ol type="1">
+<li>Add comments to your code to explain what you’re doing on each line</li>
+<li>Add <code>echo</code> commands to report to the user which step the code is on</li>
 </ol>
 </section>
 <section id="more-script-automation-special-values" class="slide level2">

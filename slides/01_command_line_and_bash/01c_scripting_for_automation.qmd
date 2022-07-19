@@ -220,19 +220,54 @@ Why do you think the script is structured like this:
 
 Since we can't see the output of commands in a script like we can at the command line, how can we test our work to make sure its doing what we expect?
 
-## Remember...Job #3!
+## Remember...Job #3! (pt. 1)
 
 #### Automate your gene and patient extraction in a Bash script
 
 1.  create a bash script: `process_lab_data.sh` , open it in `text editor`
-
+    1.  make it `executable`
 2.  within `process_lab_data.sh`
-
     1.  write shebang/boilerplate code in the first lines
 
     2.  make a `gene_db` variable that stores the **path** to your `gene_panel_database.fa`
 
-    3.  make a `patient_db` variable that stores the **path** to your `patient_database` **directory**
+    3.  make a `patient_db` variable that stores the **path** to your `patient_database/` **directory**
+
+## Job #3 (pt.2)
+
+Test your code by introducing `echo` commands that:
+
+1.  print the paths to your data
+2.  print the contents of the `patient_database` directory
+
+#### Output:
+
+```{bash}
+bash ../../code/process_lab_data.sh
+```
+
+## Job #3 (pt.3)
+
+1.  Introduce the **commands** that generate `final_gene_panel.fa` by operating on the variable you've set to `gene_panel_database.fa`
+
+    ```{bash}
+    cat ../../data/final_gene_panel.csv
+    ```
+
+2.  Introduce the **commands** that generate `patient_data.csv` by operating on the variable you've set to `patient_database/` (output is just `head -3`)
+
+    ```{bash}
+    cat ../../data/patient_data.csv | head -3
+    ```
+
+## Reflection:
+
+Compare my `first_script.sh` to your `process_lab_data.sh` -- what's different?
+
+## Job #3 (pt.4)
+
+1.  Add comments to your code to explain what you're doing on each line
+2.  Add `echo` commands to report to the user which step the code is on
 
 ## More script automation: special values
 
