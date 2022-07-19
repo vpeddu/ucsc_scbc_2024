@@ -53,7 +53,7 @@ A bash **script** exists in a type of **text file**
 
 ### navigate into your `code` directory
 
-and download this [script](https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/rer_slides/code/first_script.sh)
+and download this [script](https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/code/first_script.sh)
 
 ## So, what do we do with new files?
 
