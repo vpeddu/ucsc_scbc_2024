@@ -269,6 +269,10 @@ Compare my `first_script.sh` to your `process_lab_data.sh` -- what's different?
 1.  Add comments to your code to explain what you're doing on each line
 2.  Add `echo` commands to report to the user which step the code is on
 
+## Prediction:
+
+What's something else our tool might able to use that command line tools already use?
+
 ## More script automation: special values
 
 Special values:
