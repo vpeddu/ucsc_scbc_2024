@@ -32,7 +32,7 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 	- [July 18th lecture](https://drive.google.com/file/d/1ldKZAdnd7l46ZeVqKQeyrGl15C6IOAn5/view?usp=sharing)  
 	- [July 18th notes]()  
 
-[Lecture 01c: Scripting for Automation]()
+[Lecture 01c: Scripting for Automation](slides/01_command_line_and_bash/01c_scripting_for_automation.html)  
 
 [Project 01: Making a command line tool -- Iterative Variant Calling]()
 
