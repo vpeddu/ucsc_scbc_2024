@@ -15,7 +15,7 @@ library(knitr)
 opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 ```
 
-```{bash, include=FALSE}
+```{bash, include=FALSE, eval=TRUE}
 chmod -x ../../code/first_script.sh
 ```
 
