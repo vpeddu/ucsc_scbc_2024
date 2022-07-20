@@ -34,7 +34,9 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 	- [July 19th notes](notes/01b_2022_19_07.pdf)  
 
 [Lecture 01c: Scripting for Automation](slides/01_command_line_and_bash/01c_scripting_for_automation.html)  
-	- [July 19th Lecture](https://drive.google.com/file/d/1yAbbao8sMQsRzqRTnTbrgh_oK3T6AYMC/view?usp=sharing)  
+	- [July 19th lecture](https://drive.google.com/file/d/1yAbbao8sMQsRzqRTnTbrgh_oK3T6AYMC/view?usp=sharing)  
+	- [July 20th lecture](https://drive.google.com/file/d/1yAbbao8sMQsRzqRTnTbrgh_oK3T6AYMC/view?usp=sharing)  
+	- [July 20th notes](notes/01c_2022_20_07_notes.pdf)  
 
 [Project 01: Making a command line tool -- Iterative Variant Calling]()
 
