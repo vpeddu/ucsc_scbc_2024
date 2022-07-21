@@ -39,6 +39,8 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 	- [July 20th notes](notes/01c_2022_20_07_notes.pdf)  
 
 [Project 01: Making a command line tool -- Iterative Variant Calling](slides/01_command_line_and_bash/01d_intermediate_bash_scripting.html)  
+	- [July 21 lecture](https://drive.google.com/file/d/1WzyVdvORaUDHHo7mm8G9pI0k1yH_IToz/view?usp=sharing)  
+	- [July 21 notes](notes/01d_2022_21_07_notes.pdf)  
 
 ### Other Resources  
 
