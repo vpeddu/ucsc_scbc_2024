@@ -37,12 +37,12 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 	- [July 19th lecture](https://drive.google.com/file/d/1yAbbao8sMQsRzqRTnTbrgh_oK3T6AYMC/view?usp=sharing)  
 	- [July 20th lecture](https://drive.google.com/file/d/1yAbbao8sMQsRzqRTnTbrgh_oK3T6AYMC/view?usp=sharing)  
 	- [July 20th notes](notes/01c_2022_20_07_notes.pdf)  
-	- [Roman process_lab_data.sh](code/process_lab_data.sh)  
+	- [Roman process_lab_data.sh](https://github.com/rreggiar/ucsc_scbc_2022/blob/4c704f8751c9c91cbfd162354f76c56113c4cd35/code/process_lab_data.sh)  
 
 [Project 01: Making a command line tool -- Iterative Variant Calling](slides/01_command_line_and_bash/01d_intermediate_bash_scripting.html)  
 	- [July 21 lecture](https://drive.google.com/file/d/1WzyVdvORaUDHHo7mm8G9pI0k1yH_IToz/view?usp=sharing)  
 	- [July 21 notes](notes/01d_2022_21_07_notes.pdf)  
-	- [Roman call_variant.sh](code/call_variant.sh)  
+	- [Roman call_variant.sh](https://github.com/rreggiar/ucsc_scbc_2022/blob/4c704f8751c9c91cbfd162354f76c56113c4cd35/code/call_variant.sh)    
 
 ### Other Resources  
 
