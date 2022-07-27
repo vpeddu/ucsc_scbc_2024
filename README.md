@@ -44,6 +44,10 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 	- [July 21 notes](notes/01d_2022_21_07_notes.pdf)  
 	- [Roman call_variant.sh](https://github.com/rreggiar/ucsc_scbc_2022/blob/4c704f8751c9c91cbfd162354f76c56113c4cd35/code/call_variant.sh)    
 
+#### Python
+
+[Lecture 02: Intro to Python](slides/02_intro_python/02_intro_python.slides.html)
+
 ### Other Resources  
 
 [UCSC Genome Browser](https://genome.ucsc.edu)
