@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>student_L01 Intro slides</title>
+<title>02_intro_python slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13207,7 +13207,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Download-the-lecture-slides-for-our-python-notebooks:">Download the lecture slides for our python notebooks:<a class="anchor-link" href="#Download-the-lecture-slides-for-our-python-notebooks:">&#182;</a></h2><p>python notebooks link: &lt; put link here &gt;</p>
+<h2 id="Download-the-lecture-slides-for-our-python-notebooks:">Download the lecture slides for our python notebooks:<a class="anchor-link" href="#Download-the-lecture-slides-for-our-python-notebooks:">&#182;</a></h2><p>python notebooks link: <a href="https://github.com/rreggiar/ucsc_scbc_2022/raw/master/slides/02_intro_python/02_intro_python.ipynb">https://github.com/rreggiar/ucsc_scbc_2022/raw/master/slides/02_intro_python/02_intro_python.ipynb</a></p>
 
 </div>
 </div>
@@ -13218,7 +13218,7 @@ a.anchor-link {
 
 <pre><code>mkdir python_notebooks
 cd python_notebooks
-wget link</code></pre>
+wget https://github.com/rreggiar/ucsc_scbc_2022/raw/master/slides/02_intro_python/02_intro_python.ipynb</code></pre>
 
 </div>
 </div>
@@ -13483,31 +13483,13 @@ wget link</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Roman loves bioinformatics
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13648,7 +13630,7 @@ wget link</code></pre>
 </div>
 </div>
 
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
@@ -13661,7 +13643,231 @@ wget link</code></pre>
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-went-wrong-here?">What went wrong here?<a class="anchor-link" href="#What-went-wrong-here?">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># I want the text to say </span>
+<span class="n">t</span> <span class="o">=</span> <span class="s2">&quot;my favorite number is &quot;</span> <span class="o">+</span> <span class="mi">8</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [32]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)"># I want the text to say </span>
+<span class="ansi-green-fg">----&gt; 2</span> t <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">my favorite number is </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">+</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">8</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(t)
+
+<span class="ansi-red-fg">TypeError</span>: can only concatenate str (not &#34;int&#34;) to str</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-the-type-of-&quot;my-favorite-number-is-&quot;?">What is the type of <code>"my favorite number is "</code>?<a class="anchor-link" href="#What-is-the-type-of-&quot;my-favorite-number-is-&quot;?">&#182;</a></h2><h2 id="What-is-the-type-of-8?">What is the type of <code>8</code>?<a class="anchor-link" href="#What-is-the-type-of-8?">&#182;</a></h2>
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Can-we-change-the-type-of-8?">Can we change the type of <code>8</code>?<a class="anchor-link" href="#Can-we-change-the-type-of-8?">&#182;</a></h2><h2 id="Yes!-This-is-called-&quot;Type-Casting&quot;">Yes! This is called "Type Casting"<a class="anchor-link" href="#Yes!-This-is-called-&quot;Type-Casting&quot;">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#turn 8 into a string</span>
+<span class="n">t</span> <span class="o">=</span> <span class="s2">&quot;my favorite number is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>my favorite number is 8
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="You-can-type-cast-using-the-same-definitions-above:">You can type cast using the same definitions above:<a class="anchor-link" href="#You-can-type-cast-using-the-same-definitions-above:">&#182;</a></h2><ul>
+<li>integer = <code>int</code><ul>
+<li>an integer (1)</li>
+</ul>
+</li>
+<li>floating point = <code>float</code><ul>
+<li>a floating point number (3.14)</li>
+</ul>
+</li>
+<li>string = <code>str</code><ul>
+<li>a list of characters ("bioinformatics")</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mf">10.00</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>str</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">9.24</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>int</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What's-the-issue-here?">What's the issue here?<a class="anchor-link" href="#What's-the-issue-here?">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [45]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">type</span>(<span class="ansi-yellow-bg" style="color: rgb(0,135,0)">float</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">a</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>)
+
+<span class="ansi-red-fg">ValueError</span>: could not convert string to float: &#39;a&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13680,10 +13886,10 @@ wget link</code></pre>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">BSCC</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Roman&#39;</span><span class="p">,</span><span class="s1">&#39;Vikas&#39;</span><span class="p">,</span><span class="s1">&#39;Sarah&#39;</span><span class="p">,</span><span class="s1">&#39;Daniel&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">BSCC_teachers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Roman&#39;</span><span class="p">,</span><span class="s1">&#39;Vikas&#39;</span><span class="p">,</span><span class="s1">&#39;Sarah&#39;</span><span class="p">,</span><span class="s1">&#39;Daniel&#39;</span><span class="p">]</span>
 <span class="c1"># question: why do we have to put the names in quotes? </span>
 </pre></div>
 
@@ -13695,7 +13901,7 @@ wget link</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="You-can-access-elements-in-list-using-an-&quot;index&quot;">You can access elements in list using an "index"<a class="anchor-link" href="#You-can-access-elements-in-list-using-an-&quot;index&quot;">&#182;</a></h1><p><code>BSCC = ['Roman','Vikas','Sarah','Daniel']</code></p>
+<h1 id="You-can-access-elements-in-list-using-an-&quot;index&quot;">You can access elements in list using an "index"<a class="anchor-link" href="#You-can-access-elements-in-list-using-an-&quot;index&quot;">&#182;</a></h1><p><code>BSCC_teachers = ['Roman','Vikas','Sarah','Daniel']</code></p>
 <h2 id="Sarah's-name-is-the-second-position-in-the-list">Sarah's name is the second position in the list<a class="anchor-link" href="#Sarah's-name-is-the-second-position-in-the-list">&#182;</a></h2><ul>
 <li>The second element?? </li>
 <li>Python is "0 indexed", so it starts counting at 0</li>
@@ -13707,10 +13913,10 @@ wget link</code></pre>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">BSCC</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">BSCC_teachers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13723,7 +13929,7 @@ wget link</code></pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -13813,6 +14019,75 @@ Input <span class="ansi-green-fg">In [14]</span>, in <span class="ansi-cyan-fg">
 </div>
 </div>
 
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="You-can-add-to-a-list-using-the-.append()-function">You can add to a list using the <code>.append()</code> function<a class="anchor-link" href="#You-can-add-to-a-list-using-the-.append()-function">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dog_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Chewbacca&#39;</span><span class="p">,</span> <span class="s1">&#39;Bark_Twain&#39;</span><span class="p">,</span> <span class="s1">&#39;Salvador Dogi&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog_names</span><span class="p">)</span>
+<span class="n">dog_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;mary_puppins&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dog_names</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Chewbacca&#39;, &#39;Bark_Twain&#39;, &#39;Salvador Dogi&#39;]
+[&#39;Chewbacca&#39;, &#39;Bark_Twain&#39;, &#39;Salvador Dogi&#39;, &#39;mary_puppins&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notice-how-we-didn't-have-to-save-dog_names-when-using-.append()">Notice how we didn't have to save <code>dog_names</code> when using <code>.append()</code><a class="anchor-link" href="#Notice-how-we-didn't-have-to-save-dog_names-when-using-.append()">&#182;</a></h3><h3 id=".append()-performs-the-action-in-place"><code>.append()</code> performs the action in place<a class="anchor-link" href="#.append()-performs-the-action-in-place">&#182;</a></h3>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Append-your-name-to-the-BSCC_teachers-list">Append your name to the <code>BSCC_teachers</code> list<a class="anchor-link" href="#Append-your-name-to-the-BSCC_teachers-list">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13865,10 +14140,10 @@ Input <span class="ansi-green-fg">In [14]</span>, in <span class="ansi-cyan-fg">
 <h3 id="check-if-the-area-of-the-circle-created-in-the-last-slide-is-greater-than-10">check if the area of the circle created in the last slide is greater than 10<a class="anchor-link" href="#check-if-the-area-of-the-circle-created-in-the-last-slide-is-greater-than-10">&#182;</a></h3><h3 id="check-if-the-area-of-the-circle-created-in-the-last-slide-is-less-than-or-equal-to-50">check if the area of the circle created in the last slide is less than or equal to 50<a class="anchor-link" href="#check-if-the-area-of-the-circle-created-in-the-last-slide-is-less-than-or-equal-to-50">&#182;</a></h3><h3 id="hint:-you'll-have-to-wrap-these-in-a-print-statement-as-well">hint: you'll have to wrap these in a print statement as well<a class="anchor-link" href="#hint:-you'll-have-to-wrap-these-in-a-print-statement-as-well">&#182;</a></h3>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># You stored the area of the circle in the variable area</span>
@@ -13876,6 +14151,167 @@ Input <span class="ansi-green-fg">In [14]</span>, in <span class="ansi-cyan-fg">
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Challenge:">Challenge:<a class="anchor-link" href="#Challenge:">&#182;</a></h1><h2 id="Raise-the-second-element-of-list_one-to-the-power-of-the-fifth-element-of-list_two-and-store-it-in-the-variable-A">Raise the second element of <code>list_one</code> to the power of the fifth element of <code>list_two</code> and store it in the variable <code>A</code><a class="anchor-link" href="#Raise-the-second-element-of-list_one-to-the-power-of-the-fifth-element-of-list_two-and-store-it-in-the-variable-A">&#182;</a></h2><h2 id="Raise-the-first-element-of-list_two-to-the-power-of-the-third-element-of-list_one-and-store-it-in-the-variable-B">Raise the first element of <code>list_two</code> to the power of the third element of <code>list_one</code> and store it in the variable <code>B</code><a class="anchor-link" href="#Raise-the-first-element-of-list_two-to-the-power-of-the-third-element-of-list_one-and-store-it-in-the-variable-B">&#182;</a></h2><h2 id="Create-a-list,-C,-containing-A-and-B">Create a list, <code>C</code>, containing <code>A</code> and <code>B</code><a class="anchor-link" href="#Create-a-list,-C,-containing-A-and-B">&#182;</a></h2><h2 id="Using-operators,-is-A-greater-than-B?">Using operators, is <code>A</code> greater than <code>B</code>?<a class="anchor-link" href="#Using-operators,-is-A-greater-than-B?">&#182;</a></h2><h2 id="Check-if-your-values-for-A-and-B-match-the-answers-A_answer-and-B_answer">Check if your values for <code>A</code> and <code>B</code> match the answers <code>A_answer</code> and <code>B_answer</code><a class="anchor-link" href="#Check-if-your-values-for-A-and-B-match-the-answers-A_answer-and-B_answer">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">list_one</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2014</span><span class="p">,</span><span class="mi">242</span><span class="p">,</span><span class="mi">223</span><span class="p">,</span><span class="mi">583</span><span class="p">,</span><span class="mi">6712</span><span class="p">]</span>
+<span class="n">list_two</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4526</span><span class="p">,</span><span class="mi">6565</span><span class="p">,</span><span class="mi">2324</span><span class="p">,</span><span class="mi">134342</span><span class="p">,</span><span class="mi">3845</span><span class="p">,</span><span class="mi">6542</span><span class="p">]</span>
+<span class="c1"># your code here</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">list_one</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="n">list_two</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">list_two</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="n">list_one</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">]</span>
+<span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>167627228653835780533306798789391434121746937938178456823521266766618700274968871486579197384017519965197737321774692151064825152318481088987488196619282527853678614081685983479367010937281916937789779604984825323634847116013276842617203624285657812177082858998034176534095913889454739662019244356068708344631165145684339379622633892483062434806650124047832194252799569209638806849844181440427417069901198463603117101092590092061475915810535826287372166671269264958415223056517944179449209403217531682945836947861392172035029893686466856662209031273687231348943157653862360896794385335194152651555161643502345149624309582815800929127431850339477961135084947719701760915885284925269480312832347348340430906192620961854776824653177572125031571289471717740314506340389612104698419413441691830575772257222261774615576576
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A_answer</span> <span class="o">=</span>  <span class="mi">5889551107028232375922686940119454079892112774038988818063311432046819328731378237055780328738878783060668296126354186690674055444558080763110917055139399420791416402653217884906564561609144941742050191706965576010116981754811371571726305754860495847939049346011586869905466727079577655598009383116526400394201686199131590836303950189931525384350993677695282837524192618020679552611672800310575714950889152972307239365553881633160643053488741730915673768762925649872660635704371412341222615306043210098885545134236674618859661126179531153799658835392239981704523455895355049264175537296250568286131515364235659908593309608442371617560956924723302387942890207708309630222059495171405419837770715292192113498125368454838119517481905673544268262992474236966241436096883046947873196883702173091120221353570548149603973748219791913136408146193570262353793869129739425651233064458644705784291435558266435505225731209564705278721644117936513997429982031421778973146287787606691494215117576491719885387076242206778668808621315911557957386261744471134728689458535841679513638390933802689663484294328430936880624156924943211622525747409766305646870220096173010366607141187688140810182188675529900557603249989061914694434007198756728737266836645910918008608715289143091660464341077054690271102410443430975661210771598386604444653308589073889958314603233058551902234787980881200580511517452657090641407896923811495278351424684414112085747072974986400542073117551222153779969101082250758250807235982585092007901650552693568478882533074477803137197002150048096598143325163646918319917698277334295727191717599363465828677491608494978476912242635109930551929898761638173586855652883270906439005743321180861303729574298703453385250256177641097850487253281234761516461075857622353847943939803422632014044408643584254060740488203878946578806470965263143542506783170883264669520536145046687118735320235367403743247049479092671177391881402532705077124091813628017356663912458604676352362797426624872494891651983289957987783936694512090550943730207991781322202396447510864202793748538852418589592514864405519950690347897132739323963070728021807641431776274575341636136021385336734990117573636971739904956837498059330426901335794301998242872045647929072936575024989340545146871361566052860440579656093282346433761072721765789088838234553339923376527936111492763854160274187006387816881438427954824033752829626170892917798522187906579145309184862424383101926058582773110611676396179205934345279807569530397697765853163177422120925405905082692383497542956830692467041139226239080457128046430162257083044556634713192370154000235676997407062507399222392487667685422957116137306654149140742536757169225068299309900127604668690610340581231470348586192902637817308227348768987091760618465341925892077761214882816354076950020055863786874017821785015089471163668848850288352719874772019759266642498664176118174001967821174126714839922985271721853297675071387197122893971839146253821991101171391926490407723471085931124651764260377634437038087790160014200451441542894890122435757151189335705261244825287230873940555354952846511054097520740545942421998435879657187238647368625462893820007851633087813165242560167585579745046970249127717073543758994538928907654035587272713412784936896894922303376220067760847478566623926144804988687070024399616996278782119191894558141085889537584280007865334359315005821691294620332852045239818685567231735739971060598254055132772677885440122835102439528157264152186161253926891919272043954973218614199171244218571809547911791930050824198319234165164741891840139857369513708496450433587654525173819340325293675837556019402482732774603489946217645151618238787473227995628488014433344955680963072068300072902460695579716585083882864283052673274555220865739971257479610414707181300057726182509358475245005989970926508769664136933601455336338941722252774124032740025797260576790446040342900137919622490811629001231176013502866778090076834452544077624248923573200459707008631062401435862633808727115249209529526325965572884620253396020938274569280271892813237084008856367358549397352600366572135222644042633639782080219786312940624814858294897028088723641984115223818601688567783395062213523784330366573512469273981444698198519889563980291101327050851626873662395087608664723471113783775461296134503081939887449989383291470458825478223447670176859555825934548175963138873886576052783170719396660271748464469143624094423548122221658873884553965592267271878149468586656538120621087775972240336223917744421103869283907520053776926375521580467986183443980581676127004581401446508348506528994939634973290392237459036558864938828665798408571147287417886982613449676778806854681756014882239596589387631970585358976841046674828394210778303984373311033461996434739562404545804080452600463770953570598234445624931644698115271712842637298341477930386481385540424427330678070716141667030371666719292216563783623739381015506574794840141667716892134770465313146297361336458225550530881436803385897493702755113020576126025322454322149947189922779961240865137753022799035077638362502501464115861691469324205307327648125529633344970265950916253247114079488840829910805105234354491874313932088912239052866158325774661863970144435763294533312339416453901413955696341579252347626550482781253723448485103898899176308336683042987847686432345245193860002290123470775223835336357559132626956592629098170605785087376672025169551492989255593947021041103054001629663517361099027325926582133555696862701320599760270936008172909125438660529970684177012574179608647871889908756822687720935071842640572486659381883368800965993536369167457878996738467045818974866606799063956096282236518475600282194061943703691328100700225268105346695543843232898576576479894761481426733228594554023958889073300991478358865807707358559491823400667510546872574354354478815658606761984992027961989915659292603527134587654934744135687431253435431627248029845422105615505056099380093242712453832865019064078892047504386253858950047826711675948530993850728562946405640663495421210859851473396371447947011248528770590505692547108068315430368780357932450282075721112794616881989381817465507809626422792337485307115656335620532524829687896482462137946300829658306016380133193187332739630316184860112525681864092323648029745399201119504538469116655137107995993944112549661101578754073979992498873837938916784673662329574686399725539329808176072119110519693563604961223581691948621585652106794524613047469454547283405774156102237244806241439791543342388923725647702519567037918944083025455293753776177385863776892247740222617049589011427804837555043657862428275889605017977714114918404436180592032344716482207422330441850166814874493290211574624715167376032418228317041772188265926435598227430106862321411925807293451655156821886281614543163232172950815367819929526515229283602485990334180298898693833839545946290860723869379311854217750220282761759735644195018446296274868189581851560170384167748385416140789993336564120904196754863066785679042187950567799406574169609125750029735618564012101382261823440386940959507725516348926858878336872102752313415602225209527337179746467007494586034765847662272953076602497347948171959284599462285101931529537542765950372140343575672029307939183995015086753778351893729104278614481119585024407158380380185734991520041111573784220525248637620150417765333310491614061392407371138024280177923160665877872659080698732507781623430589134802495400141944918738985276786602857391013148037629433970352585680722516496848886914775553007428707737158265338602726818686652163159817571259346207912582102380853898106726447597128513455081126911608631301557121469563271316464079813280992144511611586887584914341404516942605459644152178519382328373563373968636405253472090168842569821078351858046426773782846849388904851097201152331503294364444473495540661486502715447309033261862190837805714282388922826457700703236964773318234864217192307265176575248014009288217626906497213911203723661587985157165884366983652145897754269910027705579931432220170705997513872265048361609296554695224369039958897046734033251042375438414652985505874258599759785064026492966440075758220422136162914897772742989365645766281646727734949007179060881159697540365058233087822437783866939952176055596974231260011959017298229526786717608107288863927759790705365339065325496609441290869552973055120624842265551005988445163089895949526240933047979128092978240782237429157673618037512479205860910737324324141630738474526631130313787029485251178141098774946383812046346081240738116217924725390048831401949188976602778693996836196710678444914492554291449016837689066936744152477536945243216925206995235312745059031478298278321621715991890337594283708077671838876517833254901958969283213659207864296805248267772633078098959165908463096836980167708660387072571637736049840903714773690595556027676437479355246519221261642507383897779473608697545322678061918156310215548407723335164420486697972584094604227011197405031462910608264625426852770764480788927364601588910912201161292239088655621585532354041995931590217405394118211186120631455834067950020078071020118631918614907552284521574526887474437634778585646380134564419208713117134730821632</span>
+<span class="n">B_answer</span> <span class="o">=</span> <span class="mi">167627228653835780533306798789391434121746937938178456823521266766618700274968871486579197384017519965197737321774692151064825152318481088987488196619282527853678614081685983479367010937281916937789779604984825323634847116013276842617203624285657812177082858998034176534095913889454739662019244356068708344631165145684339379622633892483062434806650124047832194252799569209638806849844181440427417069901198463603117101092590092061475915810535826287372166671269264958415223056517944179449209403217531682945836947861392172035029893686466856662209031273687231348943157653862360896794385335194152651555161643502345149624309582815800929127431850339477961135084947719701760915885284925269480312832347348340430906192620961854776824653177572125031571289471717740314506340389612104698419413441691830575772257222261774615576576</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">==</span> <span class="n">A_answer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">B</span> <span class="o">==</span> <span class="n">B_answer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">==</span> <span class="n">B_answer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
