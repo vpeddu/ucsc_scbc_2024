@@ -48,6 +48,9 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 [Lecture 02: Intro to Python](slides/02_intro_python/02_intro_python.slides.html)  
 	- [July 28 lecture](https://drive.google.com/file/d/1tK5ZPke7o2m4QO5Lyw9FYTwDmvpThfJ-/view?usp=sharing)  
+	- [Download: July 28 ipnyb](slides/02_intro_python/02_intro_python.ipynb)  
+
+[Lecture 03: Conditionals and Branching](slides/
 
 ### Other Resources  
 
