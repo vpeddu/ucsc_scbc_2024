@@ -51,8 +51,10 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 	- [Download: July 28 ipnyb](slides/02_intro_python/02_intro_python.ipynb)  
 
 [Lecture 03: Conditionals and Branching]  
+	- [Lecture](https://drive.google.com/file/d/1tK5ZPke7o2m4QO5Lyw9FYTwDmvpThfJ-/view?usp=sharing)  
 
-[Lecture 04: Functions](slides/04_functions/L04_functions.slides.html)
+[Lecture 04: Functions](slides/04_functions/L04_functions.slides.html)  
+	- [Lecture](https://drive.google.com/file/d/1tK5ZPke7o2m4QO5Lyw9FYTwDmvpThfJ-/view?usp=sharing)  
 
 ### Other Resources  
 
