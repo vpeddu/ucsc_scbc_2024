@@ -56,4 +56,6 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 ### Other Resources  
 
-[UCSC Genome Browser](https://genome.ucsc.edu)
+[UCSC Genome Browser](https://genome.ucsc.edu)  
+
+[More Bioinformatics challenges: Rosalind](https://rosalind.info/about/)  
