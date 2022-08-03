@@ -58,6 +58,7 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 [Lecture 05: ORF Finder](slides/L05_ORF_finder/L05_ORF_finder.slides.html)  
 	- [Download: Aug 3 ipnyb](slides/L05_ORF_finder/L05_ORF_finder.ipynb)  
+	- [New Fasta download](https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/slides/L05_ORF_finder/test.fasta)  
 
 ### Other Resources  
 
