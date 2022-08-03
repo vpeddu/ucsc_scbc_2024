@@ -56,6 +56,9 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 [Lecture 04: Functions](slides/04_functions/L04_functions.slides.html)  
 	- [Lecture](https://drive.google.com/file/d/1tK5ZPke7o2m4QO5Lyw9FYTwDmvpThfJ-/view?usp=sharing)  
 
+[Lecture 05: ORF Finder](slides/L05_ORF_finder/L05_ORF_finder.slides.html)  
+	- [Download: Aug 3 ipnyb](slides/L05_ORF_finder/L05_ORF_finder.ipynb)  
+
 ### Other Resources  
 
 [UCSC Genome Browser](https://genome.ucsc.edu)  
