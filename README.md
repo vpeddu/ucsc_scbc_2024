@@ -52,7 +52,10 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 [Lecture 03: Conditionals and Branching]  
 
-[Lecture 04: Functions](slides/04_functions/L04_functions.slides.html)
+[Lecture 04: Functions](slides/04_functions/L04_functions.slides.html)  
+
+[Lecture 05: ORF Finder](slides/L05_ORF_finder/L05_ORF_finder.slides.html)  
+	- [Download: Aug 3 ipnyb](slides/L05_ORF_finder/L05_ORF_finder.ipynb)  
 
 ### Other Resources  
 
