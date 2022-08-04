@@ -60,6 +60,10 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 	- [Download: Aug 3 ipnyb](slides/L05_ORF_finder/L05_ORF_finder.ipynb)  
 	- [New Fasta download](https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/slides/L05_ORF_finder/test.fasta)  
 
+[Lecture 06: ORF Finder Continued](slides/L06_ORF_finder_continued/L06_ORF_finder_student.slides.html)  
+	- [Download: Aug 4 ipnyb](slides/L06_ORF_finder_continued/L06_ORF_finder_student.ipynb)  
+
+
 ### Other Resources  
 
 [UCSC Genome Browser](https://genome.ucsc.edu)  
