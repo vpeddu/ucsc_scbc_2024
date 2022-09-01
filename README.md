@@ -1,5 +1,8 @@
 ## Welcome to the 2022 UCSC Summer Short Course in Bioinformatics and Coding
 
+This free course is an initiative of the [UCSC Genomics Institute Committee on Diversity, Equity, and Inclusion](https://genomics.ucsc.edu/diversity-committee/), and was created in order to reduce barriers to learning foundational skills in computational biology.
+Our goal is to make bioinformatics more accessible and inclusive, and to increase access for under-represented and under-resourced communities.
+
 Here you'll find slides, code, and all the other material we are using to explore the world of bioinformatics.
 
 Contact: [Roman Reggiardo](https://rreggiar.github.io) by [email](mailto:rreggiar@ucsc.edu) [LinkedIn](https://www.linkedin.com/in/roman-reggiardo/) 
