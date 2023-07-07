@@ -7,9 +7,9 @@ Here you'll find slides, code, and all the other material we are using to explor
 
 Contact: [Roman Reggiardo](https://rreggiar.github.io) | rreggiar<at>ucsc.edu | [LinkedIn](https://www.linkedin.com/in/roman-reggiardo/) 
 
-         **Vikas Peddu** | vpeddu<at>ucsc.edu | 2023 Lead Instructor
+**Vikas Peddu** | vpeddu<at>ucsc.edu | 2023 Lead Instructor
 
-         **Daniel Arriaza** | dwarriaz<at>ucsc.edu | 2023 Co-instructor
+**Daniel Arriaza** | dwarriaz<at>ucsc.edu | 2023 Co-instructor
 
 ### Material
 
