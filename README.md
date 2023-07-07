@@ -1,15 +1,16 @@
 ## Welcome to the 2023 UCSC Summer Short Course in Bioinformatics and Coding
 
-This free course is an initiative of the [UCSC Genomics Institute Committee on Diversity, Equity, and Inclusion](https://genomics.ucsc.edu/diversity-committee/), and was created in order to reduce barriers to learning foundational skills in computational biology.
+This free course is an initiative of the [UCSC Genomics Institute Committee on Diversity, Equity, and Inclusion](https://genomics.ucsc.edu/diversity-committee/), 
+and was created in order to reduce barriers to learning foundational skills in computational biology.
 Our goal is to make bioinformatics more accessible and inclusive, and to increase access for under-represented and under-resourced communities.
 
 Here you'll find slides, code, and all the other material we are using to explore the world of bioinformatics.
 
-Contact: [Roman Reggiardo](https://rreggiar.github.io) | rreggiar<at>ucsc.edu | [LinkedIn](https://www.linkedin.com/in/roman-reggiardo/) 
+Contact: [Roman Reggiardo](https://rreggiar.github.io) | rreggiar AT ucsc.edu | [LinkedIn](https://www.linkedin.com/in/roman-reggiardo/) 
 
-**Vikas Peddu** | vpeddu<at>ucsc.edu | 2023 Lead Instructor
+**Vikas Peddu** | vpeddu AT ucsc.edu | 2023 Lead Instructor
 
-**Daniel Arriaza** | dwarriaz<at>ucsc.edu | 2023 Co-instructor
+**Daniel Arriaza** | dwarriaz AT ucsc.edu | 2023 Co-instructor
 
 ### Material
 
@@ -24,7 +25,6 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 [Lecture 00a: UCSC ITS Virtual Machine access and intro guide](slides/00_intro_and_background/00a_prp_resource.pdf)
 
 [Lecture 00b: Bioinformatics, Biology, and Data](slides/00_intro_and_background/00b_bioinformatics_bio_data.html)  
-	- [annotated slides](notes/00b_notes.pdf)
 
 #### Command Line and Bash
 
@@ -42,7 +42,7 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 [Lecture 02: Intro to Python](slides/02_intro_python/02_intro_python.slides.html)  
 
-[Lecture 03: Conditionals and Branching](slides/03_python_conditionals_and_loops/L03_Conditionals and Branching.slides.html)  
+[Lecture 03: Conditionals and Branching](slides/03_python_conditionals_and_loops/L03_Conditionals and Branching.slides.html)
 	- [Download: ipynb](slides/03_python_conditionals_and_loops/L03_Conditionals_and_Branching.ipynb)  
 
 [Lecture 04: Functions](slides/04_functions/L04_functions.slides.html)  
