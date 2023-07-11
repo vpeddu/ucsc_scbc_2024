@@ -1,6 +1,6 @@
 ---
 title: "00b: Bioinformatics, Biology, and Data"
-author: "Roman E. Reggiardo"
+author: "Roman E. Reggiardo, Vikas Peddu"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 format: 
   revealjs:
@@ -218,4 +218,4 @@ Sequence DNA/RNA in the blood, find tumors without scans/surgery
 
 ![image: MDPI](00b_bioinformatics_bio_data_files/images/cells-09-00624-g001.webp)
 
-##  
+## 

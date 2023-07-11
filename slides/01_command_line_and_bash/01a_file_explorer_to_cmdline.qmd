@@ -1,6 +1,6 @@
 ---
 title: "01a: From File Explorer to Command Line"
-author: "Roman E. Reggiardo"
+author: "Roman E. Reggiardo, Vikas Peddu"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 format: 
   revealjs:
@@ -23,7 +23,7 @@ What does data look like? Where do we keep it?
 
 The **command line** gives us an opportunity to work with computers in a more direct way compared to "Folders" and "Files".
 
-![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.02.45%20PM.png){fig-align="center"}
+![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202023-07-09%20at%201.34.54%20PM.png){fig-align="left"}
 
 ## For example:
 
@@ -33,7 +33,7 @@ Folders?
 
 What's inside?
 
-![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.25.49%20PM.png){fig-align="center"}
+![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202023-07-09%20at%201.33.45%20PM.png){fig-align="center"}
 
 ## This sounds like something we could see in everyday life...
 
@@ -57,36 +57,31 @@ How will your experience be different when you switch from "human think" to "com
 
 ### Create a "Project Folder"
 
-Using the **Graphical User Interface (GUI)** provided on your Jupyter login, create a **Folder** called:
+Using the **Graphical User Interface (GUI)**, navigate to the **Documents** folder and create a **Folder** called:
 
-`SCBC_2022_folder`
+`BSCC_2023_folder`
 
-![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.37.31%20PM.png){fig-align="center"}
+![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202023-07-09%20at%201.37.40%20PM.png){fig-align="center"}
 
 ## Practice 01A:
 
 ### Create sub-folders and a `README.txt` file:
 
-`data/`
+##### `data/`
 
-`notes/`
+##### `notes/`
 
-`code/`
+##### `code/`
 
-![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.38.28%20PM.png){fig-align="right"}
+make sure to keep the folder names lowercase!
+
+![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202023-07-09%20at%201.40.15%20PM.png){fig-align="center"}
 
 ## Practice 01B:
 
-### Go back to Jupyter and edit README.txt to say something....
+### Edit README.txt to say something....
 
-![your desktop doesn't have a text editor installed.....yet](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.41.24%20PM.png){fig-align="center"}
-
-```{bash}
-mkdir SCBC_2022_folder
-mkdir SCBC_2022_folder/data SCBC_2022_dir/notes SCBC_2022_folder/code
-touch SCBC_2022_folder/README.txt
-echo 'Hi im Roman and I like to code' > SCBC_2022_folder/README.txt
-```
+![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202023-07-09%20at%201.43.54%20PM.png){fig-align="center"}
 
 ## Reflection:
 
@@ -94,7 +89,7 @@ echo 'Hi im Roman and I like to code' > SCBC_2022_folder/README.txt
 
 Why is this useful? What could it help with moving forward?
 
-![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-28%20at%204.38.28%20PM.png){fig-align="center"}
+![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202023-07-09%20at%201.49.09%20PM.png){fig-align="center"}
 
 ## So why even bother with the command line? We just did so much!
 
@@ -112,7 +107,7 @@ Bioinformatics asks us to do much more with data, and thus computers, than most.
 
 On your desktops you can **view** and **interact** **with** the command line with a **terminal** -- a piece of software built to enable our use of command line programming
 
-![terminal on left, file explorer on right](01a_file_explorer_to_cmdline_files/images/paste-AF551921.png){fig-align="center"}
+![terminal on left, file explorer on right](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202023-07-09%20at%201.51.12%20PM.png){fig-align="center"}
 
 ## Prediction:
 
@@ -121,12 +116,12 @@ Instead of the mouse, how will we navigate the command line?
 ## Anatomy of the `command line`
 
 ```{r}
-cat('jovyan@jupyter-rreggiar-40ucsc-2eedu:~$')
+cat('localuser@bscc-vm-vikas:~$')
 ```
 
 `user` \@ `host` : `location` `$` *commands you enter here*
 
-`user` : the name your computer calls you (we're all joyvan on PRP)
+`user` : the name your computer calls you (we're all bscc-VM)
 
 `host` : the computer you're using
 
@@ -165,11 +160,15 @@ ls
 
 ## Another basic command with big implications: `cd`
 
+```{bash}
+mkdir BSCC_2023_folder
+```
+
 Our command line "mouse" -- move *somewhere, anywhere*
 
 ```{bash echo=TRUE}
 # change directory to SCBC_2022_folder
-cd SCBC_2022_folder
+cd BSCC_2023_folder
 pwd
 ```
 
@@ -177,7 +176,7 @@ hint: try hitting *tab* to complete the rest of your statements -- it'll auto-co
 
 ## What this looks like in file explorer
 
-![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202022-06-30%20at%201.55.51%20PM.png){fig-align="center"}
+![](01a_file_explorer_to_cmdline_files/images/Screen%20Shot%202023-07-09%20at%201.55.21%20PM.png){fig-align="center"}
 
 ## If you're going forward, you should be able to go back too
 
@@ -187,26 +186,24 @@ pwd
 ```
 
 ```{bash echo=TRUE}
-# change directory to SCBC_2022_folder
-cd SCBC_2022_folder
+# change directory to BSCC_2023_folder
+cd BSCC_2023_folder
 pwd
 ```
 
 ```{bash echo=TRUE}
-# change directory to SCBC_2022_folder
-cd SCBC_2022_folder
 # change directory to the one above/before/in front of pwd
 cd .. 
 pwd
 ```
 
-## Briefly: The role of '.' & '..'
+## Briefly: The role of '.' and '..'
 
 These are really useful shortcuts that correspond to location
 
 ```{bash echo=TRUE}
-# change directory to SCBC_2022_folder
-cd SCBC_2022_folder
+# change directory to BSCC_2023_folder
+cd BSCC_2023_folder
 # change directory to the one above/before/in front of pwd
 cd .. 
 pwd .
@@ -214,9 +211,9 @@ pwd .
 
 as we just saw, `cd ..` tells us to go from:
 
-```{bash}
-# change directory to SCBC_2022_folder
-cd SCBC_2022_folder
+```{bash echo=TRUE}
+# change directory to BSCC_2023_folder
+cd BSCC_2023_folder
 pwd
 ```
 
@@ -226,13 +223,13 @@ to
 pwd
 ```
 
-## Briefly: The role of '.' & '..'
+## Briefly: The role of '.' and '..'
 
 These are really useful shortcuts that correspond to location
 
 ```{bash echo=TRUE}
-# change directory to SCBC_2022_folder
-cd SCBC_2022_folder
+# change directory to BSCC_2023_folder
+cd BSCC_2023_folder
 # change directory to the one above/before/in front of pwd
 cd .. 
 pwd .
@@ -266,8 +263,8 @@ pwd
 we can go to
 
 ```{bash}
-# change directory to SCBC_2022_folder
-cd SCBC_2022_folder
+# change directory to BSCC_2023_folder
+cd BSCC_2023_folder
 pwd
 ```
 
@@ -296,7 +293,7 @@ pwd
 looks like:
 
 ```{bash error=TRUE, echo=TRUE}
-cd /Users/rreggiar/Documents
+cd /Users/vikas/Documents
 pwd
 ```
 
@@ -311,7 +308,7 @@ cd
 1.  Where are you? What does it appear running just `cd` does?
 2.  What's there?
 3.  Go to `Pictures/` directory, is anything in there?
-4.  Go to `SCBC_2022_folder/data/` directory, what does `pwd` return?
+4.  Go to `BSCC_2023_folder/data/` directory, what does `pwd` return?
 5.  List the **three** ways you can get back to where you were in `1.`
 
 ## Reflection:
@@ -326,7 +323,7 @@ Do you like moving around with the command line? It is easier than mouse? Is it 
 
 `cd` : change directory - `man cd`
 
-`. & ..` : represent present working directory and upstream directory, respectively
+`. and ..` : represent present working directory and upstream directory, respectively
 
 ## Quick aside: the command line user `man` ual
 
@@ -447,17 +444,17 @@ For the same task, which is faster: file explorer or command line?
 
 ### Create a "Project Directory"
 
-Make the directory `SCBC_2022_dir` with the same contents as `SCBC_2022_folder`.
+Make the directory `BSCC_2023_dir` with the same contents as `BSCC_2023_folder`.
 
-Delete the `SCBC_2022_folder` directory.
+Delete the `BSCC_2023_folder` directory.
 
 There are multiple ways to do this, see if you can find the fastest approach.
 
 ```{bash}
-mkdir SCBC_2022_dir
-mkdir SCBC_2022_dir/data SCBC_2022_dir/notes SCBC_2022_dir/code
-touch SCBC_2022_dir/README.txt
-echo 'Hi im Roman and I like to code' > SCBC_2022_dir/README.txt
+mkdir BSCC_2023_dir
+mkdir BSCC_2023_dir/data BSCC_2023_dir/notes BSCC_2023_dir/code
+touch BSCC_2023_dir/README.txt
+echo 'Vikas, Roman, and Daniel love to code!' > BSCC_2023_dir/README.txt
 ```
 
 ## Reflection:
@@ -472,7 +469,7 @@ The command line can help us here, just print the whole file out in terminal:
 
 ```{bash echo = TRUE}
 # 'concatenate' or **print** whole **files**
-cat SCBC_2022_dir/README.txt
+cat BSCC_2023_dir/README.txt
 ```
 
 ## Printing continued
@@ -490,21 +487,21 @@ echo 'Hello World'
 
 ```{bash echo=TRUE}
 # `>` tells cmd line to send the output to a specific file, rather than printing to terminal
-echo 'Banana slugs have no known predators' > SCBC_2022_dir/README.txt
-cat SCBC_2022_dir/README.txt
+echo 'Banana slugs have no known predators' > BSCC_2023_dir/README.txt
+cat BSCC_2023_dir/README.txt
 ```
 
-Something new here: `>` is letting us write our `echo` output to our `SCBC_2022_dir/README.txt` **file.**
+Something new here: `>` is letting us write our `echo` output to our `BSCC_2023_dir/README.txt` **file.**
 
 But in this case, we **over-wrote** our original statement!
 
 ## Printing to files: Thinking about writing
 
-How can we re-generate our original `SCBC_2022_dir/README.txt` ?
+How can we re-generate our original `BSCC_2023_dir/README.txt` ?
 
 ```{bash echo=TRUE}
-echo 'Hi im Roman and I like to code' > SCBC_2022_dir/README.txt
-cat SCBC_2022_dir/README.txt
+echo 'Vikas, Roman, and Daniel love to code!' > BSCC_2023_dir/README.txt
+cat BSCC_2023_dir/README.txt
 ```
 
 ## Printing to files: Appending instead of over-writing
@@ -513,8 +510,8 @@ Much like `.` and `..` , `>` and `>>` have distinct functions.
 
 ```{bash echo=TRUE}
 ## `>>` lets us append output to an existing file, line by line
-echo 'Banana slugs have no known predators' >> SCBC_2022_dir/README.txt
-cat SCBC_2022_dir/README.txt
+echo 'Banana slugs have no known predators' >> BSCC_2023_dir/README.txt
+cat BSCC_2023_dir/README.txt
 ```
 
 now we have both lines!
@@ -532,13 +529,13 @@ We can also **search** for key terms in files:
 ```{bash echo=TRUE}
 # `grep` will return lines that contain the input argument
 # grep [text to search for] [file to search in]
-grep "Roman" SCBC_2022_dir/README.txt
+grep "Roman" BSCC_2023_dir/README.txt
 ```
 
 the text doesn't have to be in the beginning:
 
 ```{bash echo=TRUE}
-grep "predators" SCBC_2022_dir/README.txt
+grep "predators" BSCC_2023_dir/README.txt
 ```
 
 ## Reflection:
@@ -559,15 +556,15 @@ Does this beat opening up Microsoft word or are you still skeptical?
 
 `cp` : copy a file from A to B directory - `man cp`
 
-## A tool to bring in something new: `wget`
+## A tool to copy data: `cp`
 
-`wget` : "World Wide Web" + get
+`cp` : copy
 
-**Before** you run the following code, `cd` to your `SCBC_2022_dir/data` directory
+**Before** you run the following code, `cd` to your `BSCC_2023_dir/data` directory
 
 ```{bash echo=TRUE, eval=FALSE}
-# wget [link to file]
-wget 'https://raw.githubusercontent.com/rreggiar/ucsc_scbc_2022/master/data/talking.txt'
+# cp <this file> <to here>
+cp /media/fileshare/talking.txt . 
 ```
 
 ## Practice 04 (pt.1)
@@ -594,7 +591,7 @@ What other steps in the last practice could we theoretically use command line fo
 
 **Part 1**:
 
-Within your `SCBC_2022_dir/data` directory, create a new file: `book_of_poems.txt` .
+Within your `BSCC_2023_dir/data` directory, create a new file: `book_of_poems.txt` .
 
 Using `echo` and the `\n` trick, add as many lines of `speakers` and `statements` as you'd like to, following the format of **Practice 04.**
 
@@ -609,13 +606,13 @@ Now, utilizing `grep --help`, figure out a way to make two new files:
 
 ```{bash}
 # clean up working dirs
-rm -rf SCBC_2022_dir
-rm -rf SCBC_2022_folder
+rm -rf BSCC_2023_dir/
+rm -rf BSCC_2023_folder/
 ```
 
 ## Summary 04:
 
-`wget` : downloads a file from a `http/https` link - `man wget`
+`cp` : copy files - `man cp`
 
 `head` : print only the top 6 lines of a file (default) - `man head`
 
