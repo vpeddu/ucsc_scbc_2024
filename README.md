@@ -21,7 +21,7 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 [Protected: Summer 2023 Lecture Recordings]()
 
 #### Background and Setup resources
-
+##### VM link: https://learntech.ucsc.edu/bscc/#/
 [Lecture 00a: UCSC ITS Virtual Machine access and intro guide](slides/00_intro_and_background/00a_prp_resource.pdf)
 
 [Lecture 00b: Bioinformatics, Biology, and Data](slides/00_intro_and_background/00b_bioinformatics_bio_data.html)  
