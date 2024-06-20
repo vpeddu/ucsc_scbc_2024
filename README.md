@@ -8,6 +8,7 @@ Here you'll find slides, code, and all the other material we are using to explor
 
 Contact: [Vikas Peddu](https://github.com/vpeddu) | vpeddu AT ucsc.edu
 
+| Name                  | Email                | Role                |
 |-----------------------|----------------------|---------------------|
 | Ivana Pačar           | ipacar AT ucsc.edu   | Instructor (Bash)   |
 | Connor Mattingly      | csmattin AT ucsc.edu | Instructor (Python) |
