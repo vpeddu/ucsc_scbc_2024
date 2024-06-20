@@ -1,4 +1,4 @@
-## Welcome to the 2023 UCSC Summer Short Course in Bioinformatics and Coding
+## Welcome to the 2024 UCSC Summer Short Course in Bioinformatics and Coding
 
 This free course is an initiative of the [UCSC Genomics Institute Committee on Diversity, Equity, and Inclusion](https://genomics.ucsc.edu/diversity-committee/), 
 and was created in order to reduce barriers to learning foundational skills in computational biology.
@@ -6,11 +6,11 @@ Our goal is to make bioinformatics more accessible and inclusive, and to increas
 
 Here you'll find slides, code, and all the other material we are using to explore the world of bioinformatics.
 
-Contact: [Roman Reggiardo](https://rreggiar.github.io) | rreggiar AT ucsc.edu | [LinkedIn](https://www.linkedin.com/in/roman-reggiardo/) 
+Contact: [Vikas Peddu](https://github.com/vpeddu) | vpeddu AT ucsc.edu 
 
-**Vikas Peddu** | vpeddu AT ucsc.edu | 2023 Lead Instructor
+**Ivana Pačar** | ipacar AT ucsc.edu | 2024 Instructor (Bash) 
 
-**Daniel Arriaza** | dwarriaz AT ucsc.edu | 2023 Co-instructor
+**Connor Mattingly** | csmattin AT ucsc.edu | 2024 instructor (Python) 
 
 ### Material
 
@@ -18,10 +18,10 @@ Here is the course material in HTML and/or PDF slide format.
 If you need to go from HTML (website-like interaction) please print to PDF from your browser.
 *Recommended to open these in a new tab: ctrl- or cmd- click*
 
-[Protected: Summer 2023 Lecture Recordings](https://drive.google.com/drive/folders/1RZjdzRFGXzZr6II2_v10Nr5F-tIvRdW5?usp=drive_link)
+[Protected: Summer 2024 Lecture Recordings](https://drive.google.com/drive/folders/1RZjdzRFGXzZr6II2_v10Nr5F-tIvRdW5?usp=drive_link)
 
 #### Background and Setup resources
-##### [VM link](https://learntech.ucsc.edu/bscc/#/) 
+##### [VM link](remotelab.lt.ucsc.edu) 
 [Lecture 00a: UCSC ITS Virtual Machine access and intro guide](slides/00_intro_and_background/00a_BSCC_resource_2023.pdf)
 
 [Lecture 00b: Bioinformatics, Biology, and Data](slides/00_intro_and_background/00b_bioinformatics_bio_data.html)  
