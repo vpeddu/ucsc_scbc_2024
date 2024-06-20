@@ -8,9 +8,15 @@ Here you'll find slides, code, and all the other material we are using to explor
 
 Contact: [Vikas Peddu](https://github.com/vpeddu) | vpeddu AT ucsc.edu 
 
-**Ivana Pačar** | ipacar AT ucsc.edu | 2024 Instructor (Bash) 
-
-**Connor Mattingly** | csmattin AT ucsc.edu | 2024 instructor (Python) 
+| Ivana Pačar           | ipacar AT ucsc.edu   | Instructor (Bash)   |
+|-----------------------|----------------------|---------------------|
+| Connor Mattingly      | csmattin AT ucsc.edu | Instructor (Python) |
+| Bhavna Mahi           | bmahi AT ucsc.edu    | Teaching Assistant  |
+| Madeline Chertkow     | mchertko AT ucsc.edu | Teaching Assistant  |
+| Megha Srigyan         | msrigyan AT ucsc.edu | Teaching Assistant  |
+| Megna Chalamala       | mchalama AT ucsc.edu | Teaching Assistant  |
+| Shivani Mandalaparthi | smandal2 AT ucsc.edu | Teaching Assistant  |
+| Sami Alabbas          | salabbas AT ucsc.edu | Teaching Assistant  |
 
 ### Material
 
