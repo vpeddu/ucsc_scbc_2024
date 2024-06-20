@@ -6,8 +6,9 @@ Our goal is to make bioinformatics more accessible and inclusive, and to increas
 
 Here you'll find slides, code, and all the other material we are using to explore the world of bioinformatics.
 
-Contact: [Vikas Peddu](https://github.com/vpeddu) | vpeddu AT ucsc.edu 
+Contact: [Vikas Peddu](https://github.com/vpeddu) | vpeddu AT ucsc.edu
 
+|-----------------------|----------------------|---------------------|
 | Ivana Pačar           | ipacar AT ucsc.edu   | Instructor (Bash)   |
 | Connor Mattingly      | csmattin AT ucsc.edu | Instructor (Python) |
 | Bhavna Mahi           | bmahi AT ucsc.edu    | Teaching Assistant  |
