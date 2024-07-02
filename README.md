@@ -21,7 +21,7 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 [Protected: Summer 2024 Lecture Recordings](https://drive.google.com/drive/folders/1RZjdzRFGXzZr6II2_v10Nr5F-tIvRdW5?usp=drive_link)
 
 #### Background and Setup resources
-##### [VM link](remotelab.lt.ucsc.edu) 
+##### [VM link](https://remotelab.lt.ucsc.edu/#/) 
 [Lecture 00a: UCSC ITS Virtual Machine access and intro guide](slides/00_intro_and_background/00a_BSCC_resource_2023.pdf)
 
 [Lecture 00b: Bioinformatics, Biology, and Data](slides/00_intro_and_background/00b_bioinformatics_bio_data.html)  
