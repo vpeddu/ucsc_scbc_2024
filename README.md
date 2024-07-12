@@ -73,3 +73,4 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 * [07/08/2024](https://youtu.be/vOiL1fXKdWI)
 * [07/09/2024](https://youtu.be/b4HxIHqfyrI)
 * [07/10/2024](https://youtu.be/GzUIdo2UlhM)
+* [07/11/2024](https://youtu.be/zHcHaGyE4VM)
