@@ -68,6 +68,8 @@ If you need to go from HTML (website-like interaction) please print to PDF from 
 
 [More Bioinformatics challenges: Rosalind](https://rosalind.info/about/)  
 
+[Professional development](https://github.com/vpeddu/ucsc_scbc_2024/raw/gh_pages/slides/BSCC_professional_development.pptx)
+
 
 ### Recordings
 * [07/08/2024](https://youtu.be/vOiL1fXKdWI)
